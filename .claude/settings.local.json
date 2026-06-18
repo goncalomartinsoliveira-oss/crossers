@@ -4,7 +4,8 @@
       "PowerShell(node --version)",
       "PowerShell(npm --version)",
       "PowerShell(cd \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\"; $env:NODE_OPTIONS=\"--use-system-ca\"; npm install --save-dev vite)",
-      "PowerShell(cd \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\"; $env:NODE_OPTIONS=\"--use-system-ca\"; npm run dev)"
+      "PowerShell(cd \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\"; $env:NODE_OPTIONS=\"--use-system-ca\"; npm run dev)",
+      "PowerShell(gh --version)"
     ]
   }
 }
