@@ -11,203 +11,206 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0C1210; --white: #FFFFFF;
+      --bg: #0a0a0a; --white: #FFFFFF;
       --accent1: #4CAF50; --accent2: #2E7D32;
-      --card-bg: #111A11; --border: #1a2a1a;
-      --muted: #4a6a4a; --stat-dark: #0e170d;
+      --card-bg: #111111; --border: #222222;
+      --muted: #555555; --grain-opacity: 0.045;
       --font-title: 'Bebas Neue', sans-serif; --font-body: 'Inter', sans-serif;
     }
     html { scroll-behavior: smooth; }
-    body { background-color:var(--bg); color:var(--white); font-family:var(--font-body); font-size:16px; line-height:1.6; overflow-x:hidden; }
-    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 24px; }
-    .section { padding:96px 0; }
-    .section-label { font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent1); margin-bottom:12px; }
-    .section-title { font-family:var(--font-title); font-size:clamp(2.5rem,5vw,4rem); letter-spacing:0.03em; line-height:1; margin-bottom:24px; }
-    .accent-orange { color:var(--accent2); }
-    .accent-blue { color:var(--accent1); }
-    .accent-green { color:var(--accent1); }
-    .divider-orange { width:48px; height:3px; background:var(--accent2); margin-bottom:48px; }
-    .divider-blue { width:48px; height:3px; background:var(--accent1); margin-bottom:48px; }
-    .fade-in { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.visible { opacity:1; transform:translateY(0); }
+    body { background-color: var(--bg); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+    /* GRAIN TEXTURE */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: var(--grain-opacity);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent1); margin-bottom: 12px; }
+    .section-title { font-family: var(--font-title); font-size: clamp(2.8rem, 6vw, 5rem); letter-spacing: 0.03em; line-height: 0.95; margin-bottom: 24px; }
+    .accent-green { color: var(--accent1); }
+    .divider { width: 48px; height: 3px; background: var(--accent1); margin-bottom: 48px; }
+    .fade-in { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* NAVBAR */
-    #navbar { position:fixed; top:0; left:0; right:0; z-index:100; height:64px; display:flex; align-items:center; background:rgba(12,18,16,0.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); transition:background 0.3s; }
-    #navbar .container { display:flex; align-items:center; justify-content:space-between; }
-    .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
-    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
-    .nav-links a { font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.6); text-decoration:none; transition:color 0.2s; }
-    .nav-links a:hover { color:var(--white); }
-    .btn-nav { font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; background:var(--accent1); border:none; padding:10px 20px; cursor:pointer; text-decoration:none; transition:background 0.2s, transform 0.15s; clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%); }
-    .btn-nav:hover { background:#5dc962; transform:translateY(-1px); }
-    .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-    .nav-hamburger span { display:block; width:24px; height:2px; background:var(--white); transition:all 0.3s; }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 64px; display: flex; align-items: center; background: rgba(10,10,10,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.3s; }
+    #navbar .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .btn-nav { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #000; background: var(--accent1); border: none; padding: 10px 20px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+    .btn-nav:hover { background: #5dc962; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
 
-    /* HERO — two-column layout */
-    #hero { min-height:100vh; display:flex; flex-direction:column; align-items:stretch; justify-content:center; position:relative; overflow:hidden; padding-top:64px; }
-    .hero-bg { position:absolute; inset:0; background-color:var(--bg); background-image: linear-gradient(rgba(76,175,80,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(76,175,80,0.03) 1px, transparent 1px), repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(76,175,80,0.015) 20px, rgba(76,175,80,0.015) 21px); background-size:40px 40px, 40px 40px, 100% 100%; }
-    .hero-accent { position:absolute; width:200px; height:200px; pointer-events:none; }
-    .hero-accent-tl { top:80px; left:0; border-top:2px solid var(--accent1); border-left:2px solid var(--accent1); opacity:0.22; }
-    .hero-accent-br { bottom:0; right:0; border-bottom:2px solid var(--accent2); border-right:2px solid var(--accent2); opacity:0.18; }
-    .hero-diag { position:absolute; pointer-events:none; overflow:hidden; inset:0; }
-    .hero-diag::before { content:''; position:absolute; width:1px; height:60vh; background:var(--accent1); opacity:0.06; transform:rotate(-30deg); top:-10vh; left:15%; }
-    .hero-diag::after  { content:''; position:absolute; width:1px; height:60vh; background:var(--accent2); opacity:0.05; transform:rotate(-30deg); top:-10vh; right:15%; }
-    .hero-inner { position:relative; z-index:2; width:100%; max-width:1200px; margin:0 auto; padding:80px 24px 100px; display:flex; align-items:center; }
-    .hero-body { display:grid; grid-template-columns:1fr 400px; gap:64px; align-items:center; width:100%; }
-    /* left column */
-    .slogan-small { font-size:10px; font-weight:600; letter-spacing:0.35em; text-transform:lowercase; color:var(--muted); margin-bottom:18px; }
-    .hero-logo { margin-bottom:22px; display:inline-block; }
-    .headline-main { font-family:var(--font-title); font-size:clamp(3.5rem,7.5vw,7.5rem); letter-spacing:0.02em; line-height:0.9; margin-bottom:22px; }
-    .brand-line { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:18px; padding-left:14px; border-left:3px solid var(--accent1); }
-    .sub-line { font-size:14px; color:rgba(255,255,255,0.55); line-height:1.8; max-width:460px; margin-bottom:36px; }
-    .cta-row { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
-    .btn-primary { display:inline-block; font-size:13px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#fff; background:var(--accent1); border:none; padding:16px 40px; cursor:pointer; text-decoration:none; transition:background 0.2s, transform 0.15s, box-shadow 0.2s; clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); }
-    .btn-primary:hover { background:#5dc962; transform:translateY(-2px); box-shadow:0 8px 32px rgba(76,175,80,0.3); }
-    .btn-secondary-link { font-size:13px; font-weight:600; letter-spacing:0.1em; color:rgba(255,255,255,0.55); text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:2px; transition:color 0.2s, border-color 0.2s; }
-    .btn-secondary-link:hover { color:var(--white); border-color:var(--accent1); }
-    /* right column */
-    .stat-col { display:flex; flex-direction:column; gap:2px; }
-    .stat-top { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-bottom:2px; }
-    .stat-box { padding:32px 20px; display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
-    .sb-accent1 { background:var(--accent1); }
-    .sb-accent2 { background:var(--accent2); }
-    .stat-box-num { font-family:var(--font-title); font-size:4rem; letter-spacing:0.02em; color:#fff; line-height:1; }
-    .stat-box-lbl { font-size:10px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.85); line-height:1.5; }
-    .stat-bar-row { background:var(--stat-dark); border:1px solid var(--border); padding:11px 18px; font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-bottom:2px; }
-    .hero-scroll { position:absolute; bottom:32px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; opacity:0.35; animation:scrollBounce 2s infinite; z-index:3; }
-    .hero-scroll span { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; }
-    .hero-scroll-arrow { width:1px; height:32px; background:linear-gradient(to bottom,rgba(255,255,255,0.6),transparent); }
-    @keyframes scrollBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+    /* HERO */
+    #hero { min-height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+    .hero-photo {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80&fit=crop') center center / cover no-repeat;
+      filter: grayscale(85%) brightness(0.45);
+    }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.15) 40%, rgba(10,10,10,0.85) 75%, rgba(10,10,10,1) 100%); }
+    .hero-scratch { position: absolute; inset: 0; opacity: 0.06; background: repeating-linear-gradient(92deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 3px); pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; padding: 0 0 80px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 100vh; }
+    .hero-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: var(--accent1); margin-bottom: 20px; border-left: 3px solid var(--accent1); padding-left: 12px; }
+    .hero-logo-wrap { margin-bottom: 24px; }
+    .hero-h1 { font-family: var(--font-title); font-size: clamp(4.5rem, 12vw, 10rem); letter-spacing: 0.015em; line-height: 0.88; margin-bottom: 28px; text-transform: uppercase; }
+    .hero-h1 .accent-green { color: var(--accent1); }
+    .hero-meta { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-meta-item { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .hero-meta-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+    .hero-cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .btn-grunge { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #000; background: var(--accent1); border: none; padding: 16px 44px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-grunge:hover { background: #5dc962; transform: translateY(-2px); }
+    .btn-ghost { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.2); padding: 15px 32px; cursor: pointer; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost:hover { border-color: var(--accent1); color: var(--white); }
 
-    /* STATS STRIP */
-    .stats-strip { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--stat-dark); }
-    .strip-item { padding:24px 32px; border-right:1px solid var(--border); }
-    .strip-item:last-child { border-right:none; }
-    .strip-v { font-family:var(--font-title); font-size:2.2rem; letter-spacing:0.04em; color:var(--accent1); line-height:1; margin-bottom:4px; }
-    .strip-l { font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35); }
+    /* STATS BAR */
+    .stats-bar { background: var(--accent1); display: grid; grid-template-columns: repeat(3, 1fr); }
+    .stat-bar-item { padding: 20px 32px; border-right: 1px solid rgba(0,0,0,0.15); display: flex; align-items: center; gap: 16px; }
+    .stat-bar-item:last-child { border-right: none; }
+    .stat-bar-num { font-family: var(--font-title); font-size: 2.4rem; letter-spacing: 0.04em; color: #000; line-height: 1; }
+    .stat-bar-lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(0,0,0,0.6); line-height: 1.5; }
 
     /* O EVENTO */
-    #evento { background:var(--bg); }
-    .evento-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
-    .evento-text p { color:rgba(255,255,255,0.65); font-size:15px; line-height:1.8; margin-bottom:16px; }
-    .evento-cards { display:flex; flex-direction:column; gap:16px; }
-    .stat-card { background:var(--card-bg); border:1px solid var(--border); padding:24px; display:flex; align-items:center; gap:20px; transition:border-color 0.2s; }
-    .stat-card:hover { border-color:var(--accent1); }
-    .stat-card-num { font-family:var(--font-title); font-size:2.5rem; letter-spacing:0.04em; line-height:1; color:var(--accent1); }
-    .stat-card-num.orange { color:var(--accent2); }
-    .stat-card-label { font-size:12px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.5); }
-    .stat-card-desc { font-size:13px; color:rgba(255,255,255,0.4); margin-top:2px; }
+    #evento { background: var(--bg); }
+    .evento-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 560px; }
+    .evento-photo { position: relative; overflow: hidden; min-height: 480px; }
+    .evento-photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(60%) brightness(0.7); transition: filter 0.5s; }
+    .evento-photo:hover img { filter: grayscale(30%) brightness(0.85); }
+    .evento-photo-label { position: absolute; bottom: 24px; left: 24px; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent1); background: rgba(0,0,0,0.6); padding: 6px 12px; }
+    .evento-text-block { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; }
+    .evento-text-block p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.9; margin-bottom: 16px; }
+    .evento-stats { display: flex; flex-direction: column; gap: 2px; margin-top: 32px; }
+    .evento-stat-row { display: flex; align-items: center; gap: 20px; background: #111; border-left: 3px solid var(--accent1); padding: 14px 20px; }
+    .evento-stat-num { font-family: var(--font-title); font-size: 1.8rem; color: var(--accent1); line-height: 1; min-width: 56px; }
+    .evento-stat-lbl { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
 
     /* O PERCURSO */
-    #percurso { background:var(--card-bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .percurso-content { text-align:center; }
-    .percurso-diagram { width:100%; max-width:100%; margin:0 auto 40px; display:block; }
-    .percurso-stats { display:flex; align-items:center; justify-content:center; border:1px solid var(--border); max-width:600px; margin:0 auto; flex-wrap:wrap; }
-    .percurso-stat { flex:1; min-width:160px; padding:20px 24px; border-right:1px solid var(--border); }
-    .percurso-stat:last-child { border-right:none; }
-    .percurso-stat-num { font-family:var(--font-title); font-size:2rem; letter-spacing:0.04em; color:var(--accent1); }
-    .percurso-stat-num.orange { color:var(--accent2); }
-    .percurso-stat-label { font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:2px; }
+    #percurso { background: #0d0d0d; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .percurso-content { text-align: center; }
+    .percurso-diagram { width: 100%; max-width: 100%; margin: 0 auto 40px; display: block; }
+    .percurso-snake { display: none; width: 100%; max-width: 400px; margin: 0 auto 40px; }
+    @media (max-width: 640px) {
+      .percurso-diagram { display: none; }
+      .percurso-snake { display: block; }
+    }
+    .percurso-footer { display: flex; align-items: center; justify-content: center; gap: 0; border: 1px solid var(--border); max-width: 600px; margin: 0 auto; }
+    .percurso-foot-item { flex: 1; padding: 20px 24px; border-right: 1px solid var(--border); text-align: center; }
+    .percurso-foot-item:last-child { border-right: none; }
+    .percurso-foot-num { font-family: var(--font-title); font-size: 2rem; color: var(--accent1); line-height: 1; }
+    .percurso-foot-lbl { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 4px; }
 
     /* AS ESTACOES */
-    #estacoes { background:var(--bg); }
-    .estacoes-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-    .station-card { background:var(--card-bg); border:1px solid var(--border); overflow:hidden; transition:transform 0.2s, border-color 0.2s, box-shadow 0.2s; }
-    .station-card:hover { transform:translateY(-4px); border-color:var(--accent1); box-shadow:0 8px 32px rgba(76,175,80,0.12); }
-    .station-card:hover .station-img img { transform:scale(1.06); }
-    .station-img { width:100%; height:160px; overflow:hidden; position:relative; background:var(--border); }
-    .station-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; filter:brightness(0.75) saturate(0.85); }
-    .station-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 40%, rgba(12,18,16,0.75) 100%); }
-    .station-card-header { background:var(--accent2); padding:10px 16px; display:flex; align-items:center; justify-content:space-between; }
-    .station-num { font-family:var(--font-title); font-size:1.1rem; letter-spacing:0.08em; color:var(--white); }
-    .station-badge { font-size:9px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:3px 8px; background:rgba(0,0,0,0.25); color:rgba(255,255,255,0.9); }
-    .station-body { padding:16px; }
-    .station-name { font-family:var(--font-title); font-size:1.35rem; letter-spacing:0.05em; margin-bottom:6px; }
-    .station-desc { font-size:12px; color:rgba(255,255,255,0.5); line-height:1.6; }
+    #estacoes { background: var(--bg); }
+    .estacoes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+    .g-station { position: relative; overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
+    .g-station img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(70%) brightness(0.6); transition: filter 0.4s, transform 0.5s; }
+    .g-station:hover img { filter: grayscale(20%) brightness(0.8); transform: scale(1.04); }
+    .g-station-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); }
+    .g-station-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent1); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .g-station:hover .g-station-accent { transform: scaleX(1); }
+    .g-station-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px; }
+    .g-station-num { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent1); margin-bottom: 4px; }
+    .g-station-name { font-family: var(--font-title); font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; line-height: 1; margin-bottom: 6px; }
+    .g-station-badge { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); padding: 3px 7px; }
+    .g-station-desc { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.6; margin-top: 8px; max-height: 0; overflow: hidden; transition: max-height 0.35s; }
+    .g-station:hover .g-station-desc { max-height: 80px; }
 
-    /* INFORMACOES */
-    #info { background:var(--card-bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
-    .info-item { display:flex; align-items:flex-start; gap:16px; }
-    .info-icon { width:40px; height:40px; background:rgba(76,175,80,0.1); border:1px solid rgba(76,175,80,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .info-label { font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:4px; }
-    .info-value { font-family:var(--font-title); font-size:1.1rem; letter-spacing:0.04em; }
+    /* CATEGORIAS */
+    #categorias { background: var(--bg); border-top: 1px solid var(--border); }
+    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 48px; }
+    .cat-card { position: relative; overflow: hidden; min-height: 320px; }
+    .cat-card-photo { position: absolute; inset: 0; background-size: cover; background-position: center; filter: grayscale(75%) brightness(0.45); transition: filter 0.4s, transform 0.5s; }
+    .cat-card:hover .cat-card-photo { filter: grayscale(30%) brightness(0.6); transform: scale(1.03); }
+    .cat-card-overlay { position: absolute; inset: 0; }
+    .cat-card-body { position: relative; z-index: 2; padding: 32px 28px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
+    .cat-accent-bar { height: 4px; width: 48px; margin-bottom: 16px; }
+    .cat-card-label { font-size: 9px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+    .cat-card-title { font-family: var(--font-title); font-size: 1.6rem; letter-spacing: 0.06em; line-height: 1.1; margin-bottom: 12px; }
+    .cat-card-desc { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .cat-card-tag { margin-top: 16px; font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+    .partidas-block { background: #111; border: 1px solid var(--border); border-left: 4px solid var(--accent1); padding: 32px 40px; }
+    .partidas-title { font-family: var(--font-title); font-size: 1.3rem; letter-spacing: 0.06em; margin-bottom: 12px; }
+    .partidas-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.9; }
+
+    /* INFO */
+    #info { background: #0d0d0d; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .info-tile { background: #111; padding: 28px 24px; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    .info-tile:hover { border-color: var(--accent1); }
+    .info-tile-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent1); margin-bottom: 8px; }
+    .info-tile-value { font-family: var(--font-title); font-size: 1.2rem; letter-spacing: 0.04em; }
+    .info-tile-sub { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
 
     /* INSCRICOES */
-    #inscricoes { background:var(--bg); border-top:1px solid var(--border); text-align:center; position:relative; overflow:hidden; }
-    .inscricoes-bg { position:absolute; inset:0; background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(76,175,80,0.08) 0%, transparent 70%); pointer-events:none; }
-    .inscricoes-content { position:relative; z-index:2; }
-    .inscricoes-title { font-family:var(--font-title); font-size:clamp(3.5rem,9vw,7rem); letter-spacing:0.04em; line-height:1; margin-bottom:16px; }
-    .inscricoes-sub { font-size:15px; color:rgba(255,255,255,0.55); letter-spacing:0.05em; margin-bottom:48px; max-width:400px; margin-left:auto; margin-right:auto; }
-    .inscricoes-note { margin-top:24px; font-size:12px; color:rgba(255,255,255,0.3); letter-spacing:0.1em; }
-    .inscricoes-note a { color:var(--accent1); text-decoration:none; }
-    .inscricoes-note a:hover { text-decoration:underline; }
-
-    /* BTN CTA (used outside hero) */
-    .btn-cta { display:inline-block; font-size:14px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#fff; background:var(--accent1); border:none; padding:18px 48px; cursor:pointer; text-decoration:none; transition:background 0.2s, transform 0.15s, box-shadow 0.2s; clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%); }
-    .btn-cta:hover { background:#5dc962; transform:translateY(-2px); box-shadow:0 8px 32px rgba(76,175,80,0.3); }
-    .btn-cta-orange { background:var(--accent2); color:#fff; }
-    .btn-cta-orange:hover { background:#388E3C; box-shadow:0 8px 32px rgba(46,125,50,0.35); }
+    #inscricoes { position: relative; overflow: hidden; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .inscricoes-photo { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1600&q=80&fit=crop') center center / cover no-repeat; filter: grayscale(80%) brightness(0.35); }
+    .inscricoes-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.65); }
+    .inscricoes-content { position: relative; z-index: 2; padding: 96px 24px; }
+    .inscricoes-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent1); margin-bottom: 20px; }
+    .inscricoes-h2 { font-family: var(--font-title); font-size: clamp(3.5rem, 9vw, 7rem); letter-spacing: 0.04em; line-height: 0.95; margin-bottom: 24px; }
+    .inscricoes-sub { font-size: 14px; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; margin-bottom: 44px; max-width: 380px; margin-left: auto; margin-right: auto; }
+    .inscricoes-note { margin-top: 24px; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; }
+    .inscricoes-note a { color: var(--accent1); text-decoration: none; }
 
     /* FOOTER */
-    #footer { background:#080e08; border-top:1px solid var(--border); padding:64px 0 32px; }
-    .footer-top { display:flex; align-items:flex-start; justify-content:space-between; gap:48px; padding-bottom:48px; border-bottom:1px solid var(--border); margin-bottom:32px; flex-wrap:wrap; }
-    .footer-logo-text { font-family:var(--font-title); font-size:2rem; letter-spacing:0.1em; }
-    .footer-slogan { font-size:10px; font-weight:600; letter-spacing:0.3em; text-transform:lowercase; color:var(--muted); margin-top:8px; }
-    .footer-nav h4 { font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:16px; }
-    .footer-nav ul { list-style:none; }
-    .footer-nav ul li+li { margin-top:10px; }
-    .footer-nav a { font-size:13px; color:rgba(255,255,255,0.55); text-decoration:none; transition:color 0.2s; }
-    .footer-nav a:hover { color:var(--white); }
-    .footer-social h4 { font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:16px; }
-    .social-links { display:flex; gap:12px; }
-    .social-link { width:40px; height:40px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; text-decoration:none; color:rgba(255,255,255,0.5); transition:border-color 0.2s, color 0.2s; }
-    .social-link:hover { border-color:var(--accent1); color:var(--accent1); }
-    .footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { font-size:12px; color:rgba(255,255,255,0.25); letter-spacing:0.05em; }
+    #footer { background: #060606; border-top: 1px solid var(--border); padding: 64px 0 32px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); margin-bottom: 32px; flex-wrap: wrap; }
+    .footer-brand-name { font-family: var(--font-title); font-size: 2rem; letter-spacing: 0.1em; }
+    .footer-brand-slogan { font-size: 10px; font-weight: 600; letter-spacing: 0.3em; text-transform: lowercase; color: var(--muted); margin-top: 8px; }
+    .footer-nav h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+    .footer-nav ul { list-style: none; }
+    .footer-nav ul li + li { margin-top: 10px; }
+    .footer-nav a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-social h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+    .social-links { display: flex; gap: 12px; }
+    .social-link { width: 40px; height: 40px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-decoration: none; color: rgba(255,255,255,0.4); transition: border-color 0.2s, color 0.2s; }
+    .social-link:hover { border-color: var(--accent1); color: var(--accent1); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
 
-    /* MOBILE */
-    .nav-mobile-overlay { display:none; position:fixed; inset:64px 0 0; background:rgba(12,18,16,0.97); backdrop-filter:blur(12px); z-index:99; flex-direction:column; align-items:center; justify-content:center; gap:32px; }
-    .nav-mobile-overlay.open { display:flex; }
-    .nav-mobile-overlay a { font-family:var(--font-title); font-size:2.5rem; letter-spacing:0.08em; color:var(--white); text-decoration:none; }
-    .nav-mobile-overlay a:hover { color:var(--accent1); }
+    /* MOBILE MENU */
+    .nav-mobile-overlay { display: none; position: fixed; inset: 64px 0 0; background: rgba(10,10,10,0.98); backdrop-filter: blur(8px); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .nav-mobile-overlay.open { display: flex; }
+    .nav-mobile-overlay a { font-family: var(--font-title); font-size: 2.5rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
+    .nav-mobile-overlay a:hover { color: var(--accent1); }
 
     /* RESPONSIVE */
-    @media (max-width:1024px) { .estacoes-grid { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:900px) {
-      .hero-body { grid-template-columns:1fr; gap:40px; }
-      .stat-top { grid-template-columns:1fr 1fr; }
-      .stats-strip { grid-template-columns:repeat(2,1fr); }
-      .strip-item:nth-child(2) { border-right:none; }
-      .strip-item:nth-child(3) { border-right:1px solid var(--border); }
+    @media (max-width: 1024px) { .estacoes-grid { grid-template-columns: repeat(2, 1fr); } .cat-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .evento-split { grid-template-columns: 1fr; } .stats-bar { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .section { padding: 72px 0; }
+      .nav-links, .btn-nav { display: none; }
+      .nav-hamburger { display: flex; }
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { flex-direction: column; }
+      .evento-text-block { padding: 40px 24px; }
     }
-    @media (max-width:768px) {
-      .section { padding:72px 0; }
-      .nav-links, .btn-nav { display:none; }
-      .nav-hamburger { display:flex; }
-      .evento-grid { grid-template-columns:1fr; gap:40px; }
-      .info-grid { grid-template-columns:1fr 1fr; }
-      .footer-top { flex-direction:column; }
-      .hero-accent { width:120px; height:120px; }
-    }
-    @media (max-width:480px) {
-      .estacoes-grid { grid-template-columns:1fr; }
-      .info-grid { grid-template-columns:1fr; }
-      .percurso-stats { flex-direction:column; }
-      .percurso-stat { border-right:none; border-bottom:1px solid var(--border); }
-      .percurso-stat:last-child { border-bottom:none; }
-      .stats-strip { grid-template-columns:1fr 1fr; }
-      .strip-item { padding:16px 20px; }
-      .strip-item:nth-child(2) { border-right:none; }
-      .strip-item:nth-child(3) { border-right:1px solid var(--border); }
-      .strip-item:nth-child(4) { border-right:none; }
+    @media (max-width: 480px) {
+      .estacoes-grid { grid-template-columns: repeat(2, 1fr); }
+      .info-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 <script src="/password-gate.js"></script>
 
-  <nav id="navbar" role="navigation" aria-label="Navegação principal">
+  <nav id="navbar" role="navigation" aria-label="Navega&ccedil;&atilde;o principal">
     <div class="container">
       <a href="#hero" class="nav-logo" aria-label="Crossers"><svg viewBox="0 0 787.20001 788.47998" xmlns="http://www.w3.org/2000/svg" style="height:44px;width:auto;display:block" aria-label="Crossers" role="img">
   <defs
@@ -235,7 +238,7 @@
       <ul class="nav-links">
         <li><a href="#evento">O Evento</a></li>
         <li><a href="#percurso">Percurso</a></li>
-        <li><a href="#estacoes">Estações</a></li>
+        <li><a href="#estacoes">Esta&ccedil;&otilde;es</a></li>
         <li><a href="#categorias">Categorias</a></li>
         <li><a href="#info">Info</a></li>
       </ul>
@@ -249,23 +252,20 @@
   <div class="nav-mobile-overlay" id="mobileMenu">
     <a href="#evento" class="mobile-link">O Evento</a>
     <a href="#percurso" class="mobile-link">Percurso</a>
-    <a href="#estacoes" class="mobile-link">Estações</a>
+    <a href="#estacoes" class="mobile-link">Esta&ccedil;&otilde;es</a>
     <a href="#categorias" class="mobile-link">Categorias</a>
     <a href="#info" class="mobile-link">Info</a>
-    <a href="#inscricoes" class="btn-cta mobile-link">Inscrever-me</a>
+    <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-grunge mobile-link">Inscrever-me</a>
   </div>
 
+  <!-- HERO -->
   <section id="hero" aria-label="Crossers — The Hybrid Race">
-    <div class="hero-bg"></div>
-    <div class="hero-accent hero-accent-tl" aria-hidden="true"></div>
-    <div class="hero-accent hero-accent-br" aria-hidden="true"></div>
-    <div class="hero-diag" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <div class="hero-body">
-
-        <div class="headline-block">
-          <p class="slogan-small">run. perform. overcome.</p>
-          <div class="hero-logo"><svg viewBox="0 0 787.20001 788.47998" xmlns="http://www.w3.org/2000/svg" style="width:220px;display:block;margin:0 auto" aria-label="Crossers" role="img">
+    <div class="hero-photo" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-scratch" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-tag">18 Outubro 2026 &middot; Loures</p>
+      <div class="hero-logo-wrap"><svg viewBox="0 0 787.20001 788.47998" xmlns="http://www.w3.org/2000/svg" style="width:220px;display:block;margin:0 auto" aria-label="Crossers" role="img">
   <defs
      id="defs1" />
   
@@ -288,320 +288,447 @@
     </g>
   </g>
 </svg></div>
-          <h1 class="headline-main">THE <span class="accent-green">HYBRID</span><br>RACE.</h1>
-          <div class="brand-line"><span>CROSSERS</span><span>&nbsp;&middot;&nbsp;</span><span>18 OUTUBRO 2026</span></div>
-          <p class="sub-line">O evento h&iacute;brido que combina corrida e esta&ccedil;&otilde;es funcionais num s&oacute; desafio. 8&nbsp;km, 8 esta&ccedil;&otilde;es, 1 objectivo: superar.</p>
-          <div class="cta-row">
-            <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-primary">Inscrever-me</a>
-            <a href="#evento" class="btn-secondary-link">Saber mais &#8594;</a>
-          </div>
-        </div>
-
-        <div class="stat-col">
-          <div class="stat-top">
-            <div class="stat-box sb-accent1">
-              <div class="stat-box-num">8</div>
-              <div class="stat-box-lbl">KM<br>Corrida</div>
-            </div>
-            <div class="stat-box sb-accent2">
-              <div class="stat-box-num">8</div>
-              <div class="stat-box-lbl">Esta&ccedil;&otilde;es<br>Funcionais</div>
-            </div>
-          </div>
-          <div class="stat-bar-row">1 KM ENTRE CADA ESTA&Ccedil;&Atilde;O</div>
-          <div class="stat-bar-row">DUPLAS &middot; MASC / MISTAS / FEM</div>
-        </div>
-
+      <h1 class="hero-h1">THE <span class="accent-green">HYBRID</span><br>RACE.</h1>
+      <div class="hero-meta">
+        <span class="hero-meta-item">8 km</span>
+        <span class="hero-meta-sep" aria-hidden="true"></span>
+        <span class="hero-meta-item">8 Esta&ccedil;&otilde;es</span>
+        <span class="hero-meta-sep" aria-hidden="true"></span>
+        <span class="hero-meta-item">Duplas</span>
+        <span class="hero-meta-sep" aria-hidden="true"></span>
+        <span class="hero-meta-item">Loures</span>
       </div>
-    </div>
-    <div class="hero-scroll" aria-hidden="true">
-      <div class="hero-scroll-arrow"></div>
-      <span>Scroll</span>
+      <div class="hero-cta-row">
+        <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-grunge">Inscrever-me</a>
+        <a href="#evento" class="btn-ghost">Saber mais</a>
+      </div>
     </div>
   </section>
 
-  <div class="stats-strip" aria-hidden="true">
-    <div class="strip-item"><div class="strip-v">8km</div><div class="strip-l">Corrida Total</div></div>
-    <div class="strip-item"><div class="strip-v">8</div><div class="strip-l">Esta&ccedil;&otilde;es</div></div>
-    <div class="strip-item"><div class="strip-v">Duplas</div><div class="strip-l">Evento em Duplas</div></div>
+  <!-- STATS BAR -->
+  <div class="stats-bar" aria-hidden="true">
+    <div class="stat-bar-item">
+      <div class="stat-bar-num">8km</div>
+      <div class="stat-bar-lbl">Corrida<br>Total</div>
+    </div>
+    <div class="stat-bar-item">
+      <div class="stat-bar-num">8</div>
+      <div class="stat-bar-lbl">Esta&ccedil;&otilde;es<br>Funcionais</div>
+    </div>
+    <div class="stat-bar-item">
+      <div class="stat-bar-num">Duplas</div>
+      <div class="stat-bar-lbl">Masc &middot; Mistas<br>Femininas</div>
+    </div>
   </div>
 
-  <section id="evento" class="section" aria-labelledby="evento-title">
-    <div class="container">
-      <div class="evento-grid">
-        <div class="evento-text fade-in">
-          <p class="section-label">O Conceito</p>
-          <h2 class="section-title" id="evento-title">O QUE &Eacute; A<br><span class="accent-orange">CROSSERS?</span></h2>
-          <div class="divider-orange"></div>
-          <p>A Crossers &eacute; um evento desportivo h&iacute;brido que combina o melhor da corrida de resist&ecirc;ncia com o fitness funcional e os obst&aacute;culos. Um conceito novo, posicionado na vanguarda dos eventos h&iacute;bridos modernos.</p>
-          <p>O percurso &eacute; oval &mdash; uma volta completa equivale a 1&nbsp;km. Ap&oacute;s cada quil&oacute;metro, os atletas passam por uma esta&ccedil;&atilde;o de performance funcional numa zona central. 8&nbsp;km de corrida. 8 esta&ccedil;&otilde;es. 1 objetivo.</p>
-          <p>Esta edi&ccedil;&atilde;o &eacute; exclusiva para <strong style="color:var(--white)">duplas de atletas</strong>. Masculinas, Mistas ou Femininas &mdash; dois atletas, um &uacute;nico objetivo: superar.</p>
-        </div>
-        <div class="evento-cards fade-in">
-          <div class="stat-card">
-            <div style="flex-shrink:0"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#4CAF50" stroke-width="1.5" stroke-dasharray="5 3"/><text x="24" y="30" font-family="'Bebas Neue',sans-serif" font-size="16" fill="#4CAF50" text-anchor="middle">8K</text></svg></div>
-            <div><div class="stat-card-num">8 KM</div><div class="stat-card-label">Corrida total</div><div class="stat-card-desc">Percurso oval &middot; 1 km por volta</div></div>
+  <!-- O EVENTO -->
+  <section id="evento" aria-labelledby="evento-title">
+    <div class="evento-split">
+      <div class="evento-photo fade-in">
+        <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=900&q=80&fit=crop" alt="Atleta no evento Crossers" loading="lazy" />
+        <div class="evento-photo-label">crossers 2026</div>
+      </div>
+      <div class="evento-text-block fade-in">
+        <p class="section-label">O Conceito</p>
+        <h2 class="section-title" id="evento-title">O QUE &Eacute; A<br><span class="accent-green">CROSSERS?</span></h2>
+        <div class="divider"></div>
+        <p>A Crossers &eacute; um evento desportivo h&iacute;brido que combina o melhor da corrida de resist&ecirc;ncia com o fitness funcional e os obst&aacute;culos. Um conceito novo, posicionado na vanguarda dos eventos h&iacute;bridos modernos.</p>
+        <p>O percurso &eacute; oval &mdash; uma volta completa equivale a 1&nbsp;km. Ap&oacute;s cada quil&oacute;metro, os atletas passam por uma esta&ccedil;&atilde;o de performance funcional numa zona central. 8&nbsp;km de corrida. 8 esta&ccedil;&otilde;es. 1 objetivo.</p>
+        <p>Esta edi&ccedil;&atilde;o &eacute; exclusiva para <strong style="color:var(--white)">duplas de atletas</strong>. Masculinas, Mistas ou Femininas &mdash; dois atletas, um &uacute;nico objetivo: superar.</p>
+        <div class="evento-stats">
+          <div class="evento-stat-row">
+            <div class="evento-stat-num">8 KM</div>
+            <div class="evento-stat-lbl">Corrida total &middot; 1 km por volta</div>
           </div>
-          <div class="stat-card">
-            <div style="flex-shrink:0"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="15" height="15" stroke="#2E7D32" stroke-width="1.5"/><rect x="27" y="6" width="15" height="15" stroke="#2E7D32" stroke-width="1.5"/><rect x="6" y="27" width="15" height="15" stroke="#2E7D32" stroke-width="1.5"/><rect x="27" y="27" width="15" height="15" stroke="#2E7D32" stroke-width="1.5"/></svg></div>
-            <div><div class="stat-card-num orange">8</div><div class="stat-card-label">Esta&ccedil;&otilde;es</div><div class="stat-card-desc">Performance funcional &middot; zona central</div></div>
+          <div class="evento-stat-row">
+            <div class="evento-stat-num">8</div>
+            <div class="evento-stat-lbl">Esta&ccedil;&otilde;es de performance funcional</div>
           </div>
-          <div class="stat-card">
-            <div style="flex-shrink:0"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><polygon points="24,6 42,38 6,38" stroke="#fff" stroke-width="1.5" fill="none"/><circle cx="24" cy="28" r="3.5" fill="#fff"/></svg></div>
-            <div><div class="stat-card-num">2</div><div class="stat-card-label">Atletas por equipa</div><div class="stat-card-desc">Duplas &middot; Masculinas, Mistas, Femininas</div></div>
+          <div class="evento-stat-row">
+            <div class="evento-stat-num">2</div>
+            <div class="evento-stat-lbl">Atletas por equipa &middot; duplas</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- O PERCURSO -->
   <section id="percurso" class="section" aria-labelledby="percurso-title">
     <div class="container percurso-content">
       <p class="section-label fade-in">O Formato</p>
       <h2 class="section-title fade-in" id="percurso-title">O <span class="accent-green">PERCURSO</span></h2>
-      <div class="divider-blue" style="margin:0 auto 48px" aria-hidden="true"></div>
+      <div class="divider fade-in" style="margin: 0 auto 48px" aria-hidden="true"></div>
       <svg class="percurso-diagram fade-in" viewBox="0 0 1000 195" fill="none" role="img" aria-label="Percurso linear: START, 8 esta&ccedil;&otilde;es, FINISH">
         <defs>
-          <pattern id="pgrid" width="32" height="32" patternUnits="userSpaceOnUse">
+          <pattern id="pgrid2" width="32" height="32" patternUnits="userSpaceOnUse">
             <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
           </pattern>
         </defs>
-        <rect width="1000" height="195" fill="#0d0d0d" rx="8"/>
-        <rect width="1000" height="195" fill="url(#pgrid)" rx="8"/>
-
-        <!-- Main horizontal line -->
-        <line x1="60" y1="105" x2="942" y2="105" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-        <!-- Direction arrow tip -->
-        <polygon points="936,100 946,105 936,110" fill="rgba(76,175,80,0.6)"/>
-
-        <!-- ── RUN SEGMENT LABELS (above line, 9 segments) ── -->
-        <!-- Centers: 77, 183, 289, 395, 501, 607, 713, 819, 925 -->
-        <text x="77"  y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">1km</text>
-        <text x="77"  y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.55)" text-anchor="middle" letter-spacing="2">RUN</text>
-        <text x="183" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">1km</text>
-        <text x="183" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.55)" text-anchor="middle" letter-spacing="2">RUN</text>
-        <text x="289" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">1km</text>
-        <text x="289" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.55)" text-anchor="middle" letter-spacing="2">RUN</text>
-        <text x="395" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">1km</text>
-        <text x="395" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.55)" text-anchor="middle" letter-spacing="2">RUN</text>
-        <text x="501" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">1km</text>
-        <text x="501" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.55)" text-anchor="middle" letter-spacing="2">RUN</text>
-        <text x="607" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">1km</text>
-        <text x="607" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.55)" text-anchor="middle" letter-spacing="2">RUN</text>
-        <text x="713" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">1km</text>
-        <text x="713" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.55)" text-anchor="middle" letter-spacing="2">RUN</text>
-        <text x="819" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">1km</text>
-        <text x="819" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.55)" text-anchor="middle" letter-spacing="2">RUN</text>
-        <!-- ── STATION BOXES (centers: 130, 236, 342, 448, 554, 660, 766, 872) ── -->
-        <!-- S1 REMO -->
-        <rect x="94"  y="87" width="72" height="36" rx="4" fill="#111A11" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect width="1000" height="195" fill="#0a0a0a" rx="6"/>
+        <rect width="1000" height="195" fill="url(#pgrid2)" rx="6"/>
+        <line x1="60" y1="105" x2="942" y2="105" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+        <polygon points="936,100 946,105 936,110" fill="rgba(76,175,80,0.7)"/>
+        <!-- RUN labels -->
+        <text x="77"  y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">1km</text>
+        <text x="77"  y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.5)" text-anchor="middle" letter-spacing="2">RUN</text>
+        <text x="183" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">1km</text>
+        <text x="183" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.5)" text-anchor="middle" letter-spacing="2">RUN</text>
+        <text x="289" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">1km</text>
+        <text x="289" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.5)" text-anchor="middle" letter-spacing="2">RUN</text>
+        <text x="395" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">1km</text>
+        <text x="395" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.5)" text-anchor="middle" letter-spacing="2">RUN</text>
+        <text x="501" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">1km</text>
+        <text x="501" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.5)" text-anchor="middle" letter-spacing="2">RUN</text>
+        <text x="607" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">1km</text>
+        <text x="607" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.5)" text-anchor="middle" letter-spacing="2">RUN</text>
+        <text x="713" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">1km</text>
+        <text x="713" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.5)" text-anchor="middle" letter-spacing="2">RUN</text>
+        <text x="819" y="68" font-family="'Bebas Neue',sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">1km</text>
+        <text x="819" y="82" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(76,175,80,0.5)" text-anchor="middle" letter-spacing="2">RUN</text>
+        <!-- Station boxes -->
+        <rect x="94"  y="87" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
         <text x="130" y="100" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S1</text>
         <text x="130" y="116" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">REMO</text>
-
-        <!-- S2 SKI ERG -->
-        <rect x="200" y="87" width="72" height="36" rx="4" fill="#111A11" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="200" y="87" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
         <text x="236" y="100" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S2</text>
         <text x="236" y="116" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">SKI ERG</text>
-
-        <!-- S3 FARM CARRY -->
-        <rect x="306" y="87" width="72" height="36" rx="4" fill="#111A11" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="306" y="87" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
         <text x="342" y="100" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S3</text>
         <text x="342" y="116" font-family="'Inter',sans-serif" font-size="8" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.3">FARM CARRY</text>
-
-        <!-- S4 SAND BAG -->
-        <rect x="412" y="87" width="72" height="36" rx="4" fill="#111A11" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="412" y="87" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
         <text x="448" y="100" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S4</text>
         <text x="448" y="116" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">SAND BAG</text>
-
-        <!-- S5 WALL BALLS -->
-        <rect x="518" y="87" width="72" height="36" rx="4" fill="#111A11" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="518" y="87" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
         <text x="554" y="100" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S5</text>
         <text x="554" y="116" font-family="'Inter',sans-serif" font-size="8" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.3">WALL BALLS</text>
-
-        <!-- S6 BURPEES -->
-        <rect x="624" y="87" width="72" height="36" rx="4" fill="#111A11" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="624" y="87" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
         <text x="660" y="100" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S6</text>
         <text x="660" y="116" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">BURPEES</text>
-
-        <!-- S7 OLYMPUS -->
-        <rect x="730" y="87" width="72" height="36" rx="4" fill="#111A11" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="730" y="87" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
         <text x="766" y="100" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S7</text>
         <text x="766" y="116" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">OLYMPUS</text>
-
-        <!-- S8 RAMPA -->
-        <rect x="836" y="87" width="72" height="36" rx="4" fill="#2E7D32" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="836" y="87" width="72" height="36" rx="3" fill="#2E7D32" stroke="#4CAF50" stroke-width="1.5"/>
         <text x="872" y="100" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#fff" text-anchor="middle" letter-spacing="1">S8</text>
         <text x="872" y="116" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.95)" text-anchor="middle" font-weight="700" letter-spacing="0.5">RAMPA</text>
-
-        <!-- ── START ── -->
+        <!-- START / FINISH -->
         <circle cx="60" cy="105" r="7" fill="#4CAF50"/>
         <line x1="60" y1="112" x2="60" y2="125" stroke="#4CAF50" stroke-width="1.5" opacity="0.5"/>
         <text x="60" y="148" font-family="'Bebas Neue',sans-serif" font-size="13" fill="#4CAF50" text-anchor="middle" letter-spacing="2">START</text>
-
-        <!-- ── FINISH ── -->
         <circle cx="942" cy="105" r="7" fill="#4CAF50"/>
         <line x1="942" y1="112" x2="942" y2="125" stroke="#4CAF50" stroke-width="1.5" opacity="0.5"/>
         <text x="942" y="148" font-family="'Bebas Neue',sans-serif" font-size="13" fill="#4CAF50" text-anchor="middle" letter-spacing="2">FINISH</text>
-
-        <!-- Total distance label -->
-        <text x="500" y="178" font-family="'Bebas Neue',sans-serif" font-size="11" fill="rgba(255,255,255,0.2)" text-anchor="middle" letter-spacing="3">8 KM TOTAL &nbsp;&middot;&nbsp; 8 ESTA&Ccedil;&Otilde;ES &nbsp;&middot;&nbsp; 1 OBJECTIVO</text>
+        <text x="500" y="178" font-family="'Bebas Neue',sans-serif" font-size="11" fill="rgba(255,255,255,0.15)" text-anchor="middle" letter-spacing="3">8 KM TOTAL &nbsp;&middot;&nbsp; 8 ESTA&Ccedil;&Otilde;ES &nbsp;&middot;&nbsp; 1 OBJECTIVO</text>
       </svg>
-      <div class="percurso-stats fade-in">
-        <div class="percurso-stat"><div class="percurso-stat-num">8 KM</div><div class="percurso-stat-label">Corrida</div></div>
-        <div class="percurso-stat"><div class="percurso-stat-num orange">8</div><div class="percurso-stat-label">Esta&ccedil;&otilde;es</div></div>
-        <div class="percurso-stat"><div class="percurso-stat-num">1 KM</div><div class="percurso-stat-label">Entre esta&ccedil;&otilde;es</div></div>
+      <!-- MOBILE SNAKE DIAGRAM — ordem de renderização: linhas → rects → setas → todos os textos por último -->
+      <svg class="percurso-snake fade-in" viewBox="0 0 360 490" fill="none" role="img" aria-label="Percurso em snake: START, 8 esta&ccedil;&otilde;es, FINISH">
+        <defs>
+          <pattern id="pgrid-s" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+          </pattern>
+        </defs>
+
+        <!-- 1. FUNDO -->
+        <rect width="360" height="490" fill="#0a0a0a" rx="8"/>
+        <rect width="360" height="490" fill="url(#pgrid-s)" rx="8"/>
+
+        <!-- 2. LINHAS + CONECTORES -->
+        <line x1="20"  y1="115" x2="316" y2="115" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+        <line x1="44"  y1="245" x2="316" y2="245" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+        <line x1="44"  y1="375" x2="340" y2="375" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+        <path d="M 316,115 C 344,115 344,245 316,245" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+        <path d="M 44,245 C 16,245 16,375 44,375"    stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+
+        <!-- 3. RECTS DAS ESTAÇÕES (sem texto) -->
+        <rect x="56"  y="97"  width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="144" y="97"  width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="232" y="97"  width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="232" y="227" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="144" y="227" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="56"  y="227" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="64"  y="357" width="72" height="36" rx="3" fill="#111" stroke="#4CAF50" stroke-width="1.5"/>
+        <rect x="200" y="357" width="72" height="36" rx="3" fill="#2E7D32" stroke="#4CAF50" stroke-width="1.5"/>
+
+        <!-- 4. SETAS DE DIRECÇÃO -->
+        <polygon points="310,110 320,115 310,120" fill="rgba(76,175,80,0.7)"/>
+        <polygon points="50,240 40,245 50,250"    fill="rgba(76,175,80,0.7)"/>
+        <polygon points="334,370 344,375 334,380" fill="rgba(76,175,80,0.7)"/>
+
+        <!-- 5. TEXTO DAS ESTAÇÕES (desenhado por cima dos rects) -->
+        <text x="92"  y="110" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S1</text>
+        <text x="92"  y="126" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">REMO</text>
+        <text x="180" y="110" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S2</text>
+        <text x="180" y="126" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">SKI ERG</text>
+        <text x="268" y="110" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S3</text>
+        <text x="268" y="126" font-family="'Inter',sans-serif" font-size="8"  fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.3">FARM CARRY</text>
+        <text x="268" y="240" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S4</text>
+        <text x="268" y="256" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">SAND BAG</text>
+        <text x="180" y="240" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S5</text>
+        <text x="180" y="256" font-family="'Inter',sans-serif" font-size="8"  fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.3">WALL BALLS</text>
+        <text x="92"  y="240" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S6</text>
+        <text x="92"  y="256" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">BURPEES</text>
+        <text x="100" y="370" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#4CAF50" text-anchor="middle" letter-spacing="1">S7</text>
+        <text x="100" y="386" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700" letter-spacing="0.5">OLYMPUS</text>
+        <text x="236" y="370" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#fff" text-anchor="middle" letter-spacing="1">S8</text>
+        <text x="236" y="386" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.95)" text-anchor="middle" font-weight="700" letter-spacing="0.5">RAMPA</text>
+
+        <!-- 6. LABELS "1km RUN" — desenhados por cima de tudo, posicionados ACIMA de cada rect -->
+        <!-- Linha 1: labels acima dos rects (rect top = y=97, labels a y=78/89) -->
+        <text x="38"  y="78" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">1km</text>
+        <text x="38"  y="89" font-family="'Bebas Neue',sans-serif" font-size="8"  fill="rgba(76,175,80,0.6)"  text-anchor="middle" letter-spacing="1">RUN</text>
+        <text x="136" y="78" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">1km</text>
+        <text x="136" y="89" font-family="'Bebas Neue',sans-serif" font-size="8"  fill="rgba(76,175,80,0.6)"  text-anchor="middle" letter-spacing="1">RUN</text>
+        <text x="224" y="78" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">1km</text>
+        <text x="224" y="89" font-family="'Bebas Neue',sans-serif" font-size="8"  fill="rgba(76,175,80,0.6)"  text-anchor="middle" letter-spacing="1">RUN</text>
+        <!-- Conector direito (S3→S4) — rotacionado no centro da curva -->
+        <text transform="rotate(90,350,180)" x="350" y="180" font-family="'Bebas Neue',sans-serif" font-size="9" fill="rgba(76,175,80,0.6)" text-anchor="middle" letter-spacing="1">1km RUN</text>
+        <!-- Linha 2: labels acima dos rects (rect top = y=227, labels a y=208/219) -->
+        <text x="224" y="208" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">1km</text>
+        <text x="224" y="219" font-family="'Bebas Neue',sans-serif" font-size="8"  fill="rgba(76,175,80,0.6)"  text-anchor="middle" letter-spacing="1">RUN</text>
+        <text x="136" y="208" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">1km</text>
+        <text x="136" y="219" font-family="'Bebas Neue',sans-serif" font-size="8"  fill="rgba(76,175,80,0.6)"  text-anchor="middle" letter-spacing="1">RUN</text>
+        <!-- Conector esquerdo (S6→S7) — rotacionado -->
+        <text transform="rotate(-90,10,310)" x="10" y="310" font-family="'Bebas Neue',sans-serif" font-size="9" fill="rgba(76,175,80,0.6)" text-anchor="middle" letter-spacing="1">1km RUN</text>
+        <!-- Linha 3: label acima dos rects (rect top = y=357, label a y=338/349) -->
+        <text x="168" y="338" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">1km</text>
+        <text x="168" y="349" font-family="'Bebas Neue',sans-serif" font-size="8"  fill="rgba(76,175,80,0.6)"  text-anchor="middle" letter-spacing="1">RUN</text>
+
+        <!-- 7. START / FINISH + legenda -->
+        <circle cx="20" cy="115" r="7" fill="#4CAF50"/>
+        <text x="20" y="88" font-family="'Bebas Neue',sans-serif" font-size="11" fill="#4CAF50" text-anchor="middle" letter-spacing="2">START</text>
+        <circle cx="340" cy="375" r="7" fill="#4CAF50"/>
+        <text x="340" y="418" font-family="'Bebas Neue',sans-serif" font-size="11" fill="#4CAF50" text-anchor="middle" letter-spacing="2">FINISH</text>
+        <text x="180" y="462" font-family="'Bebas Neue',sans-serif" font-size="10" fill="rgba(255,255,255,0.15)" text-anchor="middle" letter-spacing="2">8 KM &middot; 8 ESTA&Ccedil;&Otilde;ES &middot; 1 OBJECTIVO</text>
+      </svg>
+
+      <div class="percurso-footer fade-in">
+        <div class="percurso-foot-item"><div class="percurso-foot-num">8 KM</div><div class="percurso-foot-lbl">Corrida</div></div>
+        <div class="percurso-foot-item"><div class="percurso-foot-num">8</div><div class="percurso-foot-lbl">Esta&ccedil;&otilde;es</div></div>
+        <div class="percurso-foot-item"><div class="percurso-foot-num">1 KM</div><div class="percurso-foot-lbl">Entre esta&ccedil;&otilde;es</div></div>
       </div>
     </div>
   </section>
 
+  <!-- AS ESTACOES -->
   <section id="estacoes" class="section" aria-labelledby="estacoes-title">
     <div class="container">
       <p class="section-label fade-in">Performance Funcional</p>
-      <h2 class="section-title fade-in" id="estacoes-title">AS <span class="accent-orange">8 ESTA&Ccedil;&Otilde;ES</span></h2>
-      <div class="divider-orange fade-in" aria-hidden="true"></div>
-      <div class="estacoes-grid">
+      <h2 class="section-title fade-in" id="estacoes-title">AS <span class="accent-green">8 ESTA&Ccedil;&Otilde;ES</span></h2>
+      <div class="divider fade-in" style="margin-bottom:40px" aria-hidden="true"></div>
+    </div>
+    <div class="estacoes-grid">
 
-        <article class="station-card fade-in">
-          <div class="station-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=70&fit=crop" alt="Remo ergómetro" loading="lazy"/></div>
-          <div class="station-card-header"><span class="station-num">S1</span><span class="station-badge">Cardio</span></div>
-          <div class="station-body"><h3 class="station-name">Remo</h3><p class="station-desc">Erg&oacute;metro de remo. Pot&ecirc;ncia dos membros superiores e core numa das m&aacute;quinas mais exigentes do fitness funcional.</p></div>
-        </article>
-
-        <article class="station-card fade-in">
-          <div class="station-img"><img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400&q=70&fit=crop" alt="Ski Erg" loading="lazy"/></div>
-          <div class="station-card-header"><span class="station-num">S2</span><span class="station-badge">Cardio</span></div>
-          <div class="station-body"><h3 class="station-name">Ski Erg</h3><p class="station-desc">Simulador de esqui n&oacute;rdico. Trabalho intenso de ombros, dorsal e abd&oacute;men &mdash; sem descanso para os membros superiores.</p></div>
-        </article>
-
-        <article class="station-card fade-in">
-          <div class="station-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70&fit=crop" alt="Farm Carry" loading="lazy"/></div>
-          <div class="station-card-header"><span class="station-num">S3</span><span class="station-badge">For&ccedil;a</span></div>
-          <div class="station-body"><h3 class="station-name">Farm Carry</h3><p class="station-desc">Transporte de peso com handles. For&ccedil;a de preen&ccedil;&atilde;o, estabilidade e resist&ecirc;ncia muscular total.</p></div>
-        </article>
-
-        <article class="station-card fade-in">
-          <div class="station-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=70&fit=crop" alt="Sand Bag" loading="lazy"/></div>
-          <div class="station-card-header"><span class="station-num">S4</span><span class="station-badge">For&ccedil;a</span></div>
-          <div class="station-body"><h3 class="station-name">Sand Bag</h3><p class="station-desc">Carregamento de saco de areia. Movimento funcional total &mdash; pernas, costas e core a trabalhar em conjunto.</p></div>
-        </article>
-
-        <article class="station-card fade-in">
-          <div class="station-img"><img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=400&q=70&fit=crop" alt="Wall Balls" loading="lazy"/></div>
-          <div class="station-card-header"><span class="station-num">S5</span><span class="station-badge">For&ccedil;a</span></div>
-          <div class="station-body"><h3 class="station-name">Wall Balls</h3><p class="station-desc">Lan&ccedil;amento de medicine ball para alvo em altura. Squat + press explosivo &mdash; o cl&aacute;ssico do fitness funcional.</p></div>
-        </article>
-
-        <article class="station-card fade-in">
-          <div class="station-img"><img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=400&q=70&fit=crop" alt="Burpees" loading="lazy"/></div>
-          <div class="station-card-header"><span class="station-num">S6</span><span class="station-badge">Cardio</span></div>
-          <div class="station-body"><h3 class="station-name">Burpees</h3><p class="station-desc">O movimento mais honesto do fitness. Cardio, for&ccedil;a e mentalidade &mdash; n&atilde;o h&aacute; atalhos nesta esta&ccedil;&atilde;o.</p></div>
-        </article>
-
-        <article class="station-card fade-in">
-          <div class="station-img"><img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=400&q=70&fit=crop" alt="Olympus wall" loading="lazy"/></div>
-          <div class="station-card-header"><span class="station-num">S7</span><span class="station-badge">Obst&aacute;culo</span></div>
-          <div class="station-body"><h3 class="station-name">Olympus</h3><p class="station-desc">Parede de obst&aacute;culo lateral com pegadas e an&eacute;is. For&ccedil;a de tra&ccedil;&atilde;o, equil&iacute;brio e t&eacute;cnica num dos elementos mais desafiantes.</p></div>
-        </article>
-
-        <article class="station-card fade-in">
-          <div class="station-img"><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&q=70&fit=crop" alt="Rampa final" loading="lazy"/></div>
-          <div class="station-card-header"><span class="station-num">S8</span><span class="station-badge">Obst&aacute;culo</span></div>
-          <div class="station-body"><h3 class="station-name">Rampa</h3><p class="station-desc">A esta&ccedil;&atilde;o final antes da meta. Sobe. Desce. Cruza a linha. <span style="color:var(--accent1)">Overcome.</span></p></div>
-        </article>
-
+      <div class="g-station fade-in">
+        <img src="https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?w=600&q=75&fit=crop" alt="Remo" loading="lazy"/>
+        <div class="g-station-overlay"></div>
+        <div class="g-station-accent"></div>
+        <div class="g-station-body">
+          <div class="g-station-num">S1</div>
+          <div class="g-station-name">Remo</div>
+          <div class="g-station-badge">Cardio</div>
+          <div class="g-station-desc">Erg&oacute;metro de remo. Pot&ecirc;ncia dos membros superiores e core numa das m&aacute;quinas mais exigentes do fitness funcional.</div>
+        </div>
       </div>
+
+      <div class="g-station fade-in">
+        <img src="https://images.unsplash.com/photo-1604247584233-99c80a8b5fa8?w=600&q=75&fit=crop" alt="Ski Erg" loading="lazy"/>
+        <div class="g-station-overlay"></div>
+        <div class="g-station-accent"></div>
+        <div class="g-station-body">
+          <div class="g-station-num">S2</div>
+          <div class="g-station-name">Ski Erg</div>
+          <div class="g-station-badge">Cardio</div>
+          <div class="g-station-desc">Simulador de esqui n&oacute;rdico. Trabalho intenso de ombros, dorsal e abd&oacute;men.</div>
+        </div>
+      </div>
+
+      <div class="g-station fade-in">
+        <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=75&fit=crop" alt="Farm Carry" loading="lazy"/>
+        <div class="g-station-overlay"></div>
+        <div class="g-station-accent"></div>
+        <div class="g-station-body">
+          <div class="g-station-num">S3</div>
+          <div class="g-station-name">Farm Carry</div>
+          <div class="g-station-badge">For&ccedil;a</div>
+          <div class="g-station-desc">Transporte de peso com handles. For&ccedil;a de preen&ccedil;&atilde;o, estabilidade e resist&ecirc;ncia muscular total.</div>
+        </div>
+      </div>
+
+      <div class="g-station fade-in">
+        <img src="https://images.unsplash.com/photo-1581009137042-c552e485697a?w=600&q=75&fit=crop" alt="Sand Bag" loading="lazy"/>
+        <div class="g-station-overlay"></div>
+        <div class="g-station-accent"></div>
+        <div class="g-station-body">
+          <div class="g-station-num">S4</div>
+          <div class="g-station-name">Sand Bag</div>
+          <div class="g-station-badge">For&ccedil;a</div>
+          <div class="g-station-desc">Carregamento de saco de areia. Movimento funcional total &mdash; pernas, costas e core em conjunto.</div>
+        </div>
+      </div>
+
+      <div class="g-station fade-in">
+        <img src="https://images.unsplash.com/photo-1590239926044-4131b5a33a5c?w=600&q=75&fit=crop" alt="Wall Balls" loading="lazy"/>
+        <div class="g-station-overlay"></div>
+        <div class="g-station-accent"></div>
+        <div class="g-station-body">
+          <div class="g-station-num">S5</div>
+          <div class="g-station-name">Wall Balls</div>
+          <div class="g-station-badge">For&ccedil;a</div>
+          <div class="g-station-desc">Lan&ccedil;amento de medicine ball para alvo. Squat + press explosivo &mdash; o cl&aacute;ssico do fitness funcional.</div>
+        </div>
+      </div>
+
+      <div class="g-station fade-in">
+        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600&q=75&fit=crop" alt="Burpees" loading="lazy"/>
+        <div class="g-station-overlay"></div>
+        <div class="g-station-accent"></div>
+        <div class="g-station-body">
+          <div class="g-station-num">S6</div>
+          <div class="g-station-name">Burpees</div>
+          <div class="g-station-badge">Cardio</div>
+          <div class="g-station-desc">O movimento mais honesto do fitness. Cardio, for&ccedil;a e mentalidade &mdash; n&atilde;o h&aacute; atalhos.</div>
+        </div>
+      </div>
+
+      <div class="g-station fade-in">
+        <img src="/assets/station-olympus.jpg" alt="Olympus" loading="lazy"/>
+        <div class="g-station-overlay"></div>
+        <div class="g-station-accent"></div>
+        <div class="g-station-body">
+          <div class="g-station-num">S7</div>
+          <div class="g-station-name">Olympus</div>
+          <div class="g-station-badge">Obst&aacute;culo</div>
+          <div class="g-station-desc">Parede de obst&aacute;culo lateral com pegadas e an&eacute;is. For&ccedil;a de tra&ccedil;&atilde;o, equil&iacute;brio e t&eacute;cnica.</div>
+        </div>
+      </div>
+
+      <div class="g-station fade-in">
+        <img src="/assets/station-rampa.jpg" alt="Rampa final" loading="lazy"/>
+        <div class="g-station-overlay"></div>
+        <div class="g-station-accent" style="background:var(--accent1)"></div>
+        <div class="g-station-body">
+          <div class="g-station-num" style="color:var(--accent1)">S8 &mdash; FINAL</div>
+          <div class="g-station-name">Rampa</div>
+          <div class="g-station-badge">Obst&aacute;culo</div>
+          <div class="g-station-desc">A esta&ccedil;&atilde;o final antes da meta. Sobe. Desce. Cruza a linha. Overcome.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section id="categorias" class="section" style="background:var(--bg);border-top:1px solid var(--border)" aria-labelledby="categorias-title">
+  <!-- CATEGORIAS -->
+  <section id="categorias" class="section" aria-labelledby="categorias-title">
     <div class="container">
       <p class="section-label fade-in">Quem Participa</p>
-      <h2 class="section-title fade-in" id="categorias-title">CATEGORIAS <span class="accent-orange">&amp; VAGAS</span></h2>
-      <div class="divider-orange fade-in"></div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px" class="fade-in">
-        <div style="background:var(--card-bg);border:1px solid var(--border);overflow:hidden">
-          <div style="background:var(--accent1);padding:16px 20px"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.08em;color:#fff">DUPLAS MASCULINAS</div></div>
-          <div style="padding:20px"><p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7">Dois atletas masculinos. A primeira vaga a sair &mdash; lideram o pel&otilde;t&atilde;o e abrem a competi&ccedil;&atilde;o.</p><div style="margin-top:16px"><span style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent1)">&#9654; 1.&ordf; VAGA</span></div></div>
-        </div>
-        <div style="background:var(--card-bg);border:1px solid var(--border);overflow:hidden">
-          <div style="background:#7B3FBE;padding:16px 20px"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.08em;color:#fff">DUPLAS MISTAS</div></div>
-          <div style="padding:20px"><p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7">Um atleta masculino e um feminino. Competi&ccedil;&atilde;o a dois sem fronteiras de g&eacute;nero.</p><div style="margin-top:16px"><span style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#9B6FDE">&#9654; 2.&ordf; VAGA</span></div></div>
-        </div>
-        <div style="background:var(--card-bg);border:1px solid var(--border);overflow:hidden">
-          <div style="background:var(--accent2);padding:16px 20px"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.08em;color:#fff">DUPLAS FEMININAS</div></div>
-          <div style="padding:20px"><p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7">Duas atletas femininas. Fecham o programa em for&ccedil;a &mdash; a &uacute;ltima vaga da manh&atilde;.</p><div style="margin-top:16px"><span style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent2)">&#9654; 3.&ordf; VAGA</span></div></div>
+      <h2 class="section-title fade-in" id="categorias-title">CATEGORIAS <span class="accent-green">&amp; VAGAS</span></h2>
+      <div class="divider fade-in" style="margin-bottom:40px"></div>
+    </div>
+    <div class="cat-grid">
+
+      <div class="cat-card fade-in">
+        <div class="cat-card-photo" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=75&fit=crop')"></div>
+        <div class="cat-card-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(76,175,80,0.12) 100%)"></div>
+        <div class="cat-card-body">
+          <div class="cat-accent-bar" style="background:var(--accent1)"></div>
+          <div class="cat-card-label">1.&ordf; Vaga</div>
+          <div class="cat-card-title">DUPLAS<br>MASCULINAS</div>
+          <div class="cat-card-desc">Dois atletas masculinos. A primeira vaga a sair &mdash; lideram o pel&otilde;t&atilde;o e abrem a competi&ccedil;&atilde;o.</div>
+          <div class="cat-card-tag" style="color:var(--accent1)">&#9654; Masc</div>
         </div>
       </div>
-      <div style="background:var(--card-bg);border:1px solid var(--border);padding:32px 40px" class="fade-in">
-        <div style="display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center">
-          <div style="text-align:center">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--accent1);line-height:1">9:00</div>
-            <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px">Previs&atilde;o de in&iacute;cio</div>
-          </div>
-          <div style="border-left:1px solid var(--border);padding-left:32px">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.05em;margin-bottom:10px">FORMATO DE PARTIDAS</div>
-            <p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.8">As duplas partem em <strong style="color:var(--white)">vagas escalonadas</strong> de X em X minutos, pela seguinte ordem: <span style="color:var(--accent1)">Masculinas</span> &#8594; <span style="color:#9B6FDE">Mistas</span> &#8594; <span style="color:var(--accent2)">Femininas</span>.<br>Os hor&aacute;rios exactos de cada vaga ser&atilde;o divulgados na semana do evento.</p>
-          </div>
+
+      <div class="cat-card fade-in">
+        <div class="cat-card-photo" style="background-image:url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=75&fit=crop')"></div>
+        <div class="cat-card-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(123,63,190,0.15) 100%)"></div>
+        <div class="cat-card-body">
+          <div class="cat-accent-bar" style="background:#7B3FBE"></div>
+          <div class="cat-card-label">2.&ordf; Vaga</div>
+          <div class="cat-card-title">DUPLAS<br>MISTAS</div>
+          <div class="cat-card-desc">Um atleta masculino e um feminino. Competi&ccedil;&atilde;o a dois sem fronteiras de g&eacute;nero.</div>
+          <div class="cat-card-tag" style="color:#9B6FDE">&#9654; Masc + Fem</div>
         </div>
+      </div>
+
+      <div class="cat-card fade-in">
+        <div class="cat-card-photo" style="background-image:url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=75&fit=crop')"></div>
+        <div class="cat-card-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(46,125,50,0.15) 100%)"></div>
+        <div class="cat-card-body">
+          <div class="cat-accent-bar" style="background:var(--accent2)"></div>
+          <div class="cat-card-label">3.&ordf; Vaga</div>
+          <div class="cat-card-title">DUPLAS<br>FEMININAS</div>
+          <div class="cat-card-desc">Duas atletas femininas. Fecham o programa em for&ccedil;a &mdash; a &uacute;ltima vaga da manh&atilde;.</div>
+          <div class="cat-card-tag" style="color:var(--accent2)">&#9654; Fem</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container" style="margin-top:3px">
+      <div class="partidas-block fade-in">
+        <div class="partidas-title">FORMATO DE PARTIDAS</div>
+        <p class="partidas-desc">As duplas partem em <strong style="color:var(--white)">vagas escalonadas</strong> de X em X minutos, pela seguinte ordem: <span style="color:var(--accent1)">Masculinas</span> &#8594; <span style="color:#9B6FDE">Mistas</span> &#8594; <span style="color:var(--accent2)">Femininas</span>. Os hor&aacute;rios exactos de cada vaga ser&atilde;o divulgados na semana do evento. Previs&atilde;o de in&iacute;cio: <strong style="color:var(--white)">9:00h</strong>.</p>
       </div>
     </div>
   </section>
 
+  <!-- INFORMACOES -->
   <section id="info" class="section" aria-labelledby="info-title">
     <div class="container">
       <p class="section-label fade-in">Detalhes</p>
       <h2 class="section-title fade-in" id="info-title">INFORMA&Ccedil;&Otilde;ES</h2>
-      <div class="divider-blue fade-in"></div>
+      <div class="divider fade-in" style="margin-bottom:40px"></div>
       <div class="info-grid fade-in">
-        <div class="info-item">
-          <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="14" rx="1" stroke="#4CAF50" stroke-width="1.5"/><line x1="6" y1="2" x2="6" y2="6" stroke="#4CAF50" stroke-width="1.5"/><line x1="14" y1="2" x2="14" y2="6" stroke="#4CAF50" stroke-width="1.5"/><line x1="2" y1="9" x2="18" y2="9" stroke="#4CAF50" stroke-width="1"/></svg></div>
-          <div><div class="info-label">Data</div><div class="info-value">18 Outubro 2026</div></div>
+        <div class="info-tile">
+          <div class="info-tile-label">Data</div>
+          <div class="info-tile-value">18 Outubro 2026</div>
         </div>
-        <div class="info-item">
-          <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="8" r="3.5" stroke="#4CAF50" stroke-width="1.5"/><path d="M10 2C6.7 2 4 4.7 4 8c0 5 6 10 6 10s6-5 6-10c0-3.3-2.7-6-6-6z" stroke="#4CAF50" stroke-width="1.5" fill="none"/></svg></div>
-          <div>
-            <div class="info-label">Local</div>
-            <div class="info-value"><span style="color:var(--accent2)">Loures</span> &middot; Parque Papa Francisco</div>
-            <div style="margin-top:6px"><a href="https://maps.app.goo.gl/zjKKLdnSWuSs73Dp6" target="_blank" rel="noopener" style="font-size:11px;color:var(--accent1);text-decoration:none;letter-spacing:0.1em">&#9654; VER NO GOOGLE MAPS</a></div>
-          </div>
+        <div class="info-tile">
+          <div class="info-tile-label">Local</div>
+          <div class="info-tile-value">Loures &middot; Parque Papa Francisco</div>
+          <div class="info-tile-sub"><a href="https://maps.app.goo.gl/zjKKLdnSWuSs73Dp6" target="_blank" rel="noopener" style="color:var(--accent1);text-decoration:none;font-size:10px;letter-spacing:0.1em">&#9654; VER NO GOOGLE MAPS</a></div>
         </div>
-        <div class="info-item">
-          <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#4CAF50" stroke-width="1.5"/><polyline points="10,5 10,10 14,13" stroke="#4CAF50" stroke-width="1.5"/></svg></div>
-          <div><div class="info-label">Hora de in&iacute;cio</div><div class="info-value">9:00h <span style="font-size:0.8rem;color:rgba(255,255,255,0.4)">(previs&atilde;o)</span></div></div>
+        <div class="info-tile">
+          <div class="info-tile-label">Hora</div>
+          <div class="info-tile-value">9:00h</div>
+          <div class="info-tile-sub">Previs&atilde;o de in&iacute;cio</div>
         </div>
-        <div class="info-item">
-          <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="6" r="3" stroke="#4CAF50" stroke-width="1.5"/><path d="M2 18c0-3.3 2.7-6 6-6" stroke="#4CAF50" stroke-width="1.5" fill="none"/><circle cx="14" cy="6" r="2" stroke="#4CAF50" stroke-width="1.2"/><path d="M16 15c0-2.2-1-4-2.5-4.8" stroke="#4CAF50" stroke-width="1.2" fill="none"/></svg></div>
-          <div><div class="info-label">Formato</div><div class="info-value">Duplas</div></div>
+        <div class="info-tile">
+          <div class="info-tile-label">Formato</div>
+          <div class="info-tile-value">Duplas</div>
         </div>
-        <div class="info-item">
-          <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10 A7 7 0 0 1 17 10" stroke="#4CAF50" stroke-width="1.5" fill="none" stroke-dasharray="4 2"/><circle cx="3" cy="10" r="1.5" fill="#4CAF50"/><circle cx="17" cy="10" r="1.5" fill="#4CAF50"/></svg></div>
-          <div><div class="info-label">Dist&acirc;ncia</div><div class="info-value">8 km</div></div>
+        <div class="info-tile">
+          <div class="info-tile-label">Dist&acirc;ncia</div>
+          <div class="info-tile-value">8 km</div>
         </div>
-        <div class="info-item">
-          <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="9" width="16" height="9" stroke="#4CAF50" stroke-width="1.5"/><line x1="6" y1="9" x2="6" y2="5" stroke="#4CAF50" stroke-width="1.5"/><line x1="14" y1="9" x2="14" y2="3" stroke="#4CAF50" stroke-width="1.5"/><line x1="10" y1="9" x2="10" y2="6" stroke="#4CAF50" stroke-width="1.5"/></svg></div>
-          <div><div class="info-label">Categorias</div><div class="info-value">3 Categorias</div><div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:4px">Masculinas &middot; Mistas &middot; Femininas</div></div>
+        <div class="info-tile">
+          <div class="info-tile-label">Categorias</div>
+          <div class="info-tile-value">3 Categorias</div>
+          <div class="info-tile-sub">Masculinas &middot; Mistas &middot; Femininas</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="inscricoes" class="section" aria-labelledby="inscricoes-title">
-    <div class="inscricoes-bg" aria-hidden="true"></div>
-    <div class="container inscricoes-content">
-      <p class="section-label fade-in" style="display:flex;justify-content:center">Torna-te um Crosser</p>
-      <h2 class="inscricoes-title fade-in" id="inscricoes-title">EST&Aacute;S<br><span class="accent-green">PRONTO?</span></h2>
+  <!-- INSCRICOES -->
+  <section id="inscricoes" aria-labelledby="inscricoes-title">
+    <div class="inscricoes-photo" aria-hidden="true"></div>
+    <div class="inscricoes-overlay" aria-hidden="true"></div>
+    <div class="inscricoes-content">
+      <p class="inscricoes-eyebrow fade-in">Torna-te um Crosser</p>
+      <h2 class="inscricoes-h2 fade-in" id="inscricoes-title">EST&Aacute;S<br><span class="accent-green">PRONTO?</span></h2>
       <p class="inscricoes-sub fade-in">Prepara-te. Supera-te. Torna-te um Crosser.</p>
-      <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-cta btn-cta-orange fade-in">Inscrever-me Agora</a>
-      <p class="inscricoes-note fade-in">Inscri&ccedil;&otilde;es em breve em <a href="https://lap2go.com/pt/event/crossers-2026">crossers.pt</a></p>
+      <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-grunge fade-in">Inscrever-me Agora</a>
+      <p class="inscricoes-note fade-in">Inscri&ccedil;&otilde;es em <a href="https://lap2go.com/pt/event/crossers-2026">lap2go.com</a></p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer id="footer" role="contentinfo">
     <div class="container">
       <div class="footer-top">
-        <div class="footer-brand">
-          <div class="footer-logo-text">CROSSERS</div>
-          <div class="footer-slogan">run. perform. overcome.</div>
+        <div>
+          <div class="footer-brand-name">CROSSERS</div>
+          <div class="footer-brand-slogan">run. perform. overcome.</div>
         </div>
         <nav class="footer-nav" aria-label="Links do rodap&eacute;">
           <h4>Navega&ccedil;&atilde;o</h4>
@@ -644,7 +771,7 @@
     });
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      navbar.style.background = window.scrollY > 40 ? 'rgba(12,18,16,0.98)' : 'rgba(12,18,16,0.9)';
+      navbar.style.background = window.scrollY > 40 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.9)';
     }, { passive: true });
     const fadeObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
