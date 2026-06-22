@@ -56,11 +56,7 @@
 
     /* HERO */
     #hero { min-height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
-    .hero-photo {
-      position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80&fit=crop') center center / cover no-repeat;
-      filter: grayscale(85%) brightness(0.45);
-    }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(80%) brightness(0.5); }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.15) 40%, rgba(10,10,10,0.85) 75%, rgba(10,10,10,1) 100%); }
     .hero-scratch { position: absolute; inset: 0; opacity: 0.06; background: repeating-linear-gradient(92deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 3px); pointer-events: none; }
     .hero-content { position: relative; z-index: 2; padding: 0 0 80px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 100vh; }
@@ -259,7 +255,9 @@
 
   <!-- HERO -->
   <section id="hero" aria-label="Crossers — The Hybrid Race">
-    <div class="hero-photo" aria-hidden="true"></div>
+    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-scratch" aria-hidden="true"></div>
     <div class="hero-content">
@@ -329,11 +327,11 @@
       </div>
       <div class="evento-text-block fade-in">
         <p class="section-label">O Conceito</p>
-        <h2 class="section-title" id="evento-title">O QUE &Eacute; A<br><span class="accent-green">CROSSERS?</span></h2>
+        <h2 class="section-title" id="evento-title">O QUE &Eacute; A CROSSERS<br><span class="accent-green">THE HYBRID RACE.</span></h2>
         <div class="divider"></div>
         <p>A Crossers &eacute; um evento desportivo h&iacute;brido que combina o melhor da corrida de resist&ecirc;ncia com o fitness funcional e os obst&aacute;culos. Um conceito novo, posicionado na vanguarda dos eventos h&iacute;bridos modernos.</p>
-        <p>O percurso &eacute; oval &mdash; uma volta completa equivale a 1&nbsp;km. Ap&oacute;s cada quil&oacute;metro, os atletas passam por uma esta&ccedil;&atilde;o de performance funcional numa zona central. 8&nbsp;km de corrida. 8 esta&ccedil;&otilde;es. 1 objetivo.</p>
-        <p>Esta edi&ccedil;&atilde;o &eacute; exclusiva para <strong style="color:var(--white)">duplas de atletas</strong>. Masculinas, Mistas ou Femininas &mdash; dois atletas, um &uacute;nico objetivo: superar.</p>
+        <p>Ao longo de 8&nbsp;km, os atletas alternam entre troços de corrida e esta&ccedil;&otilde;es de performance funcional. Oito esta&ccedil;&otilde;es. Um objectivo.</p>
+        <p>Esta edi&ccedil;&atilde;o &eacute; exclusiva para <strong style="color:var(--white)">duplas de atletas</strong>. Masculinas, Mistas ou Femininas. Dois atletas, um &uacute;nico objectivo: superar.</p>
         <div class="evento-stats">
           <div class="evento-stat-row">
             <div class="evento-stat-num">8 KM</div>
