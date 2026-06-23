@@ -201,6 +201,27 @@
       .info-grid { grid-template-columns: 1fr; }
       .stats-bar { grid-template-columns: 1fr; }
     }
+
+    /* CONTACTO */
+    #contacto { background: var(--card-bg); border-top: 1px solid var(--border); }
+    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contacto-intro p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.9; margin-bottom: 12px; }
+    .contacto-detail { display: flex; align-items: center; gap: 12px; margin-top: 32px; }
+    .contacto-detail-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .contacto-detail-value { font-size: 13px; color: rgba(255,255,255,0.7); }
+    .contacto-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .form-input, .form-textarea { background: #0d0d0d; border: 1px solid var(--border); color: var(--white); font-family: var(--font-body); font-size: 14px; padding: 14px 16px; outline: none; transition: border-color 0.2s; width: 100%; resize: none; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--accent1); }
+    .form-textarea { height: 130px; }
+    .form-submit { background: var(--accent1); color: #000; border: none; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px 40px; cursor: pointer; transition: background 0.2s, transform 0.15s; align-self: flex-start; }
+    .form-submit:hover { background: #5dc962; transform: translateY(-2px); }
+    .form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .form-feedback { font-size: 13px; letter-spacing: 0.05em; padding: 14px 16px; display: none; }
+    .form-feedback.success { display: block; background: rgba(76,175,80,0.1); border-left: 3px solid var(--accent1); color: var(--accent1); }
+    .form-feedback.error { display: block; background: rgba(220,50,50,0.1); border-left: 3px solid #e05555; color: #e07777; }
+    @media (max-width: 768px) { .contacto-grid { grid-template-columns: 1fr; gap: 40px; } }
   </style>
 </head>
 <body>
@@ -236,6 +257,7 @@
         <li><a href="#estacoes">Esta&ccedil;&otilde;es</a></li>
         <li><a href="#categorias">Categorias</a></li>
         <li><a href="#info">Info</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
       <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-nav">Inscrever-me</a>
       <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
@@ -250,6 +272,7 @@
     <a href="#estacoes" class="mobile-link">Esta&ccedil;&otilde;es</a>
     <a href="#categorias" class="mobile-link">Categorias</a>
     <a href="#info" class="mobile-link">Info</a>
+    <a href="#contacto" class="mobile-link">Contacto</a>
     <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-grunge mobile-link">Inscrever-me</a>
   </div>
 
@@ -706,6 +729,39 @@
     </div>
   </section>
 
+  <!-- CONTACTO -->
+  <section id="contacto" class="section" aria-labelledby="contacto-title">
+    <div class="container">
+      <div class="contacto-grid">
+        <div class="contacto-intro fade-in">
+          <p class="section-label">Fala connosco</p>
+          <h2 class="section-title" id="contacto-title">CONTACTO</h2>
+          <div class="divider"></div>
+          <p>Tens alguma d&uacute;vida sobre o evento, as inscri&ccedil;&otilde;es ou as esta&ccedil;&otilde;es? Entra em contacto connosco e respondemos o mais breve poss&iacute;vel.</p>
+          <p>Para parcerias ou patrocinadores, usa tamb&eacute;m este formul&aacute;rio.</p>
+        </div>
+        <div class="fade-in">
+          <form class="contacto-form" id="contacto-form" action="https://formspree.io/f/xojovgjy" method="POST">
+            <div class="form-group">
+              <label class="form-label" for="cf-nome">Nome</label>
+              <input class="form-input" id="cf-nome" type="text" name="nome" placeholder="O teu nome" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-email">Email</label>
+              <input class="form-input" id="cf-email" type="email" name="email" placeholder="o.teu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-mensagem">Mensagem</label>
+              <textarea class="form-textarea" id="cf-mensagem" name="mensagem" placeholder="Escreve aqui a tua mensagem..." required></textarea>
+            </div>
+            <div class="form-feedback" id="cf-feedback"></div>
+            <button class="form-submit" type="submit">Enviar mensagem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- INSCRICOES -->
   <section id="inscricoes" aria-labelledby="inscricoes-title">
     <div class="inscricoes-photo" aria-hidden="true"></div>
@@ -770,6 +826,35 @@
     window.addEventListener('scroll', () => {
       navbar.style.background = window.scrollY > 40 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.9)';
     }, { passive: true });
+    const contactoForm = document.getElementById('contacto-form');
+    const cfFeedback = document.getElementById('cf-feedback');
+    contactoForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = contactoForm.querySelector('.form-submit');
+      btn.disabled = true;
+      btn.textContent = 'A enviar...';
+      cfFeedback.className = 'form-feedback';
+      try {
+        const res = await fetch(contactoForm.action, {
+          method: 'POST',
+          body: new FormData(contactoForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          cfFeedback.textContent = 'Mensagem enviada com sucesso. Respondemos em breve!';
+          cfFeedback.className = 'form-feedback success';
+          contactoForm.reset();
+        } else {
+          throw new Error();
+        }
+      } catch {
+        cfFeedback.textContent = 'Ocorreu um erro ao enviar. Tenta novamente ou contacta-nos por email.';
+        cfFeedback.className = 'form-feedback error';
+      }
+      btn.disabled = false;
+      btn.textContent = 'Enviar mensagem';
+    });
+
     const fadeObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
