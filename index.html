@@ -152,14 +152,17 @@
     .info-tile-sub { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
 
     /* INSCRICOES */
-    #inscricoes { position: relative; overflow: hidden; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; }
-    .inscricoes-photo { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1600&q=80&fit=crop') center center / cover no-repeat; filter: grayscale(80%) brightness(0.35); }
-    .inscricoes-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.65); }
-    .inscricoes-content { position: relative; z-index: 2; padding: 96px 24px; }
-    .inscricoes-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent1); margin-bottom: 20px; }
-    .inscricoes-h2 { font-family: var(--font-title); font-size: clamp(3.5rem, 9vw, 7rem); letter-spacing: 0.04em; line-height: 0.95; margin-bottom: 24px; }
-    .inscricoes-sub { font-size: 14px; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; margin-bottom: 44px; max-width: 380px; margin-left: auto; margin-right: auto; }
-    .inscricoes-note { margin-top: 24px; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; }
+    #inscricoes { position: relative; overflow: hidden; min-height: 640px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .inscricoes-photo { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1600&q=80&fit=crop') center center / cover no-repeat; filter: grayscale(70%) brightness(0.3); }
+    .inscricoes-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.75) 100%); }
+    .inscricoes-content { position: relative; z-index: 2; padding: 120px 24px; }
+    .inscricoes-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent1); margin-bottom: 24px; border-left: 3px solid var(--accent1); display: inline-block; padding: 6px 16px; background: rgba(76,175,80,0.08); }
+    .inscricoes-h2 { font-family: var(--font-title); font-size: clamp(4rem, 11vw, 9rem); letter-spacing: 0.04em; line-height: 0.9; margin-bottom: 28px; }
+    .inscricoes-sub { font-size: 15px; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; margin-bottom: 52px; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .inscricoes-btn-wrap { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .btn-cta-main { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #000; background: var(--accent1); border: none; padding: 20px 64px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; }
+    .btn-cta-main:hover { background: #5dc962; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(76,175,80,0.4); }
+    .inscricoes-note { margin-top: 28px; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; }
     .inscricoes-note a { color: var(--accent1); text-decoration: none; }
 
     /* FOOTER */
@@ -745,6 +748,41 @@
     </div>
   </section>
 
+  <!-- INSCRICOES -->
+  <section id="inscricoes" aria-labelledby="inscricoes-title">
+    <div class="inscricoes-photo" aria-hidden="true"></div>
+    <div class="inscricoes-overlay" aria-hidden="true"></div>
+    <div class="inscricoes-content">
+      <p class="inscricoes-eyebrow fade-in">Torna-te um Crosser</p>
+      <h2 class="inscricoes-h2 fade-in" id="inscricoes-title">EST&Aacute;S<br><span class="accent-green">PRONTO?</span></h2>
+      <p class="inscricoes-sub fade-in">18 Outubro 2026 &middot; Loures<br>Prepara-te. Supera-te. Torna-te um Crosser.</p>
+      <div class="inscricoes-btn-wrap fade-in">
+        <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-cta-main">Inscrever-me Agora</a>
+      </div>
+      <p class="inscricoes-note fade-in">Inscri&ccedil;&otilde;es em <a href="https://lap2go.com/pt/event/crossers-2026">lap2go.com</a></p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="section">
+    <div class="container">
+      <div class="newsletter-inner fade-in">
+        <p class="section-label" style="justify-content:center;display:flex">Fica a par</p>
+        <h2 class="section-title" style="margin-bottom:16px">RECEBE <span class="accent-green">NOVIDADES</span></h2>
+        <div class="divider" style="margin:0 auto 32px"></div>
+        <p>Inscreve-te para seres o primeiro a saber sobre inscri&ccedil;&otilde;es, datas e novidades da Crossers.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input class="newsletter-input" id="nl-email" type="email" name="EMAIL" placeholder="o.teu@email.com" required />
+          <input type="hidden" name="email_address_check" value="" />
+          <input type="hidden" name="locale" value="pt" />
+          <button class="newsletter-btn" type="submit">Subscrever</button>
+        </form>
+        <div class="newsletter-feedback" id="nl-feedback"></div>
+        <p class="newsletter-note">Sem spam. Podes cancelar a qualquer momento.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACTO -->
   <section id="contacto" class="section" aria-labelledby="contacto-title">
     <div class="container">
@@ -775,39 +813,6 @@
           </form>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section id="newsletter" class="section">
-    <div class="container">
-      <div class="newsletter-inner fade-in">
-        <p class="section-label" style="justify-content:center;display:flex">Fica a par</p>
-        <h2 class="section-title" style="margin-bottom:16px">RECEBE <span class="accent-green">NOVIDADES</span></h2>
-        <div class="divider" style="margin:0 auto 32px"></div>
-        <p>Inscreve-te para seres o primeiro a saber sobre inscri&ccedil;&otilde;es, datas e novidades da Crossers.</p>
-        <form class="newsletter-form" id="newsletter-form">
-          <input class="newsletter-input" id="nl-email" type="email" name="EMAIL" placeholder="o.teu@email.com" required />
-          <input type="hidden" name="email_address_check" value="" />
-          <input type="hidden" name="locale" value="pt" />
-          <button class="newsletter-btn" type="submit">Subscrever</button>
-        </form>
-        <div class="newsletter-feedback" id="nl-feedback"></div>
-        <p class="newsletter-note">Sem spam. Podes cancelar a qualquer momento.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- INSCRICOES -->
-  <section id="inscricoes" aria-labelledby="inscricoes-title">
-    <div class="inscricoes-photo" aria-hidden="true"></div>
-    <div class="inscricoes-overlay" aria-hidden="true"></div>
-    <div class="inscricoes-content">
-      <p class="inscricoes-eyebrow fade-in">Torna-te um Crosser</p>
-      <h2 class="inscricoes-h2 fade-in" id="inscricoes-title">EST&Aacute;S<br><span class="accent-green">PRONTO?</span></h2>
-      <p class="inscricoes-sub fade-in">Prepara-te. Supera-te. Torna-te um Crosser.</p>
-      <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-grunge fade-in">Inscrever-me Agora</a>
-      <p class="inscricoes-note fade-in">Inscri&ccedil;&otilde;es em <a href="https://lap2go.com/pt/event/crossers-2026">lap2go.com</a></p>
     </div>
   </section>
 
