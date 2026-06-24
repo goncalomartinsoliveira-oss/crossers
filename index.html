@@ -202,6 +202,22 @@
       .stats-bar { grid-template-columns: 1fr; }
     }
 
+    /* NEWSLETTER */
+    #newsletter { background: #0d0d0d; border-top: 1px solid var(--border); }
+    .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .newsletter-inner p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 36px; }
+    .newsletter-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
+    .newsletter-input { flex: 1; background: #111; border: 1px solid var(--border); border-right: none; color: var(--white); font-family: var(--font-body); font-size: 14px; padding: 14px 18px; outline: none; transition: border-color 0.2s; }
+    .newsletter-input:focus { border-color: var(--accent1); }
+    .newsletter-btn { background: var(--accent1); color: #000; border: none; font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 14px 28px; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+    .newsletter-btn:hover { background: #5dc962; }
+    .newsletter-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .newsletter-feedback { margin-top: 16px; font-size: 13px; min-height: 20px; }
+    .newsletter-feedback.success { color: var(--accent1); }
+    .newsletter-feedback.error { color: #e07777; }
+    .newsletter-note { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+    @media (max-width: 480px) { .newsletter-form { flex-direction: column; } .newsletter-input { border-right: 1px solid var(--border); border-bottom: none; } .newsletter-btn { padding: 14px; } }
+
     /* CONTACTO */
     #contacto { background: var(--card-bg); border-top: 1px solid var(--border); }
     .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -762,6 +778,26 @@
     </div>
   </section>
 
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="section">
+    <div class="container">
+      <div class="newsletter-inner fade-in">
+        <p class="section-label" style="justify-content:center;display:flex">Fica a par</p>
+        <h2 class="section-title" style="margin-bottom:16px">RECEBE <span class="accent-green">NOVIDADES</span></h2>
+        <div class="divider" style="margin:0 auto 32px"></div>
+        <p>Inscreve-te para seres o primeiro a saber sobre inscri&ccedil;&otilde;es, datas e novidades da Crossers.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input class="newsletter-input" id="nl-email" type="email" name="EMAIL" placeholder="o.teu@email.com" required />
+          <input type="hidden" name="email_address_check" value="" />
+          <input type="hidden" name="locale" value="pt" />
+          <button class="newsletter-btn" type="submit">Subscrever</button>
+        </form>
+        <div class="newsletter-feedback" id="nl-feedback"></div>
+        <p class="newsletter-note">Sem spam. Podes cancelar a qualquer momento.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- INSCRICOES -->
   <section id="inscricoes" aria-labelledby="inscricoes-title">
     <div class="inscricoes-photo" aria-hidden="true"></div>
@@ -791,6 +827,8 @@
             <li><a href="#estacoes">As Esta&ccedil;&otilde;es</a></li>
             <li><a href="#categorias">Categorias</a></li>
             <li><a href="#info">Informa&ccedil;&otilde;es</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
             <li><a href="#inscricoes">Inscri&ccedil;&otilde;es</a></li>
           </ul>
         </nav>
@@ -826,6 +864,31 @@
     window.addEventListener('scroll', () => {
       navbar.style.background = window.scrollY > 40 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.9)';
     }, { passive: true });
+    const newsletterForm = document.getElementById('newsletter-form');
+    const nlFeedback = document.getElementById('nl-feedback');
+    newsletterForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = newsletterForm.querySelector('.newsletter-btn');
+      btn.disabled = true;
+      btn.textContent = 'A subscrever...';
+      nlFeedback.className = 'newsletter-feedback';
+      try {
+        await fetch('https://c80a4fc2.sibforms.com/serve/MUIFAJnVzuaKryy6J0p8qx9C7eytl17XtsK8C3xaNI9fgKX-EO8b_dLDCbW_1_qW1zPNmPgisyNpc6Vv4nxJQzNMxD9-eMwPifPCSB6s667oSGIlyBP6Y7cQrX_-eqzSHiV78DEsXDEIYOVuN3PU7XBMCYh4tFfQrfniwt2FOnwysSUpPRb7zYgiNVHsdUdZKp2zzSZWl6wIxWHzvw==', {
+          method: 'POST',
+          body: new FormData(newsletterForm),
+          mode: 'no-cors'
+        });
+        nlFeedback.textContent = 'Subscrito com sucesso! Bem-vindo à comunidade Crossers.';
+        nlFeedback.className = 'newsletter-feedback success';
+        newsletterForm.reset();
+      } catch {
+        nlFeedback.textContent = 'Ocorreu um erro. Tenta novamente.';
+        nlFeedback.className = 'newsletter-feedback error';
+      }
+      btn.disabled = false;
+      btn.textContent = 'Subscrever';
+    });
+
     const contactoForm = document.getElementById('contacto-form');
     const cfFeedback = document.getElementById('cf-feedback');
     contactoForm.addEventListener('submit', async function(e) {
