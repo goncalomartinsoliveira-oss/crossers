@@ -11,6 +11,7 @@ export default defineConfig({
         'blog-o-que-e-o-crossers': resolve(__dirname, 'blog/o-que-e-o-crossers/index.html'),
         'blog-atletas-hybrid-racing': resolve(__dirname, 'blog/atletas-hybrid-racing/index.html'),
         'blog-ginasios-corrida-hibrida-lisboa': resolve(__dirname, 'blog/ginasios-corrida-hibrida-lisboa/index.html'),
+        links: resolve(__dirname, 'links/index.html'),
       },
     },
   },
