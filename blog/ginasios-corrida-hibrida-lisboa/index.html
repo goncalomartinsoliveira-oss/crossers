@@ -138,6 +138,13 @@
     .gym-ig-link { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #000; background: var(--accent1); padding: 11px 22px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
     .gym-ig-link:hover { background: #5dc962; transform: translateY(-1px); }
 
+    /* GYM PHOTO */
+    .gym-header { display: flex; align-items: center; gap: 20px; margin-bottom: 16px; }
+    .gym-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent1); flex-shrink: 0; }
+    .gym-photo-placeholder { width: 72px; height: 72px; border-radius: 50%; background: rgba(76,175,80,0.07); border: 1px solid var(--border); flex-shrink: 0; }
+    .gym-info { flex: 1; min-width: 0; }
+    .gym-info .gym-handle { margin-bottom: 0; }
+
     /* CTA */
     .article-footer-cta { background: #111; border: 1px solid var(--border); border-left: 4px solid var(--accent1); padding: 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-top: 32px; }
     .article-footer-cta-text h3 { font-family: var(--font-title); font-size: 2rem; letter-spacing: 0.04em; margin-bottom: 8px; }
@@ -253,11 +260,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">01</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">Double Moove Concept</div>
-            <div class="gym-location">Moscavide</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/double-moove.jpg" alt="Double Moove Concept" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">Double Moove Concept</div>
+                <div class="gym-location">Moscavide</div>
+              </div>
+              <div class="gym-handle">@doublemooveconcept</div>
+            </div>
           </div>
-          <div class="gym-handle">@doublemooveconcept</div>
           <div class="gym-tags">
             <span class="gym-tag">Funcional</span>
             <span class="gym-tag">Alta Intensidade</span>
@@ -274,11 +286,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">02</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">My Workout</div>
-            <div class="gym-location">Moscavide</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/myworkout.jpg" alt="My Workout" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">My Workout</div>
+                <div class="gym-location">Moscavide</div>
+              </div>
+              <div class="gym-handle">@myworkoutstudio</div>
+            </div>
           </div>
-          <div class="gym-handle">@myworkoutstudio</div>
           <div class="gym-tags">
             <span class="gym-tag">HYROX</span>
             <span class="gym-tag">Performance</span>
@@ -295,11 +312,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">03</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">No Pain Box</div>
-            <div class="gym-location">Póvoa de Santa Iria</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/nopain.jpg" alt="No Pain Box" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">No Pain Box</div>
+                <div class="gym-location">Póvoa de Santa Iria</div>
+              </div>
+              <div class="gym-handle">@nopainbox</div>
+            </div>
           </div>
-          <div class="gym-handle">@nopainbox</div>
           <div class="gym-tags">
             <span class="gym-tag">Crosstraining</span>
             <span class="gym-tag">Comunidade</span>
@@ -316,11 +338,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">04</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">Base10 CrossFit</div>
-            <div class="gym-location">Alverca</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/base10.jpg" alt="Base10 CrossFit" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">Base10 CrossFit</div>
+                <div class="gym-location">Alverca</div>
+              </div>
+              <div class="gym-handle">@base10crossfit</div>
+            </div>
           </div>
-          <div class="gym-handle">@base10crossfit</div>
           <div class="gym-tags">
             <span class="gym-tag">CrossFit</span>
             <span class="gym-tag">Competição Híbrida</span>
@@ -337,11 +364,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">05</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">X - The OCR Spot</div>
-            <div class="gym-location">Sacavém</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/xtheocrspot.jpg" alt="X - The OCR Spot" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">X - The OCR Spot</div>
+                <div class="gym-location">Sacavém</div>
+              </div>
+              <div class="gym-handle">@x_theocrspot</div>
+            </div>
           </div>
-          <div class="gym-handle">@x_theocrspot</div>
           <div class="gym-tags">
             <span class="gym-tag">OCR</span>
             <span class="gym-tag">Suspensão</span>
@@ -364,11 +396,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">06</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">Hybrid Lisboa</div>
-            <div class="gym-location">Laranjeiras</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/hybridlisboa.jpg" alt="Hybrid Lisboa" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">Hybrid Lisboa</div>
+                <div class="gym-location">Laranjeiras</div>
+              </div>
+              <div class="gym-handle">@hybrid.lisboa</div>
+            </div>
           </div>
-          <div class="gym-handle">@hybrid.lisboa</div>
           <div class="gym-tags">
             <span class="gym-tag">Treino Híbrido</span>
             <span class="gym-tag">Especializado</span>
@@ -385,11 +422,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">07</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">The Barn</div>
-            <div class="gym-location">Marvila</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/the-barn.jpg" alt="The Barn" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">The Barn</div>
+                <div class="gym-location">Marvila</div>
+              </div>
+              <div class="gym-handle">@thebarn_crossfit</div>
+            </div>
           </div>
-          <div class="gym-handle">@thebarn_crossfit</div>
           <div class="gym-tags">
             <span class="gym-tag">Funcional</span>
             <span class="gym-tag">Crosstraining</span>
@@ -406,11 +448,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">08</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">BASEZERO | Fitness Technology</div>
-            <div class="gym-location">Telheiras</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/base-zero.jpg" alt="BASEZERO" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">BASEZERO | Fitness Technology</div>
+                <div class="gym-location">Telheiras</div>
+              </div>
+              <div class="gym-handle">@basezero.pt</div>
+            </div>
           </div>
-          <div class="gym-handle">@basezero.pt</div>
           <div class="gym-tags">
             <span class="gym-tag">HYROX</span>
             <span class="gym-tag">Ritmos</span>
@@ -427,11 +474,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">09</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">CAPLX</div>
-            <div class="gym-location">Alvalade</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/caplx.jpg" alt="CAPLX" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">CAPLX</div>
+                <div class="gym-location">Alvalade</div>
+              </div>
+              <div class="gym-handle">@caplx.pt</div>
+            </div>
           </div>
-          <div class="gym-handle">@caplx.pt</div>
           <div class="gym-tags">
             <span class="gym-tag">Crosstraining</span>
             <span class="gym-tag">Endurance</span>
@@ -448,11 +500,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">10</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">Vinte Fitness Boutique</div>
-            <div class="gym-location">Alameda</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/vinte.jpg" alt="Vinte Fitness Boutique" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">Vinte Fitness Boutique</div>
+                <div class="gym-location">Alameda</div>
+              </div>
+              <div class="gym-handle">@vintelisboa</div>
+            </div>
           </div>
-          <div class="gym-handle">@vintelisboa</div>
           <div class="gym-tags">
             <span class="gym-tag">HYROX</span>
             <span class="gym-tag">Boutique</span>
@@ -469,11 +526,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">11</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">The Code</div>
-            <div class="gym-location">Laranjeiras</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/the-code.jpg" alt="The Code" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">The Code</div>
+                <div class="gym-location">Laranjeiras</div>
+              </div>
+              <div class="gym-handle">@thecodept</div>
+            </div>
           </div>
-          <div class="gym-handle">@thecodept</div>
           <div class="gym-tags">
             <span class="gym-tag">Performance</span>
             <span class="gym-tag">Circuitos</span>
@@ -490,11 +552,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">12</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">PowerX Gym</div>
-            <div class="gym-location">Alcântara</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/powerx.jpg" alt="PowerX Gym" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">PowerX Gym</div>
+                <div class="gym-location">Alcântara</div>
+              </div>
+              <div class="gym-handle">@powerx_gym</div>
+            </div>
           </div>
-          <div class="gym-handle">@powerx_gym</div>
           <div class="gym-tags">
             <span class="gym-tag">Funcional</span>
             <span class="gym-tag">Crosstraining</span>
@@ -517,11 +584,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">13</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">CrossFit Odivelas</div>
-            <div class="gym-location">Odivelas</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/crossfit-odivelas.png" alt="CrossFit Odivelas" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">CrossFit Odivelas</div>
+                <div class="gym-location">Odivelas</div>
+              </div>
+              <div class="gym-handle">@crossfitodivelas</div>
+            </div>
           </div>
-          <div class="gym-handle">@crossfitodivelas</div>
           <div class="gym-tags">
             <span class="gym-tag">CrossFit</span>
             <span class="gym-tag">Simulação de Provas</span>
@@ -538,11 +610,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">14</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">STRV CrossFit</div>
-            <div class="gym-location">Carnaxide</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/strv.jpg" alt="STRV CrossFit" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">STRV CrossFit</div>
+                <div class="gym-location">Carnaxide</div>
+              </div>
+              <div class="gym-handle">@strv.pt</div>
+            </div>
           </div>
-          <div class="gym-handle">@strv.pt</div>
           <div class="gym-tags">
             <span class="gym-tag">Afiliado HYROX</span>
             <span class="gym-tag">CrossFit</span>
@@ -559,11 +636,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">15</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">Alphaden Training Center</div>
-            <div class="gym-location">Cacém</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/alphaden.jpg" alt="Alphaden Training Center" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">Alphaden Training Center</div>
+                <div class="gym-location">Cacém</div>
+              </div>
+              <div class="gym-handle">@alphaden.trainingcenter</div>
+            </div>
           </div>
-          <div class="gym-handle">@alphaden.trainingcenter</div>
           <div class="gym-tags">
             <span class="gym-tag">HYROX</span>
             <span class="gym-tag">Alto Rendimento</span>
@@ -580,11 +662,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">16</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">Neverland Fitness Community</div>
-            <div class="gym-location">Amadora</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/neverland.jpg" alt="Neverland Fitness Community" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">Neverland Fitness Community</div>
+                <div class="gym-location">Amadora</div>
+              </div>
+              <div class="gym-handle">@neverland_fitcommunity</div>
+            </div>
           </div>
-          <div class="gym-handle">@neverland_fitcommunity</div>
           <div class="gym-tags">
             <span class="gym-tag">Olímpico</span>
             <span class="gym-tag">Metabólico</span>
@@ -601,11 +688,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">17</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">Lynx Club</div>
-            <div class="gym-location">Paço de Arcos</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/lynx.jpg" alt="Lynx Club" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">Lynx Club</div>
+                <div class="gym-location">Paço de Arcos</div>
+              </div>
+              <div class="gym-handle">@lynxcluboeiras</div>
+            </div>
           </div>
-          <div class="gym-handle">@lynxcluboeiras</div>
           <div class="gym-tags">
             <span class="gym-tag">Cardio</span>
             <span class="gym-tag">Running</span>
@@ -628,11 +720,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">18</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">THRYV</div>
-            <div class="gym-location">Charneca de Caparica</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/thryv.jpg" alt="THRYV" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">THRYV</div>
+                <div class="gym-location">Charneca de Caparica</div>
+              </div>
+              <div class="gym-handle">@thryvproject</div>
+            </div>
           </div>
-          <div class="gym-handle">@thryvproject</div>
           <div class="gym-tags">
             <span class="gym-tag">HYROX</span>
             <span class="gym-tag">Performance</span>
@@ -649,11 +746,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">19</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">CrossFit Almada</div>
-            <div class="gym-location">Almada</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/crossfit-almada.jpg" alt="CrossFit Almada" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">CrossFit Almada</div>
+                <div class="gym-location">Almada</div>
+              </div>
+              <div class="gym-handle">@crossfitalmada</div>
+            </div>
           </div>
-          <div class="gym-handle">@crossfitalmada</div>
           <div class="gym-tags">
             <span class="gym-tag">CrossFit</span>
             <span class="gym-tag">Alta Intensidade</span>
@@ -670,11 +772,16 @@
       <div class="gym-item fade-in">
         <div class="gym-number">20</div>
         <div class="gym-content">
-          <div class="gym-name-row">
-            <div class="gym-name">CFM HYROX Training Club</div>
-            <div class="gym-location">Montijo</div>
+          <div class="gym-header">
+            <img src="/assets/gyms/cfm.jpg" alt="CFM HYROX Training Club" class="gym-photo">
+            <div class="gym-info">
+              <div class="gym-name-row">
+                <div class="gym-name">CFM HYROX Training Club</div>
+                <div class="gym-location">Montijo</div>
+              </div>
+              <div class="gym-handle">@crossfitmontijo</div>
+            </div>
           </div>
-          <div class="gym-handle">@crossfitmontijo</div>
           <div class="gym-tags">
             <span class="gym-tag">Afiliado HYROX</span>
             <span class="gym-tag">Standards Internacionais</span>
