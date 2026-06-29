@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0C1210;
+  --bg-card: #1A1A1A;
+  --bg-input: #111111;
+  --accent: #4CAF50;
+  --accent-dark: #2E7D32;
+  --white: #FFFFFF;
+  --gray-light: #CCCCCC;
+  --gray-mid: #888888;
+  --border: #2a2a2a;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--bg-card);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input, textarea, select {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--white);
+  border-radius: 6px;
+  padding: 10px 14px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--gray-mid);
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-dark);
+  color: #fff;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-light);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.error-msg {
+  color: #f87171;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.quick-action-card:hover .card {
+  border-color: var(--accent);
+}
