@@ -5,7 +5,23 @@
       "PowerShell(npm --version)",
       "PowerShell(cd \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\"; $env:NODE_OPTIONS=\"--use-system-ca\"; npm install --save-dev vite)",
       "PowerShell(cd \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\"; $env:NODE_OPTIONS=\"--use-system-ca\"; npm run dev)",
-      "PowerShell(gh --version)"
+      "PowerShell(gh --version)",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\\\\index-grunge.html\" \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\\\\grunge\\\\index.html\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\\\\public\")",
+      "PowerShell(Move-Item \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\\\\password-gate.js\" \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\\\\public\\\\password-gate.js\")",
+      "PowerShell(cd \"C:\\\\Users\\\\gonca\\\\Desktop\\\\crossers\"; \\(Get-Item assets/hero-video.mp4\\).Length / 1MB)",
+      "Bash(git -C \"c:/Users/gonca/Desktop/crossers\" remote -v)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(git -C \"c:/Users/gonca/Desktop/crossers\" log --oneline -10)",
+      "Bash(git -C \"c:/Users/gonca/Desktop/crossers\" diff --stat)",
+      "Bash(git -C \"c:/Users/gonca/Desktop/crossers\" add blog/o-que-e-o-crossers/index.html)",
+      "Bash(git -C c:/Users/gonca/Desktop/crossers commit -m ' *)",
+      "Bash(git -C \"c:/Users/gonca/Desktop/crossers\" push origin main)",
+      "Bash(git -C \"c:/Users/gonca/Desktop/crossers\" add blog/ginasios-corrida-hibrida-lisboa/ blog/index.html vite.config.js)",
+      "Bash(git -C \"c:/Users/gonca/Desktop/crossers\" add blog/ginasios-corrida-hibrida-lisboa/index.html)",
+      "Bash(git -C \"c:/Users/gonca/Desktop/crossers\" add assets/gyms/)",
+      "WebSearch"
     ]
   }
 }

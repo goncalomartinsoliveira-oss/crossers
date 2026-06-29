@@ -2,3 +2,9 @@ node_modules/
 dist/
 .env
 .env.local
+website/node_modules/
+website/dist/
+hub/node_modules/
+hub/.next/
+hub/.env
+hub/.env.local
