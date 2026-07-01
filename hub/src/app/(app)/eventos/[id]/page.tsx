@@ -18,10 +18,18 @@ export default async function EventoPage({ params }: { params: Promise<{ id: str
 
   const { data: entries } = await supabase
     .from('event_entries')
-    .select('id, resultado, user_id, users(nome)')
+    .select('id, resultado, user_id')
     .eq('event_id', id)
     .order('resultado', { ascending: true })
     .limit(20)
+
+  // Fetch names separately
+  const userIds = [...new Set(entries?.map(e => e.user_id) ?? [])]
+  const { data: userNames } = userIds.length > 0
+    ? await supabase.from('users').select('id, nome').in('id', userIds)
+    : { data: [] }
+  const nameMap: Record<string, string> = {}
+  userNames?.forEach(u => { nameMap[u.id] = u.nome })
 
   const minhaEntry = entries?.find(e => e.user_id === user!.id)
   const terminado = new Date(evento.data_fim) < new Date()
@@ -93,7 +101,7 @@ export default async function EventoPage({ params }: { params: Promise<{ id: str
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {entries.map((entry, i) => {
               const isMe = entry.user_id === user!.id
-              const nome = (entry.users as { nome: string } | null)?.nome ?? 'Atleta'
+              const nome = nameMap[entry.user_id] ?? 'Atleta'
               return (
                 <div key={entry.id} className="card" style={{
                   display: 'flex', alignItems: 'center', gap: '16px',
