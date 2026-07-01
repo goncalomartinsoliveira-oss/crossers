@@ -34,7 +34,7 @@ export default function PerfilPage() {
 
       const [profileRes, registosRes, eventosRes] = await Promise.all([
         supabase.from('users').select('nome, genero, data_nascimento, created_at, foto_url').eq('id', user.id).single(),
-        supabase.from('personal_records').select('id, data_registo').eq('user_id', user.id),
+        supabase.from('workouts').select('id, data_treino').eq('user_id', user.id),
         supabase.from('event_entries').select('id').eq('user_id', user.id),
       ])
 
@@ -53,13 +53,11 @@ export default function PerfilPage() {
       const records = registosRes.data ?? []
       const weeks: Record<string, number> = {}
       for (let i = 7; i >= 0; i--) {
-        const d = new Date()
-        d.setDate(d.getDate() - i * 7)
         const key = `S${8 - i}`
         weeks[key] = 0
       }
       records.forEach(r => {
-        const daysAgo = Math.floor((Date.now() - new Date(r.data_registo).getTime()) / 86400000)
+        const daysAgo = Math.floor((Date.now() - new Date(r.data_treino).getTime()) / 86400000)
         const weekIdx = Math.floor(daysAgo / 7)
         if (weekIdx < 8) {
           const key = `S${8 - weekIdx}`
@@ -151,7 +149,7 @@ export default function PerfilPage() {
         {/* Stats row */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border)', borderRadius: '10px', overflow: 'hidden' }}>
           {[
-            { value: totalRegistos, label: 'Registos' },
+            { value: totalRegistos, label: 'Treinos' },
             { value: totalEventos, label: 'Eventos' },
             { value: genero === 'M' ? 'M' : 'F', label: 'Género' },
           ].map(s => (

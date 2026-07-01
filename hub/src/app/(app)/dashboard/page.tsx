@@ -10,8 +10,9 @@ export default async function DashboardPage() {
     supabase.from('events').select('id, nome, data_fim, unidade_resultado, descricao')
       .eq('ativo', true).gte('data_fim', new Date().toISOString())
       .order('data_fim', { ascending: true }).limit(3),
-    supabase.from('personal_records').select('id, exercise_id, resultado, data_registo')
-      .eq('user_id', user!.id).order('data_registo', { ascending: false }).limit(5),
+    supabase.from('workouts')
+      .select('id, titulo, data_treino, duracao_minutos, workout_exercises(id, exercise_nome, categoria)')
+      .eq('user_id', user!.id).order('data_treino', { ascending: false }).limit(5),
   ])
 
   const nome = profileRes.data?.nome?.split(' ')[0] ?? 'Atleta'
@@ -131,21 +132,26 @@ export default async function DashboardPage() {
         <div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <h3 style={{ fontSize: '11px', fontWeight: 700, color: 'var(--gray-mid)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-              Actividade Recente
+              Treinos Recentes
             </h3>
             <Link href="/registos" style={{ color: 'var(--accent)', fontSize: '12px', fontWeight: 600 }}>Ver todos →</Link>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            {records.slice(0, 3).map(r => (
-              <div key={r.id} className="card" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '14px 18px', borderRadius: '12px' }}>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)', flexShrink: 0 }} />
-                <div>
-                  <div style={{ fontSize: '14px', fontWeight: 600 }}>Registo: {r.resultado}</div>
-                  <div style={{ color: 'var(--gray-mid)', fontSize: '11px' }}>
-                    {new Date(r.data_registo).toLocaleDateString('pt-PT')}
+            {records.slice(0, 3).map((r: { id: string; titulo: string | null; data_treino: string; workout_exercises: { id: string; exercise_nome: string; categoria: string }[] }) => (
+              <Link key={r.id} href={`/registos/${r.id}`} style={{ textDecoration: 'none' }}>
+                <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '14px 18px', borderRadius: '12px' }}>
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)', flexShrink: 0 }} />
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: '14px', fontWeight: 600 }}>
+                      {r.titulo || new Date(r.data_treino).toLocaleDateString('pt-PT', { weekday: 'long', day: 'numeric', month: 'short' })}
+                    </div>
+                    <div style={{ color: 'var(--gray-mid)', fontSize: '11px' }}>
+                      {r.workout_exercises?.length ?? 0} exercício{(r.workout_exercises?.length ?? 0) !== 1 ? 's' : ''} · {new Date(r.data_treino).toLocaleDateString('pt-PT')}
+                    </div>
                   </div>
+                  <span style={{ color: 'var(--accent)', fontSize: '14px' }}>→</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
