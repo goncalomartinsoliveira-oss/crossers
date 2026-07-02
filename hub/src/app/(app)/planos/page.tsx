@@ -6,7 +6,7 @@ export default async function PlanosPage() {
 
   const { data: planos } = await supabase
     .from('training_plans')
-    .select('id, nome, descricao, nivel, duracao_semanas, categoria')
+    .select('id, nome, descricao, nivel, duracao_semanas')
     .order('nivel')
     .order('nome')
 
@@ -57,11 +57,6 @@ export default async function PlanosPage() {
                       )}
                     </div>
                     <div style={{ display: 'flex', gap: '8px', marginTop: 'auto', flexWrap: 'wrap' }}>
-                      {plano.categoria && (
-                        <span style={{ background: 'rgba(76,175,80,0.1)', color: 'var(--accent)', fontSize: '11px', padding: '3px 8px', borderRadius: '10px', fontWeight: 600 }}>
-                          {plano.categoria}
-                        </span>
-                      )}
                       {plano.duracao_semanas && (
                         <span style={{ background: 'var(--border)', color: 'var(--gray-light)', fontSize: '11px', padding: '3px 8px', borderRadius: '10px' }}>
                           {plano.duracao_semanas} semanas
