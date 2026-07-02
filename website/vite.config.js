@@ -13,6 +13,7 @@ export default defineConfig({
         'blog-ginasios-corrida-hibrida-lisboa': resolve(__dirname, 'blog/ginasios-corrida-hibrida-lisboa/index.html'),
         links: resolve(__dirname, 'links/index.html'),
         calendario: resolve(__dirname, 'calendario/index.html'),
+        ginasios: resolve(__dirname, 'ginasios/index.html'),
         'blog-erros-preparacao-prova-hibrida': resolve(__dirname, 'blog/erros-preparacao-prova-hibrida/index.html'),
       },
     },
