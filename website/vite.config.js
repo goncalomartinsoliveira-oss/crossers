@@ -12,6 +12,7 @@ export default defineConfig({
         'blog-atletas-hybrid-racing': resolve(__dirname, 'blog/atletas-hybrid-racing/index.html'),
         'blog-ginasios-corrida-hibrida-lisboa': resolve(__dirname, 'blog/ginasios-corrida-hibrida-lisboa/index.html'),
         links: resolve(__dirname, 'links/index.html'),
+        calendario: resolve(__dirname, 'calendario/index.html'),
         'blog-erros-preparacao-prova-hibrida': resolve(__dirname, 'blog/erros-preparacao-prova-hibrida/index.html'),
       },
     },
