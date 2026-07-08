@@ -281,6 +281,16 @@
     .event-date-day { font-family: var(--font-title); font-size: 2.2rem; line-height: 1; color: var(--white); }
     .event-date-month { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent1); margin-top: 4px; }
 
+    .event-visual { flex-shrink: 0; width: 104px; border-right: 1px solid var(--border); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: radial-gradient(circle at 30% 30%, rgba(76,175,80,0.08) 0%, transparent 70%); }
+    .event-monogram { font-family: var(--font-title); font-size: 2.2rem; letter-spacing: 0.06em; color: rgba(76,175,80,0.45); user-select: none; }
+    .event-card[data-tipo="deka"] .event-visual { background: radial-gradient(circle at 30% 30%, rgba(96,165,250,0.08) 0%, transparent 70%); }
+    .event-card[data-tipo="deka"] .event-monogram { color: rgba(96,165,250,0.45); }
+    .event-card[data-tipo="hyrox"] .event-visual { background: radial-gradient(circle at 30% 30%, rgba(251,191,36,0.08) 0%, transparent 70%); }
+    .event-card[data-tipo="hyrox"] .event-monogram { color: rgba(251,191,36,0.45); }
+    .event-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .event-visual.has-img.is-logo img { object-fit: contain; padding: 14px; }
+    .event-card.past .event-visual img { filter: grayscale(60%); }
+
     .event-body { flex: 1; padding: 22px 24px; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
     .event-tags { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
     .event-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; padding: 3px 9px; border: 1px solid; }
@@ -351,6 +361,8 @@
       .event-card { flex-direction: column; }
       .event-date { width: 100%; flex-direction: row; gap: 10px; padding: 14px 20px; border-right: none; border-bottom: 1px solid var(--border); justify-content: flex-start; align-items: baseline; }
       .event-date-day { font-size: 1.6rem; }
+      .event-visual { display: none; }
+      .event-visual.has-img { display: flex; width: 100%; height: 96px; border-right: none; border-bottom: 1px solid var(--border); }
       .event-date-month { margin-top: 0; }
       .event-action { padding: 0 24px 20px; }
       #cal-cta { padding: 40px 24px; }
@@ -423,6 +435,7 @@
           <span class="event-date-day">11-12</span>
           <span class="event-date-month">Jul</span>
         </div>
+        <div class="event-visual" data-slug="gaia-throwdown" aria-hidden="true"><span class="event-monogram">GT</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">GAIA THROWDOWN</h3>
@@ -439,6 +452,7 @@
           <span class="event-date-day">17-18</span>
           <span class="event-date-month">Jul</span>
         </div>
+        <div class="event-visual" data-slug="hybrid-day-leiria" aria-hidden="true"><span class="event-monogram">HD</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">HYBRID DAY LEIRIA</h3>
@@ -458,6 +472,7 @@
           <span class="event-date-day">8</span>
           <span class="event-date-month">Ago</span>
         </div>
+        <div class="event-visual" data-slug="gois-challenge" aria-hidden="true"><span class="event-monogram">GC</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">GÓIS CHALLENGE</h3>
@@ -474,6 +489,7 @@
           <span class="event-date-day">22</span>
           <span class="event-date-month">Ago</span>
         </div>
+        <div class="event-visual" data-slug="hybrid-day-estoril" aria-hidden="true"><span class="event-monogram">HD</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">HYBRID DAY ESTORIL</h3>
@@ -490,6 +506,7 @@
           <span class="event-date-day">29</span>
           <span class="event-date-month">Ago</span>
         </div>
+        <div class="event-visual" data-slug="god-experience" aria-hidden="true"><span class="event-monogram">GOD</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">GOD EXPERIENCE BEACH EDITION</h3>
@@ -509,6 +526,7 @@
           <span class="event-date-day">5</span>
           <span class="event-date-month">Set</span>
         </div>
+        <div class="event-visual" data-slug="thryv-hyrox-simulation" aria-hidden="true"><span class="event-monogram">TH</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">THRYV HYROX SIMULATION</h3>
@@ -525,6 +543,7 @@
           <span class="event-date-day">5-6</span>
           <span class="event-date-month">Set</span>
         </div>
+        <div class="event-visual" data-slug="manz-games" aria-hidden="true"><span class="event-monogram">MG</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">RFM PERFORMANCE MANZ GAMES</h3>
@@ -541,6 +560,7 @@
           <span class="event-date-day">12</span>
           <span class="event-date-month">Set</span>
         </div>
+        <div class="event-visual" data-slug="hygoes" aria-hidden="true"><span class="event-monogram">HG</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">HYGOES</h3>
@@ -557,6 +577,7 @@
           <span class="event-date-day">12</span>
           <span class="event-date-month">Set</span>
         </div>
+        <div class="event-visual" data-slug="deka-braga" aria-hidden="true"><span class="event-monogram">DK</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag deka">DEKA</span></div>
           <h3 class="event-title">DEKA BRAGA</h3>
@@ -573,6 +594,7 @@
           <span class="event-date-day">19</span>
           <span class="event-date-month">Set</span>
         </div>
+        <div class="event-visual" data-slug="vortex-hybrid-games" aria-hidden="true"><span class="event-monogram">VX</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">VORTEX HYBRID GAMES</h3>
@@ -589,6 +611,7 @@
           <span class="event-date-day">26</span>
           <span class="event-date-month">Set</span>
         </div>
+        <div class="event-visual" data-slug="prime-hybrid" aria-hidden="true"><span class="event-monogram">PH</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">PRIME HYBRID</h3>
@@ -605,6 +628,7 @@
           <span class="event-date-day">26</span>
           <span class="event-date-month">Set</span>
         </div>
+        <div class="event-visual" data-slug="hybrid-day-beja" aria-hidden="true"><span class="event-monogram">HD</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">HYBRID DAY BEJA (BA11)</h3>
@@ -624,6 +648,7 @@
           <span class="event-date-day">17</span>
           <span class="event-date-month">Out</span>
         </div>
+        <div class="event-visual" data-slug="azores-hybrid-race" aria-hidden="true"><span class="event-monogram">AZ</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">AZORES HYBRID RACE</h3>
@@ -640,6 +665,7 @@
           <span class="event-date-day">18</span>
           <span class="event-date-month">Out</span>
         </div>
+        <div class="event-visual" data-slug="crossers" aria-hidden="true"><span class="event-monogram">CR</span></div>
         <div class="event-body">
           <div class="event-tags">
             <span class="event-tag destaque">O nosso evento</span>
@@ -663,6 +689,7 @@
           <span class="event-date-day">1-3</span>
           <span class="event-date-month">Mai</span>
         </div>
+        <div class="event-visual" data-slug="hyrox-lisboa" aria-hidden="true"><span class="event-monogram">HX</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hyrox">HYROX</span></div>
           <h3 class="event-title">HYROX LISBOA</h3>
@@ -679,6 +706,7 @@
           <span class="event-date-day">30</span>
           <span class="event-date-month">Mai</span>
         </div>
+        <div class="event-visual" data-slug="hyberic-run" aria-hidden="true"><span class="event-monogram">HR</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag hibrida">Híbrida</span></div>
           <h3 class="event-title">HYBERIC RUN</h3>
@@ -695,6 +723,7 @@
           <span class="event-date-day">13</span>
           <span class="event-date-month">Jun</span>
         </div>
+        <div class="event-visual" data-slug="deka-fit-lisboa" aria-hidden="true"><span class="event-monogram">DK</span></div>
         <div class="event-body">
           <div class="event-tags"><span class="event-tag deka">DEKA</span></div>
           <h3 class="event-title">DEKA FIT LISBOA</h3>
@@ -858,6 +887,25 @@
           label.style.display = hasVisible ? '' : 'none';
         });
       });
+    });
+
+    // Logos dos eventos (fallback: monograma)
+    document.querySelectorAll('.event-visual[data-slug]').forEach(v => {
+      const slug = v.dataset.slug;
+      const exts = ['png', 'jpg', 'svg', 'webp'];
+      (function tryNext(i) {
+        if (i >= exts.length) return;
+        const img = new Image();
+        img.onload = () => {
+          v.innerHTML = '';
+          img.alt = '';
+          v.appendChild(img);
+          v.classList.add('has-img');
+          if (exts[i] === 'svg' || exts[i] === 'png') v.classList.add('is-logo');
+        };
+        img.onerror = () => tryNext(i + 1);
+        img.src = '/assets/eventos/' + slug + '.' + exts[i];
+      })(0);
     });
 
     // FAQ accordion
