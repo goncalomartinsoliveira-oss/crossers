@@ -14,6 +14,7 @@ export default defineConfig({
         links: resolve(__dirname, 'links/index.html'),
         calendario: resolve(__dirname, 'calendario/index.html'),
         ginasios: resolve(__dirname, 'ginasios/index.html'),
+        rulebook: resolve(__dirname, 'rulebook/index.html'),
         'blog-erros-preparacao-prova-hibrida': resolve(__dirname, 'blog/erros-preparacao-prova-hibrida/index.html'),
       },
     },

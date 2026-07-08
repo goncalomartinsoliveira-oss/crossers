@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rulebook | Regulamento Oficial da Crossers 2026 | Loures</title>
+  <meta name="description" content="Regulamento oficial da Crossers, The Hybrid Race de 18 de Outubro de 2026 em Loures. Formato da prova, as 8 estações, cargas por categoria, regras técnicas e penalizações." />
+  <meta name="author" content="Crossers" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://crossers.pt/rulebook/" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-clean.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crossers.pt/rulebook/" />
+  <meta property="og:title" content="Rulebook | Regulamento Oficial da Crossers 2026" />
+  <meta property="og:description" content="Tudo o que precisas de saber para competir: formato, estações, cargas por categoria, regras técnicas e penalizações." />
+  <meta property="og:image" content="https://crossers.pt/assets/evento-photo.jpeg" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:site_name" content="Crossers" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRGDBVT0XG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZRGDBVT0XG');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a; --white: #FFFFFF;
+      --accent1: #4CAF50; --accent2: #2E7D32;
+      --masc: #4CAF50; --mista: #9B6FDE; --fem: #e0803a;
+      --card-bg: #111111; --border: #222222;
+      --muted: #555555; --grain-opacity: 0.045;
+      --font-title: 'Bebas Neue', sans-serif; --font-body: 'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--bg); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+    body::after {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      opacity: var(--grain-opacity);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 200px 200px;
+    }
+
+    .container { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAVBAR */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 64px; display: flex; align-items: center; background: rgba(10,10,10,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.3s; }
+    #navbar .container { max-width: 1200px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-back { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+    .nav-page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent1); }
+    .btn-nav { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #000; background: var(--accent1); border: none; padding: 10px 20px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+    .btn-nav:hover { background: #5dc962; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+    .nav-mobile-overlay { display: none; position: fixed; inset: 64px 0 0; background: rgba(10,10,10,0.98); backdrop-filter: blur(8px); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+    .nav-mobile-overlay.open { display: flex; }
+    .nav-mobile-overlay a { font-family: var(--font-title); font-size: 2rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
+    .nav-mobile-overlay a:hover { color: var(--accent1); }
+
+    /* HERO */
+    #rb-hero { padding: 130px 0 56px; border-bottom: 1px solid var(--border); }
+    .rb-hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent1); margin-bottom: 18px; }
+    .rb-hero-title { font-family: var(--font-title); font-size: clamp(3.4rem, 9vw, 6.5rem); letter-spacing: 0.03em; line-height: 0.9; margin-bottom: 20px; }
+    .rb-hero-sub { font-size: 15px; color: rgba(255,255,255,0.5); max-width: 600px; line-height: 1.8; }
+    .rb-hero-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+    .rb-hero-meta div { }
+    .rb-hero-meta .k { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+    .rb-hero-meta .v { font-family: var(--font-title); font-size: 1.4rem; letter-spacing: 0.04em; color: var(--accent1); }
+
+    /* INDEX NAV */
+    .rb-index { display: flex; gap: 8px; flex-wrap: wrap; margin: 40px 0 8px; }
+    .rb-index a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); border: 1px solid var(--border); padding: 8px 14px; text-decoration: none; transition: color 0.2s, border-color 0.2s; }
+    .rb-index a:hover { color: var(--accent1); border-color: rgba(76,175,80,0.4); }
+
+    /* SECTIONS */
+    .rb-section { padding: 56px 0 0; }
+    .rb-section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent1); margin-bottom: 10px; }
+    .rb-h2 { font-family: var(--font-title); font-size: clamp(1.9rem, 5vw, 2.6rem); letter-spacing: 0.05em; line-height: 1; margin-bottom: 20px; scroll-margin-top: 84px; }
+    .rb-p { font-size: 14.5px; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 16px; }
+    .rb-p strong { color: var(--white); font-weight: 600; }
+
+    .rb-list { list-style: none; margin: 4px 0 16px; }
+    .rb-list li { position: relative; padding-left: 22px; font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 10px; }
+    .rb-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: var(--accent1); border-radius: 50%; }
+
+    .rb-note { border-left: 2px solid var(--accent1); background: rgba(76,175,80,0.05); padding: 16px 20px; margin: 16px 0; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.75; }
+    .rb-note strong { color: var(--white); }
+    .rb-warn { border-left: 2px solid #e0803a; background: rgba(224,128,58,0.06); padding: 16px 20px; margin: 16px 0; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.75; }
+    .rb-warn strong { color: #f0a060; }
+
+    /* STATION CARDS */
+    .station { border: 1px solid var(--border); background: var(--card-bg); margin-bottom: 16px; overflow: hidden; scroll-margin-top: 84px; }
+    .station-head { display: flex; align-items: center; gap: 18px; padding: 22px 24px; border-bottom: 1px solid var(--border); background: linear-gradient(135deg, rgba(76,175,80,0.06) 0%, transparent 60%); }
+    .station-num { font-family: var(--font-title); font-size: 2.6rem; line-height: 1; color: var(--accent1); flex-shrink: 0; width: 54px; }
+    .station-titlewrap { flex: 1; }
+    .station-name { font-family: var(--font-title); font-size: 1.7rem; letter-spacing: 0.04em; line-height: 1.05; }
+    .station-target { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    .station-target strong { color: var(--accent1); font-weight: 600; }
+    .station-body { padding: 22px 24px; }
+
+    .loads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 20px; border: 1px solid var(--border); }
+    .load { padding: 14px 12px; text-align: center; background: #0d0d0d; }
+    .load-cat { font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 4px; }
+    .load-val { font-family: var(--font-title); font-size: 1.5rem; letter-spacing: 0.03em; color: var(--white); }
+    .load.masc .load-cat { color: var(--masc); }
+    .load.mista .load-cat { color: var(--mista); }
+    .load.fem .load-cat { color: var(--fem); }
+
+    .station-rules-title { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+
+    /* PENALTY TABLE */
+    .pen-table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 13.5px; }
+    .pen-table th, .pen-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .pen-table th { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .pen-table td { color: rgba(255,255,255,0.65); line-height: 1.6; }
+    .pen-table td:last-child { color: var(--accent1); font-weight: 600; white-space: nowrap; }
+    .pen-table tr:last-child td { border-bottom: none; }
+
+    /* CTA */
+    #rb-cta { margin: 72px 0; border: 1px solid rgba(76,175,80,0.3); background: linear-gradient(135deg, rgba(76,175,80,0.1) 0%, rgba(46,125,50,0.03) 100%); padding: 52px 36px; text-align: center; }
+    .rb-cta-title { font-family: var(--font-title); font-size: clamp(2rem, 5vw, 3rem); letter-spacing: 0.04em; line-height: 1; margin-bottom: 14px; }
+    .rb-cta-sub { font-size: 14px; color: rgba(255,255,255,0.5); max-width: 460px; margin: 0 auto 28px; line-height: 1.8; }
+    .btn-cta { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #000; background: var(--accent1); border: none; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+    .btn-cta:hover { background: #5dc962; }
+
+    /* FOOTER */
+    #footer { background: #060606; border-top: 1px solid var(--border); padding: 64px 0 32px; }
+    #footer .container { max-width: 1200px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); margin-bottom: 32px; flex-wrap: wrap; }
+    .footer-brand-name { font-family: var(--font-title); font-size: 2rem; letter-spacing: 0.1em; }
+    .footer-brand-slogan { font-size: 10px; font-weight: 600; letter-spacing: 0.3em; text-transform: lowercase; color: var(--muted); margin-top: 8px; }
+    .footer-nav h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+    .footer-nav ul { list-style: none; }
+    .footer-nav ul li + li { margin-top: 10px; }
+    .footer-nav a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-social h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+    .social-links { display: flex; gap: 12px; }
+    .social-link { width: 40px; height: 40px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-decoration: none; color: rgba(255,255,255,0.4); transition: border-color 0.2s, color 0.2s; }
+    .social-link:hover { border-color: var(--accent1); color: var(--accent1); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-desktop-right { display: none; }
+      .footer-top { flex-direction: column; }
+      #rb-hero { padding: 110px 0 44px; }
+      .loads { grid-template-columns: 1fr; }
+      .station-num { font-size: 2rem; width: 40px; }
+      #rb-cta { padding: 36px 22px; }
+      .pen-table th, .pen-table td { padding: 10px 8px; font-size: 12.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Navegação">
+    <div class="container">
+      <a href="/" class="nav-logo" aria-label="Crossers, página principal">
+        <img src="/assets/logo-clean.svg" alt="Crossers" style="height:36px;width:auto;" />
+      </a>
+      <div style="display:flex;align-items:center;gap:24px;" class="nav-desktop-right">
+        <span class="nav-page-label">Rulebook</span>
+        <a href="/calendario/" class="nav-back">Calendário</a>
+        <a href="/" class="nav-back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Evento
+        </a>
+        <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-nav">Inscrever-me</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay" id="mobileMenu">
+    <a href="/" class="mobile-link">Evento</a>
+    <a href="/calendario/" class="mobile-link">Calendário</a>
+    <a href="/ginasios/" class="mobile-link">Ginásios</a>
+    <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="mobile-link" style="color:var(--accent1)">Inscrever-me</a>
+  </div>
+
+  <!-- HERO -->
+  <header id="rb-hero">
+    <div class="container">
+      <p class="rb-hero-eyebrow fade-in">Crossers &middot; The Hybrid Race</p>
+      <h1 class="rb-hero-title fade-in">RULEBOOK</h1>
+      <p class="rb-hero-sub fade-in">
+        O regulamento oficial da prova. Aqui tens tudo o que precisas de saber para te preparares e competires: o formato,
+        as oito estações, as cargas de cada categoria, as regras técnicas de cada movimento e as penalizações.
+        Lê com atenção antes do dia da prova.
+      </p>
+      <div class="rb-hero-meta fade-in">
+        <div><div class="k">Data</div><div class="v">18 Out 2026</div></div>
+        <div><div class="k">Local</div><div class="v">Loures</div></div>
+        <div><div class="k">Formato</div><div class="v">Duplas</div></div>
+        <div><div class="k">Distância</div><div class="v">8 km + 8 estações</div></div>
+      </div>
+
+      <nav class="rb-index fade-in" aria-label="Índice do regulamento">
+        <a href="#formato">Formato</a>
+        <a href="#corrida">Corrida</a>
+        <a href="#estacoes-regras">Regras das estações</a>
+        <a href="#estacoes">As 8 estações</a>
+        <a href="#penalizacoes">Penalizações</a>
+        <a href="#substituicoes">Substituições</a>
+        <a href="#arbitragem">Arbitragem</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- FORMATO -->
+    <section class="rb-section">
+      <div class="container">
+        <p class="rb-section-label fade-in">Visão geral</p>
+        <h2 class="rb-h2 fade-in" id="formato">O FORMATO DA PROVA</h2>
+        <p class="rb-p fade-in">
+          A Crossers é uma prova híbrida disputada <strong>em duplas</strong>, em três categorias: Duplas Masculinas,
+          Duplas Mistas e Duplas Femininas. O percurso combina <strong>8 quilómetros de corrida</strong> com
+          <strong>8 estações funcionais</strong>. A dupla corre 1.000 metros, executa uma estação, volta a correr 1.000 metros,
+          executa a estação seguinte, e assim sucessivamente até completar as oito estações.
+        </p>
+        <p class="rb-p fade-in">
+          As estações são sempre disputadas pela mesma ordem, da estação 1 (Ski Erg) à estação 8 (Wall Balls).
+          As duplas partem em vagas escalonadas, pela ordem Masculinas, Mistas e Femininas, com início previsto para as 9:00.
+        </p>
+        <div class="rb-note fade-in">
+          <strong>Trabalho em dupla.</strong> Cada estação pode ser dividida entre os dois membros da dupla, mas
+          <strong>ambos têm de ter parte interveniente no exercício</strong>. A forma de dividir o trabalho é livre,
+          desde que os dois contribuam.
+        </div>
+      </div>
+    </section>
+
+    <!-- CORRIDA -->
+    <section class="rb-section">
+      <div class="container">
+        <p class="rb-section-label fade-in">Regras gerais</p>
+        <h2 class="rb-h2 fade-in" id="corrida">A CORRIDA ENTRE ESTAÇÕES</h2>
+        <p class="rb-p fade-in">
+          Entre cada estação há sempre <strong>1.000 metros de corrida</strong>. Consoante o espaço do recinto,
+          esta distância pode ser dividida em 1 a 4 voltas. Em alguns casos, a primeira ou a última volta pode não ter
+          exatamente 1.000 metros devido à partida escalonada; nesses casos, os metros em falta são compensados na última volta.
+        </p>
+        <ul class="rb-list fade-in">
+          <li>Os dois membros da dupla devem <strong>correr lado a lado durante todo o percurso</strong> de 1.000 metros.</li>
+          <li>Assim que terminam a corrida, <strong>ambos entram juntos na estação</strong>. Os dois têm de estar presentes para iniciar os exercícios.</li>
+          <li>A estação só pode ser abandonada depois de concluída toda a distância ou repetições, e deve ser deixada <strong>pelos dois ao mesmo tempo</strong>.</li>
+          <li>O percurso tem uma linha que divide a pista em duas zonas: <strong>faixa rápida</strong> e <strong>faixa de velocidade normal</strong>. Os atletas mais rápidos devem usar a faixa rápida e os mais lentos a faixa normal.</li>
+        </ul>
+        <div class="rb-warn fade-in">
+          Se um dos membros correr a um ritmo significativamente mais rápido do que o outro, a dupla incorre numa
+          <strong>penalização de 3 minutos</strong>, porque isso pode interferir com o sistema de cronometragem.
+        </div>
+      </div>
+    </section>
+
+    <!-- REGRAS DAS ESTAÇÕES -->
+    <section class="rb-section">
+      <div class="container">
+        <p class="rb-section-label fade-in">Regras gerais</p>
+        <h2 class="rb-h2 fade-in" id="estacoes-regras">REGRAS DAS ESTAÇÕES</h2>
+        <ul class="rb-list fade-in">
+          <li>Completar todas as estações <strong>pela ordem correta</strong>, da 1 à 8.</li>
+          <li>Executar cada exercício de acordo com os <strong>padrões de movimento</strong> definidos.</li>
+          <li>Utilizar os <strong>pontos corretos de início e fim</strong> de cada estação.</li>
+          <li>Completar o <strong>número correto de repetições ou distâncias</strong>.</li>
+          <li>Executar os movimentos com a <strong>carga correta</strong>, em quilogramas, para a categoria da dupla.</li>
+        </ul>
+        <div class="rb-warn fade-in">
+          <strong>Ordem das estações.</strong> Se uma dupla não completar uma estação na sequência correta, pode completar a
+          estação em falta antes de entrar na estação 8 (Wall Balls). Fazer o percurso fora de ordem implica uma penalização
+          de 3 minutos. Se mais do que uma estação for feita fora de ordem, a dupla é desclassificada.
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTAÇÕES -->
+    <section class="rb-section">
+      <div class="container">
+        <p class="rb-section-label fade-in">Estação a estação</p>
+        <h2 class="rb-h2 fade-in" id="estacoes">AS 8 ESTAÇÕES</h2>
+
+        <!-- S1 SKI ERG -->
+        <div class="station fade-in" id="est-1">
+          <div class="station-head">
+            <div class="station-num">S1</div>
+            <div class="station-titlewrap">
+              <div class="station-name">SKI ERG</div>
+              <div class="station-target"><strong>1.000 m</strong> &middot; igual para todas as categorias</div>
+            </div>
+          </div>
+          <div class="station-body">
+            <p class="station-rules-title">Como se executa</p>
+            <ul class="rb-list">
+              <li>Antes de começar, o monitor do SkiErg deve ser reconfigurado por um árbitro.</li>
+              <li>Os pés devem permanecer na plataforma durante todo o exercício. Não é permitido levantar os pés durante o movimento.</li>
+              <li>Depois de completar a distância, o atleta levanta o braço para chamar o árbitro, que confirma a conclusão.</li>
+              <li>Só após a confirmação do árbitro é que o atleta pode sair da plataforma e da estação.</li>
+              <li>O membro em descanso deve permanecer na área demarcada. Não é permitido passar as pegas diretamente de um atleta para o outro.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- S2 FARMER WALK -->
+        <div class="station fade-in" id="est-2">
+          <div class="station-head">
+            <div class="station-num">S2</div>
+            <div class="station-titlewrap">
+              <div class="station-name">FARMER WALK</div>
+              <div class="station-target"><strong>200 m</strong> &middot; a caminhar em linha recta com dois kettlebells</div>
+            </div>
+          </div>
+          <div class="station-body">
+            <div class="loads">
+              <div class="load fem"><div class="load-cat">Femininas</div><div class="load-val">2 x 16 kg</div></div>
+              <div class="load mista"><div class="load-cat">Mistas</div><div class="load-val">2 x 24 kg</div></div>
+              <div class="load masc"><div class="load-cat">Masculinas</div><div class="load-val">2 x 32 kg</div></div>
+            </div>
+            <p class="station-rules-title">Como se executa</p>
+            <ul class="rb-list">
+              <li>O exercício começa e termina com a recolha e devolução dos kettlebells na área demarcada, junto à linha de partida e chegada.</li>
+              <li>O atleta deve transportar os dois kettlebells em simultâneo enquanto se desloca, com os braços estendidos ao lado do corpo.</li>
+              <li>É permitido descansar, pousando os kettlebells no chão, mas não os pode empurrar para a frente ao pousá-los.</li>
+              <li>A estação termina quando os kettlebells são transportados até à linha de chegada e devolvidos à área correta, com as pegas viradas para cima.</li>
+              <li>O membro em descanso deve caminhar atrás do membro ativo, sem obstruir outros participantes.</li>
+            </ul>
+            <div class="rb-warn">Devolver os kettlebells de forma incorreta implica uma penalização de <strong>30 segundos</strong>.</div>
+          </div>
+        </div>
+
+        <!-- S3 SANDBAG LUNGES -->
+        <div class="station fade-in" id="est-3">
+          <div class="station-head">
+            <div class="station-num">S3</div>
+            <div class="station-titlewrap">
+              <div class="station-name">SANDBAG LUNGES</div>
+              <div class="station-target"><strong>100 m</strong> de afundos com saco de areia às costas</div>
+            </div>
+          </div>
+          <div class="station-body">
+            <div class="loads">
+              <div class="load fem"><div class="load-cat">Femininas</div><div class="load-val">10 kg</div></div>
+              <div class="load mista"><div class="load-cat">Mistas</div><div class="load-val">20 kg</div></div>
+              <div class="load masc"><div class="load-cat">Masculinas</div><div class="load-val">30 kg</div></div>
+            </div>
+            <p class="station-rules-title">Como se executa</p>
+            <ul class="rb-list">
+              <li>O exercício começa e termina com a recolha e devolução do saco na área demarcada, junto à linha de partida e chegada.</li>
+              <li>O atleta deve levantar o saco sem ajuda e posicioná-lo sobre os dois ombros.</li>
+              <li>Inicia em pé, com os dois pés atrás da linha de partida, antes do primeiro afundo.</li>
+              <li>Em cada afundo, o joelho de trás deve tocar claramente no chão. A repetição termina com joelhos e ancas totalmente estendidos, em pé.</li>
+              <li>Os afundos devem ser alternados: o joelho que toca no chão muda a cada repetição.</li>
+              <li>Pode avançar de forma contínua ou parar após cada afundo, mantendo os dois pés paralelos. Não são permitidos passos extra nem pequenos ajustes entre repetições.</li>
+              <li>O pé da frente deve cruzar completamente a linha branca no fim de cada segmento e na linha de chegada.</li>
+              <li>O saco deve permanecer sempre sobre os ombros. A troca entre membros pode ser feita de lado ou para trás, nunca para a frente.</li>
+            </ul>
+            <div class="rb-warn">
+              Pousar o saco no chão implica <strong>10 m de penalização</strong>; se acontecer uma segunda vez, a dupla é desclassificada.
+              Outras infrações às regras acima invalidam a repetição e, à segunda advertência, acrescentam <strong>10 m</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- S4 SLAM BALL -->
+        <div class="station fade-in" id="est-4">
+          <div class="station-head">
+            <div class="station-num">S4</div>
+            <div class="station-titlewrap">
+              <div class="station-name">SLAM BALL OVER THE SHOULDERS</div>
+              <div class="station-target"><strong>50 repetições</strong> &middot; lançar a bola por cima do ombro</div>
+            </div>
+          </div>
+          <div class="station-body">
+            <div class="loads">
+              <div class="load fem"><div class="load-cat">Femininas</div><div class="load-val">20 kg</div></div>
+              <div class="load mista"><div class="load-cat">Mistas</div><div class="load-val">30 kg</div></div>
+              <div class="load masc"><div class="load-cat">Masculinas</div><div class="load-val">40 kg</div></div>
+            </div>
+            <p class="station-rules-title">Como se executa</p>
+            <ul class="rb-list">
+              <li>O atleta levanta a bola do chão e arremessa-a por cima do ombro, para trás. Cada lançamento conta como uma repetição.</li>
+              <li>O movimento exige levantar a bola a partir do solo em cada repetição, com controlo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- S5 REMO -->
+        <div class="station fade-in" id="est-5">
+          <div class="station-head">
+            <div class="station-num">S5</div>
+            <div class="station-titlewrap">
+              <div class="station-name">REMO</div>
+              <div class="station-target"><strong>1.000 m</strong> &middot; igual para todas as categorias</div>
+            </div>
+          </div>
+          <div class="station-body">
+            <p class="station-rules-title">Como se executa</p>
+            <ul class="rb-list">
+              <li>Antes de começar, o monitor do remo deve ser reconfigurado por um árbitro.</li>
+              <li>Os pés devem estar fixos nos apoios antes de segurar a pega e permanecer fixos durante todo o exercício.</li>
+              <li>Depois de completar a distância, o atleta levanta o braço para chamar o árbitro, que confirma a conclusão.</li>
+              <li>Só após a confirmação do árbitro é que o atleta pode sair da plataforma e iniciar a corrida seguinte.</li>
+              <li>O membro em descanso deve permanecer na área demarcada, sem obstruir outros participantes. Não é permitido passar a pega diretamente de um atleta para o outro.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- S6 OLYMPUS -->
+        <div class="station fade-in" id="est-6">
+          <div class="station-head">
+            <div class="station-num">S6</div>
+            <div class="station-titlewrap">
+              <div class="station-name">OBSTÁCULO OLYMPUS</div>
+              <div class="station-target">Transpor a parede de obstáculo</div>
+            </div>
+          </div>
+          <div class="station-body">
+            <p class="station-rules-title">Como se executa</p>
+            <ul class="rb-list">
+              <li>Os atletas devem transpor a parede, passando por cima.</li>
+              <li>É permitido utilizar as cordas para ajudar na subida e na descida.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- S7 BURPEES BROAD JUMP -->
+        <div class="station fade-in" id="est-7">
+          <div class="station-head">
+            <div class="station-num">S7</div>
+            <div class="station-titlewrap">
+              <div class="station-name">BURPEES BROAD JUMP</div>
+              <div class="station-target"><strong>80 m</strong> &middot; igual para todas as categorias</div>
+            </div>
+          </div>
+          <div class="station-body">
+            <p class="station-rules-title">Como se executa</p>
+            <ul class="rb-list">
+              <li>Cada repetição começa com um burpee: as mãos apoiam no chão atrás da linha, junto aos pés (no máximo a um comprimento de pé de distância). Depois de tocarem no chão, as mãos não podem avançar.</li>
+              <li>Na posição baixa, o peito deve tocar claramente no chão.</li>
+              <li>De seguida o atleta levanta-se e executa um salto em comprimento, com os dois pés a descolar e a aterrar em simultâneo e paralelos. Não é permitido posicionamento desalinhado, passos ou pequenos ajustes dos pés.</li>
+              <li>Ao levantar-se do burpee, os pés não podem ultrapassar a linha das pontas dos dedos das mãos.</li>
+              <li>O comprimento de cada salto é livre. Não são permitidos passos extra para a frente entre repetições.</li>
+              <li>A estação termina quando o atleta cruza a linha de chegada com um salto.</li>
+              <li>Na troca entre membros, o novo membro ativo começa com as mãos no ponto onde aterraram os pés do membro anterior, com dedos das mãos e dos pés alinhados. O membro em descanso caminha atrás do membro ativo.</li>
+            </ul>
+            <div class="rb-warn">
+              Violar as regras invalida a repetição; à segunda infração, aplica-se <strong>10 m de penalização</strong>.
+              Se o membro em descanso atrapalhar outros participantes, por exemplo cruzando faixas, a dupla recebe <strong>10 m</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- S8 WALL BALLS -->
+        <div class="station fade-in" id="est-8">
+          <div class="station-head">
+            <div class="station-num">S8</div>
+            <div class="station-titlewrap">
+              <div class="station-name">WALL BALLS</div>
+              <div class="station-target"><strong>100 lançamentos</strong> à parede ou alvo</div>
+            </div>
+          </div>
+          <div class="station-body">
+            <div class="loads">
+              <div class="load fem"><div class="load-cat">Femininas</div><div class="load-val">4 kg</div></div>
+              <div class="load mista"><div class="load-cat">Mistas</div><div class="load-val">6 kg</div></div>
+              <div class="load masc"><div class="load-cat">Masculinas</div><div class="load-val">9 kg</div></div>
+            </div>
+            <p class="station-rules-title">Como se executa</p>
+            <ul class="rb-list">
+              <li>O atleta começa em pé, a segurar a bola com as duas mãos. Agacha e, ao subir, lança a bola acertando no alvo correto. Isto conta como uma repetição.</li>
+              <li>Cada lançamento deve atingir o alvo designado: atletas femininas acertam no centro do alvo WOMEN; atletas masculinos no centro do alvo MEN.</li>
+              <li>Depois de tocar no alvo, o atleta pode apanhar a bola no ar e reiniciar, ou deixar a bola tocar no chão. Nesse caso, deve estar em pé, com ancas e joelhos estendidos, antes de iniciar novo agachamento.</li>
+              <li>Na posição mais baixa, as ancas devem descer abaixo da linha dos joelhos (abaixo dos 90 graus). O árbitro pode usar uma caixa de referência para garantir a profundidade.</li>
+              <li>Violar qualquer destas regras invalida a repetição.</li>
+            </ul>
+            <div class="rb-note">
+              <strong>Altura dos alvos.</strong> Women: 2,70 m &middot; Men: 3,00 m &middot; Mistas: 2,70 m e 3,00 m.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PENALIZAÇÕES -->
+    <section class="rb-section">
+      <div class="container">
+        <p class="rb-section-label fade-in">Resumo</p>
+        <h2 class="rb-h2 fade-in" id="penalizacoes">PENALIZAÇÕES</h2>
+        <p class="rb-p fade-in">Resumo das principais penalizações. A decisão final sobre qualquer infração cabe sempre ao Diretor da Competição.</p>
+        <div class="fade-in" style="overflow-x:auto;">
+          <table class="pen-table">
+            <thead>
+              <tr><th>Situação</th><th>Penalização</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Membros da dupla a correr a ritmos muito diferentes</td><td>3 min</td></tr>
+              <tr><td>Uma estação feita fora da ordem correta</td><td>3 min</td></tr>
+              <tr><td>Mais do que uma estação fora de ordem</td><td>Desclassificação</td></tr>
+              <tr><td>Farmer Walk: devolução incorreta dos kettlebells</td><td>30 seg</td></tr>
+              <tr><td>Sandbag Lunges: pousar o saco no chão</td><td>10 m</td></tr>
+              <tr><td>Sandbag Lunges: pousar o saco uma segunda vez</td><td>Desclassificação</td></tr>
+              <tr><td>Burpees Broad Jump: segunda infração à técnica</td><td>10 m</td></tr>
+              <tr><td>Membro em descanso a obstruir outros participantes</td><td>10 m</td></tr>
+              <tr><td>SkiErg e Remo: infração às regras da estação</td><td>Tempo, a definir pelo Head Judge</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSTITUIÇÕES -->
+    <section class="rb-section">
+      <div class="container">
+        <p class="rb-section-label fade-in">Antes da prova</p>
+        <h2 class="rb-h2 fade-in" id="substituicoes">SUBSTITUIÇÕES</h2>
+        <p class="rb-p fade-in">
+          Se um dos membros da dupla desistir, pode ser substituído. A única exigência é que o novo membro tenha o
+          <strong>mesmo sexo e a mesma faixa etária</strong> do membro substituído, para que a categoria e o escalão se mantenham.
+        </p>
+      </div>
+    </section>
+
+    <!-- ARBITRAGEM -->
+    <section class="rb-section">
+      <div class="container">
+        <p class="rb-section-label fade-in">Organização</p>
+        <h2 class="rb-h2 fade-in" id="arbitragem">ARBITRAGEM</h2>
+        <p class="rb-p fade-in">
+          Em cada estação há um árbitro responsável por garantir que todos os atletas completam o exercício de forma correta e segura,
+          em coordenação com o Head Judge dessa estação. Cada Head Judge é supervisionado pelo Diretor da Competição, que gere todos os
+          aspetos desportivos do evento e toma as decisões finais sobre arbitragem.
+        </p>
+        <div class="rb-note fade-in">
+          Todas as decisões do Diretor da Competição e da organização são <strong>finais</strong>.
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="container">
+      <div id="rb-cta" class="fade-in">
+        <h2 class="rb-cta-title">PREPARADO PARA<br /><span style="color:var(--accent1)">A LINHA DE PARTIDA?</span></h2>
+        <p class="rb-cta-sub">Agora que conheces o regulamento, garante o teu lugar na Crossers 2026.</p>
+        <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-cta">Inscrever a minha dupla</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">CROSSERS</div>
+          <div class="footer-brand-slogan">run. perform. overcome.</div>
+        </div>
+        <nav class="footer-nav" aria-label="Links do rodapé">
+          <h4>Evento</h4>
+          <ul>
+            <li><a href="/#evento">O Evento</a></li>
+            <li><a href="/#percurso">O Percurso</a></li>
+            <li><a href="/#estacoes">As Estações</a></li>
+            <li><a href="/#categorias">Categorias</a></li>
+            <li><a href="/rulebook/">Rulebook</a></li>
+            <li><a href="/#inscricoes">Inscrições</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Recursos">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/calendario/">Calendário de Provas</a></li>
+            <li><a href="/ginasios/">Diretório de Ginásios</a></li>
+            <li><a href="/rulebook/">Rulebook</a></li>
+          </ul>
+        </nav>
+        <div class="footer-social">
+          <h4>Redes Sociais</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/crossers.pt" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram Crossers">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Crossers. Todos os direitos reservados.</p>
+        <p class="footer-copy" style="letter-spacing:0.15em">run. perform. overcome.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.background = window.scrollY > 40 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.9)';
+    }, { passive: true });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
