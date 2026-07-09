@@ -197,6 +197,19 @@
     .g-station-badge { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); padding: 3px 7px; }
     .g-station-desc { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.6; margin-top: 8px; max-height: 0; overflow: hidden; transition: max-height 0.35s; }
     .g-station:hover .g-station-desc { max-height: 80px; }
+    .g-station-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .g-station-metric { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #000; background: var(--accent1); padding: 3px 8px; }
+
+    /* RULEBOOK CTA (secção estações) */
+    .rulebook-cta { display: flex; align-items: center; gap: 24px; margin-top: 3px; padding: 28px 32px; text-decoration: none; border: 1px solid rgba(76,175,80,0.35); background: linear-gradient(135deg, rgba(76,175,80,0.1) 0%, rgba(46,125,50,0.03) 100%); transition: border-color 0.25s, background 0.25s; }
+    .rulebook-cta:hover { border-color: var(--accent1); background: linear-gradient(135deg, rgba(76,175,80,0.16) 0%, rgba(46,125,50,0.05) 100%); }
+    .rulebook-cta-text { flex: 1; }
+    .rulebook-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent1); margin-bottom: 8px; }
+    .rulebook-cta-title { font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 0.04em; line-height: 1; color: #fff; margin-bottom: 8px; }
+    .rulebook-cta-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.65; max-width: 560px; }
+    .rulebook-cta-arrow { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--accent1); display: flex; align-items: center; justify-content: center; color: #000; transition: transform 0.25s; }
+    .rulebook-cta:hover .rulebook-cta-arrow { transform: translateX(4px); }
+    @media (max-width: 640px) { .rulebook-cta { flex-direction: column; align-items: flex-start; gap: 16px; padding: 24px; } }
 
     /* CATEGORIAS */
     #categorias { background: var(--bg); border-top: 1px solid var(--border); }
@@ -350,6 +363,7 @@
         <li><a href="#categorias">Categorias</a></li>
         <li><a href="#info">Info</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li><a href="/rulebook/">Rulebook</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul>
       <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-nav">Inscrever-me</a>
@@ -366,6 +380,7 @@
     <a href="#categorias" class="mobile-link">Categorias</a>
     <a href="#info" class="mobile-link">Info</a>
     <a href="#contacto" class="mobile-link">Contacto</a>
+    <a href="/rulebook/" class="mobile-link">Rulebook</a>
     <a href="/blog/" class="mobile-link">Blog</a>
     <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-grunge mobile-link">Inscrever-me</a>
   </div>
@@ -643,7 +658,7 @@
         <div class="g-station-body">
           <div class="g-station-num">S1</div>
           <div class="g-station-name">Ski Erg</div>
-          <div class="g-station-badge">Cardio</div>
+          <div class="g-station-meta"><span class="g-station-metric">1000 m</span><span class="g-station-badge">Cardio</span></div>
           <div class="g-station-desc">No Ski Concept2 em dupla. Enquanto um puxa, o outro descansa. Sem pausas no contador.</div>
         </div>
       </div>
@@ -655,7 +670,7 @@
         <div class="g-station-body">
           <div class="g-station-num">S2</div>
           <div class="g-station-name">Farmer Walk</div>
-          <div class="g-station-badge">For&ccedil;a</div>
+          <div class="g-station-meta"><span class="g-station-metric">200 m</span><span class="g-station-badge">For&ccedil;a</span></div>
           <div class="g-station-desc">Transporte de kettlebells, um em cada m&atilde;o. Um carrega, o outro acompanha. Trocas livres em qualquer ponto.</div>
         </div>
       </div>
@@ -667,7 +682,7 @@
         <div class="g-station-body">
           <div class="g-station-num">S3</div>
           <div class="g-station-name">Sandbag</div>
-          <div class="g-station-badge">For&ccedil;a</div>
+          <div class="g-station-meta"><span class="g-station-metric">100 m</span><span class="g-station-badge">For&ccedil;a</span></div>
           <div class="g-station-desc">Transporte de saco de areia ao ombro. Um carrega, o outro acompanha e assume quando necess&aacute;rio.</div>
         </div>
       </div>
@@ -679,7 +694,7 @@
         <div class="g-station-body">
           <div class="g-station-num">S4</div>
           <div class="g-station-name">Slam Ball Over the Shoulders</div>
-          <div class="g-station-badge">For&ccedil;a</div>
+          <div class="g-station-meta"><span class="g-station-metric">50 reps</span><span class="g-station-badge">For&ccedil;a</span></div>
           <div class="g-station-desc">Em dupla, um atira a bola ao ch&atilde;o com tudo, o outro descansa. Trocam quando quiserem, o contador n&atilde;o para.</div>
         </div>
       </div>
@@ -691,7 +706,7 @@
         <div class="g-station-body">
           <div class="g-station-num">S5</div>
           <div class="g-station-name">Remo</div>
-          <div class="g-station-badge">Cardio</div>
+          <div class="g-station-meta"><span class="g-station-metric">1000 m</span><span class="g-station-badge">Cardio</span></div>
           <div class="g-station-desc">No remo Concept2 em dupla. S&oacute; um rema de cada vez, trocando quando quiser. O contador n&atilde;o para.</div>
         </div>
       </div>
@@ -715,7 +730,7 @@
         <div class="g-station-body">
           <div class="g-station-num">S7</div>
           <div class="g-station-name">Burpees Broad Jump</div>
-          <div class="g-station-badge">Cardio</div>
+          <div class="g-station-meta"><span class="g-station-metric">80 m</span><span class="g-station-badge">Cardio</span></div>
           <div class="g-station-desc">Burpee broad jumps em faixa pr&oacute;pria. Um avan&ccedil;a, o outro aguarda e troca ao sinal.</div>
         </div>
       </div>
@@ -727,11 +742,24 @@
         <div class="g-station-body">
           <div class="g-station-num" style="color:var(--accent1)">S8 FINAL</div>
           <div class="g-station-name">Wall Balls</div>
-          <div class="g-station-badge">For&ccedil;a</div>
+          <div class="g-station-meta"><span class="g-station-metric">100 reps</span><span class="g-station-badge">For&ccedil;a</span></div>
           <div class="g-station-desc">Lan&ccedil;amentos de medicine ball em dupla. Um lan&ccedil;a, o outro descansa. Cada lan&ccedil;amento tem de atingir o alvo.</div>
         </div>
       </div>
 
+    </div>
+
+    <div class="container">
+      <a href="/rulebook/" class="rulebook-cta fade-in">
+        <div class="rulebook-cta-text">
+          <div class="rulebook-cta-label">Regulamento Oficial</div>
+          <div class="rulebook-cta-title">CONSULTA O RULEBOOK DA PROVA</div>
+          <div class="rulebook-cta-desc">Cargas por categoria, regras t&eacute;cnicas de cada esta&ccedil;&atilde;o e penaliza&ccedil;&otilde;es. Tudo o que precisas de saber para preparar a tua prova.</div>
+        </div>
+        <div class="rulebook-cta-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
     </div>
   </section>
 
