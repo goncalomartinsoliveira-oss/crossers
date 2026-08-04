@@ -16,6 +16,7 @@ export default defineConfig({
         ginasios: resolve(__dirname, 'ginasios/index.html'),
         rulebook: resolve(__dirname, 'rulebook/index.html'),
         'blog-erros-preparacao-prova-hibrida': resolve(__dirname, 'blog/erros-preparacao-prova-hibrida/index.html'),
+        'blog-urban-obstacles-crossers-loures': resolve(__dirname, 'blog/urban-obstacles-crossers-loures/index.html'),
       },
     },
   },
