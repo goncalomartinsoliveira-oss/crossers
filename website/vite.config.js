@@ -17,6 +17,7 @@ export default defineConfig({
         rulebook: resolve(__dirname, 'rulebook/index.html'),
         'blog-erros-preparacao-prova-hibrida': resolve(__dirname, 'blog/erros-preparacao-prova-hibrida/index.html'),
         'blog-urban-obstacles-crossers-loures': resolve(__dirname, 'blog/urban-obstacles-crossers-loures/index.html'),
+        'info-atleta': resolve(__dirname, 'info-atleta/index.html'),
       },
     },
   },

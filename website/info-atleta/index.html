@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informações ao Atleta | Crossers 2026 | Loures</title>
+  <meta name="description" content="Tudo o que precisas de saber para o dia da Crossers 2026: horário das waves, como chegar, estacionamento, levantamento de dorsal, balneários e pesquisa de atletas inscritos." />
+  <meta name="author" content="Crossers" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://crossers.pt/info-atleta/" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-clean.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crossers.pt/info-atleta/" />
+  <meta property="og:title" content="Informações ao Atleta | Crossers 2026" />
+  <meta property="og:description" content="Horário das waves, como chegar, estacionamento, levantamento de dorsal e pesquisa de atletas inscritos na Crossers 2026." />
+  <meta property="og:image" content="https://crossers.pt/assets/evento-photo.jpeg" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:site_name" content="Crossers" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRGDBVT0XG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZRGDBVT0XG');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a; --white: #FFFFFF;
+      --accent1: #4CAF50; --accent2: #2E7D32;
+      --masc: #4CAF50; --mista: #9B6FDE; --fem: #e0803a;
+      --card-bg: #111111; --border: #222222;
+      --muted: #555555; --warn: #e0803a;
+      --font-title: 'Bebas Neue', sans-serif; --font-body: 'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--bg); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+    body::after {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 200px 200px;
+    }
+
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAVBAR */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 64px; display: flex; align-items: center; background: rgba(10,10,10,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    #navbar .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent1); }
+    .nav-back { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+    .btn-nav { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #000; background: var(--accent1); border: none; padding: 10px 20px; text-decoration: none; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); }
+    .nav-mobile-overlay { display: none; position: fixed; inset: 64px 0 0; background: rgba(10,10,10,0.98); backdrop-filter: blur(8px); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .nav-mobile-overlay.open { display: flex; }
+    .nav-mobile-overlay a { font-family: var(--font-title); font-size: 2rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
+
+    /* HERO */
+    #ia-hero { padding: 140px 0 48px; }
+    .ia-hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent1); margin-bottom: 20px; }
+    .ia-hero-title { font-family: var(--font-title); font-size: clamp(2.6rem, 6vw, 4.5rem); letter-spacing: 0.02em; line-height: 0.98; margin-bottom: 20px; }
+    .ia-hero-sub { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 680px; margin-bottom: 32px; }
+    .ia-hero-meta { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 28px; }
+    .ia-hero-meta > div { background: var(--card-bg); padding: 16px 18px; }
+    .ia-hero-meta .k { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+    .ia-hero-meta .v { font-family: var(--font-title); font-size: 1.4rem; letter-spacing: 0.02em; }
+    .ia-index { display: flex; flex-wrap: wrap; gap: 10px; }
+    .ia-index a { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; border: 1px solid var(--border); padding: 8px 14px; transition: color 0.2s, border-color 0.2s; }
+    .ia-index a:hover { color: var(--accent1); border-color: var(--accent1); }
+
+    /* SECTIONS */
+    main section { padding: 56px 0; border-top: 1px solid var(--border); }
+    .ia-section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent1); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+    .ia-section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); max-width: 40px; }
+    .ia-section-title { font-family: var(--font-title); font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: 0.02em; margin-bottom: 18px; }
+    .ia-section-text { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 720px; margin-bottom: 24px; }
+    .ia-section-text strong { color: var(--white); }
+
+    .placeholder-box { border: 1px dashed rgba(224,128,58,0.5); background: rgba(224,128,58,0.06); padding: 14px 18px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--warn); margin-top: 10px; }
+    .placeholder-box svg { flex-shrink: 0; }
+
+    /* INFO CARDS GRID */
+    .info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .info-card { background: var(--card-bg); padding: 24px; }
+    .info-card h3 { font-family: var(--font-title); font-size: 1.3rem; letter-spacing: 0.02em; margin-bottom: 10px; display:flex; align-items:center; gap:8px; }
+    .info-card p { font-size: 13.5px; color: rgba(255,255,255,0.65); }
+    .info-card .tag { display:inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(76,175,80,0.12); color: var(--accent1); padding: 3px 9px; border-radius: 10px; margin-bottom: 10px; }
+    .info-card .tag.pending { background: rgba(224,128,58,0.12); color: var(--warn); }
+
+    /* WAVE TABLE */
+    .wave-table-wrap { overflow-x: auto; border: 1px solid var(--border); }
+    table.wave-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 640px; }
+    table.wave-table th { background: #141414; text-align: left; padding: 10px 14px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); border-bottom: 1px solid var(--border); }
+    table.wave-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: rgba(255,255,255,0.8); }
+    table.wave-table tr:last-child td { border-bottom: none; }
+    .cat-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:8px; }
+    .cat-dot.M { background: var(--masc); } .cat-dot.F { background: var(--fem); } .cat-dot.X { background: var(--mista); }
+    .wave-hora { font-family: var(--font-title); font-size: 1.1rem; color: var(--accent1); letter-spacing: 0.02em; }
+
+    /* SEARCH */
+    .search-box { position: relative; margin-bottom: 20px; }
+    .search-box input { width: 100%; background: var(--card-bg); border: 1px solid var(--border); color: var(--white); font-family: var(--font-body); font-size: 15px; padding: 16px 20px 16px 48px; }
+    .search-box input:focus { outline: none; border-color: var(--accent1); }
+    .search-box svg { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.35); }
+    #searchResults { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .result-card { background: var(--card-bg); padding: 16px 20px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .result-dorsal { font-family: var(--font-title); font-size: 1.8rem; color: var(--accent1); min-width: 56px; }
+    .result-body { flex: 1; min-width: 200px; }
+    .result-team { font-weight: 700; font-size: 15px; }
+    .result-athletes { font-size: 13px; color: rgba(255,255,255,0.55); }
+    .result-meta { display: flex; gap: 14px; font-size: 12px; color: rgba(255,255,255,0.45); flex-wrap: wrap; }
+    .result-meta strong { color: rgba(255,255,255,0.75); }
+    .search-empty { padding: 32px 20px; text-align: center; color: rgba(255,255,255,0.35); font-size: 13.5px; background: var(--card-bg); }
+    .search-hint { font-size: 12.5px; color: rgba(255,255,255,0.35); margin-top: 10px; }
+    .search-stats { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+
+    /* MAP PLACEHOLDER */
+    .map-placeholder { border: 1px dashed rgba(255,255,255,0.2); background: var(--card-bg); aspect-ratio: 16/8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,0.3); }
+
+    /* CTA */
+    .ia-cta { background: #111; border: 1px solid var(--border); border-left: 4px solid var(--accent1); padding: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .ia-cta h3 { font-family: var(--font-title); font-size: 1.6rem; margin-bottom: 4px; }
+    .ia-cta p { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .btn-grunge { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #000; background: var(--accent1); border: none; padding: 14px 32px; text-decoration: none; white-space: nowrap; }
+
+    /* FOOTER (shared pattern) */
+    #footer { background: #060606; border-top: 1px solid var(--border); padding: 64px 0 32px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); margin-bottom: 32px; flex-wrap: wrap; }
+    .footer-brand-name { font-family: var(--font-title); font-size: 2rem; letter-spacing: 0.1em; }
+    .footer-brand-slogan { font-size: 10px; font-weight: 600; letter-spacing: 0.3em; text-transform: lowercase; color: var(--muted); margin-top: 8px; }
+    .footer-nav h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+    .footer-nav ul { list-style: none; columns: 2; column-gap: 56px; }
+    .footer-nav ul li { margin-bottom: 12px; break-inside: avoid; }
+    .footer-nav a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-social h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+    .social-links { display: flex; gap: 12px; }
+    .social-link { width: 40px; height: 40px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-decoration: none; color: rgba(255,255,255,0.4); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-desktop-right { display: none; }
+      .ia-hero-meta { grid-template-columns: repeat(2,1fr); }
+      .info-grid { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; }
+      .ia-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Navegação">
+    <div class="container">
+      <a href="/" class="nav-logo" aria-label="Crossers, página principal">
+        <img src="/assets/logo-clean.svg" alt="Crossers" style="height:36px;width:auto;" />
+      </a>
+      <div style="display:flex;align-items:center;gap:24px;" class="nav-desktop-right">
+        <span class="nav-page-label">Informações ao Atleta</span>
+        <a href="/" class="nav-back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Evento
+        </a>
+        <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="btn-nav">Inscrever-me</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay" id="mobileMenu">
+    <a href="/" class="mobile-link">Evento</a>
+    <a href="/rulebook/" class="mobile-link">Rulebook</a>
+    <a href="https://lap2go.com/pt/event/crossers-2026" target="_blank" rel="noopener" class="mobile-link" style="color:var(--accent1)">Inscrever-me</a>
+  </div>
+
+  <!-- HERO -->
+  <header id="ia-hero">
+    <div class="container">
+      <p class="ia-hero-eyebrow fade-in">Crossers &middot; The Hybrid Race</p>
+      <h1 class="ia-hero-title fade-in">INFORMAÇÕES<br/>AO ATLETA</h1>
+      <p class="ia-hero-sub fade-in">
+        Tudo o que precisas de saber para o dia 18 de outubro: horário da tua wave, como chegar,
+        estacionamento, levantamento do dorsal e onde te vais encontrar com a tua dupla. Lê com atenção.
+      </p>
+      <div class="ia-hero-meta fade-in">
+        <div><div class="k">Data</div><div class="v">18 Out 2026</div></div>
+        <div><div class="k">Local</div><div class="v">Parque Papa Francisco, Loures</div></div>
+        <div><div class="k">1&ordf; Partida</div><div class="v">09:00</div></div>
+        <div><div class="k">Secretariado abre</div><div class="v">07:00</div></div>
+      </div>
+      <nav class="ia-index fade-in" aria-label="Índice">
+        <a href="#horario">Horário &amp; Waves</a>
+        <a href="#chegar">Como Chegar</a>
+        <a href="#local">No Local</a>
+        <a href="#pesquisa">Pesquisar Atleta</a>
+        <a href="#percurso">Percurso</a>
+        <a href="#contactos">Contactos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HORARIO / WAVES -->
+    <section id="horario">
+      <div class="container">
+        <p class="ia-section-label fade-in">Horário do Dia</p>
+        <h2 class="ia-section-title fade-in">AS TUAS WAVES DE PARTIDA</h2>
+        <p class="ia-section-text fade-in">
+          Partem no máximo <strong>8 duplas por wave</strong>, com partidas a cada <strong>6 minutos</strong>, a começar às <strong>09:00</strong>.
+          As waves estão agrupadas por categoria: primeiro as duplas masculinas, depois femininas, depois mistas.
+          Encontra a tua dupla na <a href="#pesquisa" style="color:var(--accent1)">pesquisa de atletas</a> para saberes exatamente a tua hora.
+        </p>
+        <p class="ia-section-text fade-in" style="margin-bottom:16px;">
+          <strong>Chegada recomendada:</strong> 45 minutos antes da tua wave. <strong>Levantamento do dorsal:</strong> até 15 minutos antes da tua partida, no secretariado.
+        </p>
+        <div class="wave-table-wrap fade-in">
+          <table class="wave-table">
+            <thead>
+              <tr><th>Wave</th><th>Categoria</th><th>Duplas</th><th>Chegada recomendada</th><th>Levantamento até</th><th>Partida</th></tr>
+            </thead>
+            <tbody id="waveTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO CHEGAR -->
+    <section id="chegar">
+      <div class="container">
+        <p class="ia-section-label fade-in">Logística</p>
+        <h2 class="ia-section-title fade-in">COMO CHEGAR</h2>
+        <div class="info-grid fade-in">
+          <div class="info-card">
+            <span class="tag">Confirmado</span>
+            <h3>🅿️ Estacionamento</h3>
+            <p>O Parque Papa Francisco tem <strong>2.000 lugares de estacionamento gratuitos</strong>. O acesso de carro só pode ser feito pelo lado de <strong>Santa Iria de Azóia</strong>.</p>
+          </div>
+          <div class="info-card">
+            <span class="tag pending">A confirmar</span>
+            <h3>🚆 Transportes públicos</h3>
+            <p>Informação sobre comboio/autocarro mais próximos em breve.</p>
+            <div class="placeholder-box">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+              PLACEHOLDER — preencher
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="tag pending">A confirmar</span>
+            <h3>📍 Morada / GPS</h3>
+            <p>Parque Papa Francisco, Loures.</p>
+            <div class="placeholder-box">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+              PLACEHOLDER — link do Google Maps
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NO LOCAL -->
+    <section id="local">
+      <div class="container">
+        <p class="ia-section-label fade-in">Dia da Prova</p>
+        <h2 class="ia-section-title fade-in">O QUE VAIS ENCONTRAR NO LOCAL</h2>
+        <div class="info-grid fade-in">
+          <div class="info-card">
+            <span class="tag">Confirmado</span>
+            <h3>🎫 Secretariado</h3>
+            <p>Abre às <strong>07:00</strong>. Levanta o dorsal da tua dupla até 15 minutos antes da vossa wave. Traz documento de identificação.</p>
+          </div>
+          <div class="info-card">
+            <span class="tag">Confirmado</span>
+            <h3>🎒 Bengaleiro</h3>
+            <p>Vai existir bengaleiro no local para guardares os teus pertences durante a prova.</p>
+          </div>
+          <div class="info-card">
+            <span class="tag pending">A confirmar</span>
+            <h3>🚿 Balneários</h3>
+            <p>Vão existir balneários no local.</p>
+            <div class="placeholder-box">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+              PLACEHOLDER — localização exata por confirmar
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PESQUISA DE ATLETAS -->
+    <section id="pesquisa">
+      <div class="container">
+        <p class="ia-section-label fade-in">332 Atletas &middot; 166 Duplas</p>
+        <h2 class="ia-section-title fade-in">PESQUISAR ATLETA / EQUIPA</h2>
+        <p class="ia-section-text fade-in">
+          Procura pelo teu nome, o nome da tua equipa ou o número de dorsal (assim que atribuído) para encontrares a tua wave e hora de partida.
+        </p>
+        <div class="search-box fade-in">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="searchInput" placeholder="Nome do atleta, da equipa, ou nº de dorsal..." autocomplete="off" />
+        </div>
+        <div id="searchResults" class="fade-in"></div>
+      </div>
+    </section>
+
+    <!-- PERCURSO -->
+    <section id="percurso">
+      <div class="container">
+        <p class="ia-section-label fade-in">O Percurso</p>
+        <h2 class="ia-section-title fade-in">MAPA DA PROVA</h2>
+        <p class="ia-section-text fade-in">8 km de corrida intercalados com 8 estações funcionais. Consulta também o <a href="/rulebook/" style="color:var(--accent1)">regulamento oficial</a> para as regras de cada estação.</p>
+        <div class="map-placeholder fade-in">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+          <span>PLACEHOLDER — mapa oficial do percurso</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTOS -->
+    <section id="contactos">
+      <div class="container">
+        <p class="ia-section-label fade-in">Dúvidas</p>
+        <h2 class="ia-section-title fade-in">CONTACTOS DE ÚLTIMA HORA</h2>
+        <div class="placeholder-box fade-in" style="max-width:500px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          PLACEHOLDER — número de telefone / Instagram para dúvidas do dia da prova
+        </div>
+
+        <div class="ia-cta fade-in" style="margin-top:32px;">
+          <div>
+            <h3>AINDA TENS DÚVIDAS?</h3>
+            <p>Consulta o regulamento oficial da prova.</p>
+          </div>
+          <a href="/rulebook/" class="btn-grunge">Ver Rulebook</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">CROSSERS</div>
+          <div class="footer-brand-slogan">run. perform. overcome.</div>
+        </div>
+        <nav class="footer-nav" aria-label="Links do rodapé">
+          <h4>Evento</h4>
+          <ul>
+            <li><a href="/#evento">O Evento</a></li>
+            <li><a href="/#percurso">O Percurso</a></li>
+            <li><a href="/#estacoes">As Estações</a></li>
+            <li><a href="/#categorias">Categorias</a></li>
+            <li><a href="/rulebook/">Rulebook</a></li>
+            <li><a href="/#inscricoes">Inscrições</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Recursos">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="/calendario/">Calendário de Provas</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/ginasios/">Diretório de Ginásios</a></li>
+          </ul>
+        </nav>
+        <div class="footer-social">
+          <h4>Redes Sociais</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/crossers.pt" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram Crossers">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Crossers. Todos os direitos reservados.</p>
+        <p class="footer-copy" style="letter-spacing:0.15em">run. perform. overcome.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // WAVE TABLE
+    const waves = [
+      {w:1,cat:'Masculina',n:8,cheg:'08:15',lev:'08:45',hora:'09:00'},
+      {w:2,cat:'Masculina',n:8,cheg:'08:21',lev:'08:51',hora:'09:06'},
+      {w:3,cat:'Masculina',n:8,cheg:'08:27',lev:'08:57',hora:'09:12'},
+      {w:4,cat:'Masculina',n:8,cheg:'08:33',lev:'09:03',hora:'09:18'},
+      {w:5,cat:'Masculina',n:8,cheg:'08:39',lev:'09:09',hora:'09:24'},
+      {w:6,cat:'Masculina',n:8,cheg:'08:45',lev:'09:15',hora:'09:30'},
+      {w:7,cat:'Masculina',n:8,cheg:'08:51',lev:'09:21',hora:'09:36'},
+      {w:8,cat:'Masculina',n:8,cheg:'08:57',lev:'09:27',hora:'09:42'},
+      {w:9,cat:'Masculina',n:3,cheg:'09:03',lev:'09:33',hora:'09:48'},
+      {w:10,cat:'Feminina',n:8,cheg:'09:09',lev:'09:39',hora:'09:54'},
+      {w:11,cat:'Feminina',n:8,cheg:'09:15',lev:'09:45',hora:'10:00'},
+      {w:12,cat:'Feminina',n:8,cheg:'09:21',lev:'09:51',hora:'10:06'},
+      {w:13,cat:'Feminina',n:8,cheg:'09:27',lev:'09:57',hora:'10:12'},
+      {w:14,cat:'Feminina',n:8,cheg:'09:33',lev:'10:03',hora:'10:18'},
+      {w:15,cat:'Feminina',n:8,cheg:'09:39',lev:'10:09',hora:'10:24'},
+      {w:16,cat:'Feminina',n:5,cheg:'09:45',lev:'10:15',hora:'10:30'},
+      {w:17,cat:'Mista',n:8,cheg:'09:51',lev:'10:21',hora:'10:36'},
+      {w:18,cat:'Mista',n:8,cheg:'09:57',lev:'10:27',hora:'10:42'},
+      {w:19,cat:'Mista',n:8,cheg:'10:03',lev:'10:33',hora:'10:48'},
+      {w:20,cat:'Mista',n:8,cheg:'10:09',lev:'10:39',hora:'10:54'},
+      {w:21,cat:'Mista',n:8,cheg:'10:15',lev:'10:45',hora:'11:00'},
+      {w:22,cat:'Mista',n:6,cheg:'10:21',lev:'10:51',hora:'11:06'}
+    ];
+    const catCode = {Masculina:'M', Feminina:'F', Mista:'X'};
+    const tbody = document.getElementById('waveTableBody');
+    tbody.innerHTML = waves.map(w => `
+      <tr>
+        <td>#${w.w}</td>
+        <td><span class="cat-dot ${catCode[w.cat]}"></span>${w.cat}</td>
+        <td>${w.n}</td>
+        <td>${w.cheg}</td>
+        <td>${w.lev}</td>
+        <td class="wave-hora">${w.hora}</td>
+      </tr>`).join('');
+
+    // SEARCH
+    const ROSTER = [{"d":1,"c":"M","e":"Putedideia","a":["Miguel Claro Ferreira Das Neves","Cesar Machado"],"g":"45-49","w":1,"h":"09:00"},{"d":2,"c":"M","e":"Ice Hockey Champions","a":["Ricardo Ferreira","Armando Santos"],"g":"30-34","w":1,"h":"09:00"},{"d":3,"c":"M","e":"Plano B","a":["Antonio Lourenço","Pedro Antunes"],"g":"25-29","w":1,"h":"09:00"},{"d":4,"c":"M","e":"Será que  dá?","a":["Joel Dias","Nuno Pacheco"],"g":"40-44","w":1,"h":"09:00"},{"d":5,"c":"M","e":"Os Pedros","a":["Pedro Reduto","Pedro Cary"],"g":"30-34","w":1,"h":"09:00"},{"d":6,"c":"M","e":"Os Sobreviventes","a":["Eduardo Coelho","Gonçalo Almeida"],"g":"40-44","w":1,"h":"09:00"},{"d":7,"c":"M","e":"Ikigai Team","a":["Pedro Gomes Santos","Pedro Queiros"],"g":"50-54","w":1,"h":"09:00"},{"d":8,"c":"M","e":"Infractores do Cronómetro","a":["David Correia Martins","Daniel Gonçalves"],"g":"30-34","w":1,"h":"09:00"},{"d":9,"c":"M","e":"Limited Edition Team","a":["João Oliveira","Frederico Rodrigues"],"g":"40-44","w":2,"h":"09:06"},{"d":10,"c":"M","e":"RPBS","a":["Ricardo Pereira","Bruno Sarinhas"],"g":"30-34","w":2,"h":"09:06"},{"d":11,"c":"M","e":"Hy-Fathers","a":["Mário de Almeida","Nuno Santos"],"g":"35-39","w":2,"h":"09:06"},{"d":12,"c":"M","e":"Tiago Carlos","a":["Ricardo Pereira","Tiago Carlos"],"g":"25-29","w":2,"h":"09:06"},{"d":13,"c":"M","e":"Hilton Team","a":["Fernando Nogueira","Fernando Almeida"],"g":"30-34","w":2,"h":"09:06"},{"d":14,"c":"M","e":"Pandaurso","a":["Celso Duarte","Paulo Abreu"],"g":"40-44","w":2,"h":"09:06"},{"d":15,"c":"M","e":"Power Rangers","a":["Hugo Santos","Gonçalo Querido"],"g":"35-39","w":2,"h":"09:06"},{"d":16,"c":"M","e":"Os arruaças","a":["jorge alves","Joao Carvalho"],"g":"35-39","w":2,"h":"09:06"},{"d":17,"c":"M","e":"Portuguese Brothes","a":["Pedro Margarido","João Arrojado"],"g":"35-39","w":3,"h":"09:12"},{"d":18,"c":"M","e":"Team Altinho","a":["Diogo Alves","Paulo Fernando"],"g":"40-44","w":3,"h":"09:12"},{"d":19,"c":"M","e":"Limited Edition Team","a":["Helder Outeiro","Rui Pereira"],"g":"35-39","w":3,"h":"09:12"},{"d":20,"c":"M","e":"Há cerveja?","a":["Carlos Gabriel Martins Godinho Cabrita","João Miguel Lourenço Calca"],"g":"25-29","w":3,"h":"09:12"},{"d":21,"c":"M","e":"2615 - Sem Joelhos, sem desculpas","a":["Bruno Azevedo","João Diogo Pires"],"g":"30-34","w":3,"h":"09:12"},{"d":22,"c":"M","e":"O Gordo vai à Baliza","a":["João Lopes","Mickael Marques"],"g":"35-39","w":3,"h":"09:12"},{"d":23,"c":"M","e":"ForFive","a":["Luis Frade","Jorge Mendes"],"g":"45-49","w":3,"h":"09:12"},{"d":24,"c":"M","e":"André e Luís","a":["André Gonçalves","Luís Sousa"],"g":"25-29","w":3,"h":"09:12"},{"d":25,"c":"M","e":"Doido+Maluco","a":["José Rodrigues","Tiago Amoreira"],"g":"25-29","w":4,"h":"09:18"},{"d":26,"c":"M","e":"Molexados","a":["Manel Martins","Nuno Machado"],"g":"25-29","w":4,"h":"09:18"},{"d":27,"c":"M","e":"Pedro Fernandes","a":["Pedro Fernandes","Mauricio Sousa"],"g":"30-34","w":4,"h":"09:18"},{"d":28,"c":"M","e":"MICHAEL & IRIA","a":["Michael Santos","Vítor Iria"],"g":"25-29","w":4,"h":"09:18"},{"d":29,"c":"M","e":"Dois Tolos , Um Hyrox","a":["Daniel Caetano Gamboias","André Proença"],"g":"U24","w":4,"h":"09:18"},{"d":30,"c":"M","e":"Macambúzios","a":["Ivan Santos","Manuel Roque"],"g":"30-34","w":4,"h":"09:18"},{"d":31,"c":"M","e":"Ursos que o pariu","a":["Allyson lima","João quintas"],"g":"30-34","w":4,"h":"09:18"},{"d":32,"c":"M","e":"Vegans","a":["Henrique Miguel Fonseca Taborda","Joel Edgar Guedes Tavares"],"g":"35-39","w":4,"h":"09:18"},{"d":33,"c":"M","e":"Wall Ballerz","a":["André Filipe Silva Teixeira","Luís Carvalho"],"g":"30-34","w":5,"h":"09:24"},{"d":34,"c":"M","e":"2 Não Valem 1","a":["Bernardo Rei","Rodrigo Lourenço"],"g":"U24","w":5,"h":"09:24"},{"d":35,"c":"M","e":"Fermentação","a":["João Carlos de Freitas Cruz","Diogo Manuel Chorão Constantino"],"g":"35-39","w":5,"h":"09:24"},{"d":36,"c":"M","e":"Capas & Kopos","a":["Mikael Ferreira","Irineu Sachova"],"g":"25-29","w":5,"h":"09:24"},{"d":37,"c":"M","e":"Devoradores de Terreno","a":["Salvador Lopes Torres","José Adriano Torres"],"g":"U24","w":5,"h":"09:24"},{"d":38,"c":"M","e":"Charlie & Delta","a":["Bruno Tabuada","António Quintino"],"g":"30-34","w":5,"h":"09:24"},{"d":39,"c":"M","e":"Garantia Expirada","a":["Miguel Barreiros","Luis Almeida"],"g":"45-49","w":5,"h":"09:24"},{"d":40,"c":"M","e":"Os Lusiadas","a":["Gonçalo Silva","Ricardo Matos"],"g":"40-44","w":5,"h":"09:24"},{"d":41,"c":"M","e":"Zona T","a":["João Pinto","Joao Pacheco"],"g":"35-39","w":6,"h":"09:30"},{"d":42,"c":"M","e":"Juventude Suína","a":["Pedro Lopes","Rúben Pedroso"],"g":"U24","w":6,"h":"09:30"},{"d":43,"c":"M","e":"Maningue Nice!","a":["Mauro Ribeiro","Federico Bascià"],"g":"30-34","w":6,"h":"09:30"},{"d":44,"c":"M","e":"Eagle Box","a":["Leonardo Diniz","Pedro Joaquim"],"g":"25-29","w":6,"h":"09:30"},{"d":45,"c":"M","e":"Balboas e Napoleões","a":["Rafael Ventura","João Pascoal"],"g":"30-34","w":6,"h":"09:30"},{"d":46,"c":"M","e":"NOVA MORADA","a":["SÉRGIO RAMOS","Miguel Fernandes"],"g":"50-54","w":6,"h":"09:30"},{"d":47,"c":"M","e":"Equipa Operação Timestamp","a":["Fernando Gomes","Luis Amaral"],"g":"U24","w":6,"h":"09:30"},{"d":48,"c":"M","e":"Team upgrade","a":["Pedro Santos","Daniel Valério"],"g":"25-29","w":6,"h":"09:30"},{"d":49,"c":"M","e":"Hustle Team","a":["Joel Rendall","Rafael Pinheiro Cabrita"],"g":"30-34","w":7,"h":"09:36"},{"d":50,"c":"M","e":"Macho Quimérico e Meio","a":["Jorge Mendes","Carlos Santos"],"g":"35-39","w":7,"h":"09:36"},{"d":51,"c":"M","e":"TEAM ROCKET","a":["João Romão","Miguel Sousa"],"g":"30-34","w":7,"h":"09:36"},{"d":52,"c":"M","e":"Two Generations, One Mistake","a":["Afonso Casqueiro","Carlos Silva"],"g":"25-29","w":7,"h":"09:36"},{"d":53,"c":"M","e":"Silva VIPs","a":["Francisco Casqueiro","Joao Silva"],"g":"25-29","w":7,"h":"09:36"},{"d":54,"c":"M","e":"Valente Pinto","a":["Tiago Barbosa","Jorge Barbosa"],"g":"25-29","w":7,"h":"09:36"},{"d":55,"c":"M","e":"HYBROX","a":["Guilherme Carvalho","Nuno Teixeira"],"g":"30-34","w":7,"h":"09:36"},{"d":56,"c":"M","e":"Hybrid Wolves","a":["Jorge Ribeiro","João Rodrigues"],"g":"30-34","w":7,"h":"09:36"},{"d":57,"c":"M","e":"strong","a":["Elber Matos Mangefesti","João Jesus"],"g":"30-34","w":8,"h":"09:42"},{"d":58,"c":"M","e":"Pinho e Malta","a":["Carlos Pinho","Ruben Malta"],"g":"25-29","w":8,"h":"09:42"},{"d":59,"c":"M","e":"Studio131","a":["Bruno Ferreira","Luís Simão"],"g":"35-39","w":8,"h":"09:42"},{"d":60,"c":"M","e":"Luis Marques","a":["Luís Marques","Daniel Melo"],"g":"U24","w":8,"h":"09:42"},{"d":61,"c":"M","e":"The Bravery","a":["João Pedro Preguiça","Filipe Gouveia"],"g":"35-39","w":8,"h":"09:42"},{"d":62,"c":"M","e":"Os Evolution","a":["Carlos Gonçalves","Daniel Ameixa"],"g":"35-39","w":8,"h":"09:42"},{"d":63,"c":"M","e":"Runners Diff","a":["Tiago Adrião","Martim Cristóvão"],"g":"U24","w":8,"h":"09:42"},{"d":64,"c":"M","e":"Jocas","a":["André Paulino","André Bidet"],"g":"30-34","w":8,"h":"09:42"},{"d":65,"c":"M","e":"Novatos","a":["Diogo Gomes","Pedro Peixoto"],"g":"25-29","w":9,"h":"09:48"},{"d":66,"c":"M","e":"ASHE Team","a":["André Silva","Hélio Évora"],"g":"35-39","w":9,"h":"09:48"},{"d":67,"c":"M","e":"Bitó e Bitinha","a":["Vitor Fernandes","Vitor Silva"],"g":"25-29","w":9,"h":"09:48"},{"d":101,"c":"F","e":"Agora aguenta","a":["Joana Antunes","Sara Quartel"],"g":"25-29","w":10,"h":"09:54"},{"d":102,"c":"F","e":"AstUlo Force","a":["Mariana Pinheiro","Daniela Ribeiro"],"g":"25-29","w":10,"h":"09:54"},{"d":103,"c":"F","e":"Team AC","a":["Andreia Lourenço","Catarina Lourenço"],"g":"25-29","w":10,"h":"09:54"},{"d":104,"c":"F","e":"Ajalenjanas","a":["Filipa Saiote","Inês Malveiro"],"g":"25-29","w":10,"h":"09:54"},{"d":105,"c":"F","e":"Limited Edition Team","a":["Cláudia Mira Duarte","Cláudia Magalhães"],"g":"40-44","w":10,"h":"09:54"},{"d":106,"c":"F","e":"Be Better","a":["Susana Duro","Catarina Coito"],"g":"45-49","w":10,"h":"09:54"},{"d":107,"c":"F","e":"As velozes","a":["Neuza Borralho","Magda Borralho"],"g":"35-39","w":10,"h":"09:54"},{"d":108,"c":"F","e":"Unbreakable","a":["Inês Durão","Leonor Durão de Almeida"],"g":"U24","w":10,"h":"09:54"},{"d":109,"c":"F","e":"Sem Travão","a":["Laura Abreu","Teresa Neves"],"g":"35-39","w":11,"h":"10:00"},{"d":110,"c":"F","e":"XTEAM","a":["Susana Cruz","Cláudia Gonçalves"],"g":"45-49","w":11,"h":"10:00"},{"d":111,"c":"F","e":"Irmãs Metralha","a":["Catarina Martins","Margarida Martins"],"g":"U24","w":11,"h":"10:00"},{"d":112,"c":"F","e":"Warriors","a":["Ana Carolina Franco","Nuria Branco"],"g":"30-34","w":11,"h":"10:00"},{"d":113,"c":"F","e":"Gang das Cotas","a":["Cidália Maria Mateus Fidalgo Borges","Inês Sofia Nunes Paulino"],"g":"40-44","w":11,"h":"10:00"},{"d":114,"c":"F","e":"Santos&Franco","a":["Ana Franco","Iolanda Santos"],"g":"30-34","w":11,"h":"10:00"},{"d":115,"c":"F","e":"The burpergs","a":["Tania Saraiva","Célia Albuquerque"],"g":"40-44","w":11,"h":"10:00"},{"d":116,"c":"F","e":"Twins","a":["Cátia Lampreia","Sónia Pimentel"],"g":"35-39","w":11,"h":"10:00"},{"d":117,"c":"F","e":"Chouriças","a":["Joana Costa","Susana Moreira"],"g":"35-39","w":12,"h":"10:06"},{"d":118,"c":"F","e":"LABlisa","a":["Lília Gonçalves","Sandra Cabaço"],"g":"50-54","w":12,"h":"10:06"},{"d":119,"c":"F","e":"Mestres","a":["Beatriz Donga","Adriana Mestre"],"g":"25-29","w":12,"h":"10:06"},{"d":120,"c":"F","e":"MariTata","a":["Marisa Roque","Rita Pinto"],"g":"35-39","w":12,"h":"10:06"},{"d":121,"c":"F","e":"Alpharrecas","a":["Adriana Firme","Inês gonçalves"],"g":"35-39","w":12,"h":"10:06"},{"d":122,"c":"F","e":"Rainhas do Hyrox","a":["Ana Catarina Alves","Mariana Ferreira Ferrás"],"g":"25-29","w":12,"h":"10:06"},{"d":123,"c":"F","e":"Golden Girls","a":["Cátia Ferreira","Rita Sousa"],"g":"30-34","w":12,"h":"10:06"},{"d":124,"c":"F","e":"Experiência & inconsequência","a":["Cecília Caroline Soares de Santana","Helena Carla Magalhães Pereira"],"g":"35-39","w":12,"h":"10:06"},{"d":125,"c":"F","e":"Manas Rebenta","a":["Patrícia Rebelo","Sara Rebelo"],"g":"25-29","w":13,"h":"10:12"},{"d":126,"c":"F","e":"LABaredas","a":["Marisa Silva","Maria João Coronha"],"g":"40-44","w":13,"h":"10:12"},{"d":127,"c":"F","e":"Anda e Não Chora","a":["Raquel Brito","Susana Mendes"],"g":"35-39","w":13,"h":"10:12"},{"d":128,"c":"F","e":"Brasa na raça","a":["Eloá Furtado","Sophia Toledo"],"g":"U24","w":13,"h":"10:12"},{"d":129,"c":"F","e":"The Bravery","a":["Patricia Melo","Patricia Montes"],"g":"35-39","w":13,"h":"10:12"},{"d":130,"c":"F","e":"Brabas em dobro","a":["Sara Avelino","Marjorie Monteiro"],"g":"25-29","w":13,"h":"10:12"},{"d":131,"c":"F","e":"Revolution","a":["Nair Barroso","Veronica Raposo"],"g":"30-34","w":13,"h":"10:12"},{"d":132,"c":"F","e":"Double Trouble","a":["Mafalda Carneiro","Diana Orghian"],"g":"35-39","w":13,"h":"10:12"},{"d":133,"c":"F","e":"RX em formação","a":["Cátia Cruz","Mónica Cruz"],"g":"35-39","w":14,"h":"10:18"},{"d":134,"c":"F","e":"2pind","a":["Matilde d’Orey","Madalena Portugal"],"g":"U24","w":14,"h":"10:18"},{"d":135,"c":"F","e":"OCR LAB GILS","a":["Fabiana Zunfrili","Celina Veiga"],"g":"50-54","w":14,"h":"10:18"},{"d":136,"c":"F","e":"Cá-Dê","a":["Carla Cura","Deli do Amaral"],"g":"45-49","w":14,"h":"10:18"},{"d":137,"c":"F","e":"Oliver B","a":["Ana Rita Pestana Gil","Maria Antunes Garcia Barata"],"g":"25-29","w":14,"h":"10:18"},{"d":138,"c":"F","e":"2 MUCH 2 HANDLE","a":["Inês Sofia Sabrosa Modesto","Andreia Filipa Mendes Marouvo"],"g":"25-29","w":14,"h":"10:18"},{"d":139,"c":"F","e":"Upgrade girls","a":["Marlene Rodrigues","Renata Domingos"],"g":"35-39","w":14,"h":"10:18"},{"d":140,"c":"F","e":"Fora Da Caixa","a":["Carina Vieira","Ana Marques"],"g":"40-44","w":14,"h":"10:18"},{"d":141,"c":"F","e":"Helena e Sofia","a":["Sofia Pereira","Helena Aurélio"],"g":"40-44","w":15,"h":"10:24"},{"d":142,"c":"F","e":"Vibes before Reps","a":["Ana Diniz","Daniela Fonseca"],"g":"25-29","w":15,"h":"10:24"},{"d":143,"c":"F","e":"Carecas","a":["Catarina Redinha","Inês Gomes"],"g":"25-29","w":15,"h":"10:24"},{"d":144,"c":"F","e":"Olímpicas","a":["Inês Gouveia","Mariana Gueifão"],"g":"25-29","w":15,"h":"10:24"},{"d":145,"c":"F","e":"Team 12 30","a":["Marta Sérgio","Rita Ferreira Ribeiro"],"g":"30-34","w":15,"h":"10:24"},{"d":146,"c":"F","e":"PowerGirlsEdition","a":["Patrícia Pinto","Isabel Barra"],"g":"45-49","w":15,"h":"10:24"},{"d":147,"c":"F","e":"Tal mãe, tal filha.","a":["Carla Varela","Margarida Varela"],"g":"25-29","w":15,"h":"10:24"},{"d":148,"c":"F","e":"CrossGirls by For5","a":["Elisabete Tereso Frade","Matilde Ferreira"],"g":"U24","w":15,"h":"10:24"},{"d":149,"c":"F","e":"Unstoppable","a":["Belisa Castelhano","Filipa Santos"],"g":"25-29","w":16,"h":"10:30"},{"d":150,"c":"F","e":"I see Your Power","a":["Patrícia Pereira","Joana Teixeira"],"g":"25-29","w":16,"h":"10:30"},{"d":151,"c":"F","e":"Bia&Lu","a":["Lúcia Cardoso","Beatriz Romão"],"g":"U24","w":16,"h":"10:30"},{"d":152,"c":"F","e":"Sandra de Sousa Ferreira","a":["Andreia Farrim","Sandra Ferreira"],"g":"40-44","w":16,"h":"10:30"},{"d":153,"c":"F","e":"Ao relatim mas imbativeis","a":["Filipa Cortes Nogueira Martins","Carina Paulo"],"g":"30-34","w":16,"h":"10:30"},{"d":201,"c":"X","e":"Ritmo & Raça","a":["Isabel Monge","Bruno Aires"],"g":"35-39","w":17,"h":"10:36"},{"d":202,"c":"X","e":"JásintoCoragem","a":["Liliana Jacinto","Fabio Coragem"],"g":"40-44","w":17,"h":"10:36"},{"d":203,"c":"X","e":"Jo²","a":["Joao Pedro Cabral Teixeira","Joana Aroeira"],"g":"U24","w":17,"h":"10:36"},{"d":204,"c":"X","e":"R&D Power","a":["Daniel Martins","Rita Pereira"],"g":"30-34","w":17,"h":"10:36"},{"d":205,"c":"X","e":"Agarró","a":["João Duque","Carolina Machado"],"g":"30-34","w":17,"h":"10:36"},{"d":206,"c":"X","e":"CrossFit Odivelas","a":["Nidia Silva","Eduardo Gonzalez"],"g":"30-34","w":17,"h":"10:36"},{"d":207,"c":"X","e":"Ela Puxa, Eu Sigo","a":["Sílvia Andrade","Pedro Lopes"],"g":"35-39","w":17,"h":"10:36"},{"d":208,"c":"X","e":"Partners in Pain","a":["Carolina Gaspar Vidais","João Francisco Santos Mouchão"],"g":"U24","w":17,"h":"10:36"},{"d":209,"c":"X","e":"Os Pernas de Pau","a":["Pedro Miguel Rodrigues Vidais","Marisa Franco"],"g":"45-49","w":18,"h":"10:42"},{"d":210,"c":"X","e":"Limited Edition Team","a":["Cesar Duarte","Rita Rodrigues"],"g":"40-44","w":18,"h":"10:42"},{"d":211,"c":"X","e":"OCR Portugal LAB Club","a":["Bruno Sousa","Ana Sousa"],"g":"45-49","w":18,"h":"10:42"},{"d":212,"c":"X","e":"NãoSabiz","a":["Bruno Anjos","Marisa Lopes"],"g":"30-34","w":18,"h":"10:42"},{"d":213,"c":"X","e":"MeS","a":["Sónia Fernandes","Marco Santos"],"g":"45-49","w":18,"h":"10:42"},{"d":214,"c":"X","e":"Panda é hamster power","a":["Cátia Fernandes","Diogo Reis"],"g":"35-39","w":18,"h":"10:42"},{"d":215,"c":"X","e":"Irmãos de Aço","a":["José Afonso","Catarina Afonso"],"g":"30-34","w":18,"h":"10:42"},{"d":216,"c":"X","e":"Dupla de 2","a":["Rui Silva","Angela Ramalho"],"g":"50-54","w":18,"h":"10:42"},{"d":217,"c":"X","e":"Mix de Sofrimento","a":["Filipa Santiago Franco","Nuno Lazarim"],"g":"35-39","w":19,"h":"10:48"},{"d":218,"c":"X","e":"Flipa&Pedro","a":["Filipa Correia","Pedro Matias"],"g":"U24","w":19,"h":"10:48"},{"d":219,"c":"X","e":"NANOTC'S","a":["David Correia","Filomena Gonçalves"],"g":"45-49","w":19,"h":"10:48"},{"d":220,"c":"X","e":"Crossers OCR Portugal LAB","a":["Alexandra Carvalho","Miguel Barros"],"g":"40-44","w":19,"h":"10:48"},{"d":221,"c":"X","e":"Beatriz e Tomás","a":["Beatriz Leitão","Tomás Alexandre"],"g":"U24","w":19,"h":"10:48"},{"d":222,"c":"X","e":"Só Vim Acompanhar","a":["Ivan Santos","Margarida Reis"],"g":"25-29","w":19,"h":"10:48"},{"d":223,"c":"X","e":"BV Couple","a":["Bruno Miguel Dias","Vanessa Oliveira Rodrigues"],"g":"40-44","w":19,"h":"10:48"},{"d":224,"c":"X","e":"BFFs","a":["Catarina Neto","Nelson Cruz"],"g":"35-39","w":19,"h":"10:48"},{"d":225,"c":"X","e":"VOA","a":["Emanuel Santos","Isabel Santos"],"g":"50-54","w":20,"h":"10:54"},{"d":226,"c":"X","e":"JuZé","a":["José Domingues","Joana Graça"],"g":"25-29","w":20,"h":"10:54"},{"d":227,"c":"X","e":"Limited Edition Team","a":["Ricardo Silva","Sara André"],"g":"35-39","w":20,"h":"10:54"},{"d":228,"c":"X","e":"Quarentas","a":["Jorge Quarenta","Mónica Quarenta"],"g":"50-54","w":20,"h":"10:54"},{"d":229,"c":"X","e":"Marra","a":["Fábio Marques","Maria Carracha"],"g":"25-29","w":20,"h":"10:54"},{"d":230,"c":"X","e":"M&G","a":["Maria Andrade","Guilherme Andrade"],"g":"30-34","w":20,"h":"10:54"},{"d":231,"c":"X","e":"Hero Team","a":["Carolina Isabel Ferreira Gregório","Ivo Jesus da Silva Ferreira"],"g":"35-39","w":20,"h":"10:54"},{"d":232,"c":"X","e":"Jovens & Brutos","a":["Salvador Almeida","Leonor Barreiros"],"g":"U24","w":20,"h":"10:54"},{"d":233,"c":"X","e":"Não Havia Necessidade","a":["Hugo Rebelo","Mariana Mira"],"g":"30-34","w":21,"h":"11:00"},{"d":234,"c":"X","e":"Tartarugas Ninja","a":["Luis Narciso","Rute Ribeiro"],"g":"40-44","w":21,"h":"11:00"},{"d":235,"c":"X","e":"M&M","a":["Maria Cotrim","André Machado"],"g":"30-34","w":21,"h":"11:00"},{"d":236,"c":"X","e":"Ortículas","a":["Rodrigo Orta","Bárbara Orta"],"g":"25-29","w":21,"h":"11:00"},{"d":237,"c":"X","e":"1+1 à prova","a":["Francisco Duarte","Beatriz Cunha"],"g":"U24","w":21,"h":"11:00"},{"d":238,"c":"X","e":"BroSis","a":["Ana Camacho","João Camacho"],"g":"45-49","w":21,"h":"11:00"},{"d":239,"c":"X","e":"Corre Que Dá","a":["Zé Rosa","Andréia robalo"],"g":"30-34","w":21,"h":"11:00"},{"d":240,"c":"X","e":"Joca, não dói, juro pela minha morte!","a":["Joana Filipa Loureiro Veríssimo","João Cunha Jóia"],"g":"30-34","w":21,"h":"11:00"},{"d":241,"c":"X","e":"Dama e Vagabundo","a":["Duarte Alves","Cátia Alves"],"g":"25-29","w":22,"h":"11:06"},{"d":242,"c":"X","e":"Burpee & Chill","a":["Ana Carolina Rufino Gonçalves","André Gonçalo Abreu Faria"],"g":"25-29","w":22,"h":"11:06"},{"d":243,"c":"X","e":"Not Fast, Just Furious","a":["Maria Asturiano","Hugo Duarte"],"g":"U24","w":22,"h":"11:06"},{"d":244,"c":"X","e":"Cross-Fiteiros","a":["João Campos","Patrícia Pereira dos Santos"],"g":"50-54","w":22,"h":"11:06"},{"d":245,"c":"X","e":"Lungevidade","a":["Filipa Dias","João Sabina"],"g":"45-49","w":22,"h":"11:06"},{"d":246,"c":"X","e":"JuJu","a":["Sérgio Liberman Junior","Joana Parracho"],"g":"30-34","w":22,"h":"11:06"}];
+    const catLabel = {M:'Masculina', F:'Feminina', X:'Mista'};
+    const input = document.getElementById('searchInput');
+    const results = document.getElementById('searchResults');
+
+    function renderResults(items) {
+      if (!input.value.trim()) { results.innerHTML = ''; return; }
+      if (items.length === 0) {
+        results.innerHTML = '<div class="search-empty">Nenhum atleta ou equipa encontrado. Confirma a escrita do nome.</div>';
+        return;
+      }
+      results.innerHTML = `<div class="search-stats">${items.length} resultado${items.length>1?'s':''}</div>` +
+        items.slice(0,30).map(r => `
+        <div class="result-card">
+          <div class="result-dorsal">#${r.d}</div>
+          <div class="result-body">
+            <div class="result-team">${r.e}</div>
+            <div class="result-athletes">${r.a.join(' &amp; ')}</div>
+          </div>
+          <div class="result-meta">
+            <span><span class="cat-dot ${r.c}"></span><strong>${catLabel[r.c]}</strong></span>
+            <span>Escalão <strong>${r.g}</strong></span>
+            <span>Wave <strong>#${r.w}</strong></span>
+            <span>Partida <strong>${r.h}</strong></span>
+          </div>
+        </div>`).join('');
+    }
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      if (!q) { results.innerHTML = ''; return; }
+      const matches = ROSTER.filter(r =>
+        r.e.toLowerCase().includes(q) ||
+        r.a.some(name => name.toLowerCase().includes(q)) ||
+        String(r.d).includes(q)
+      );
+      renderResults(matches);
+    });
+  </script>
+</body>
+</html>
