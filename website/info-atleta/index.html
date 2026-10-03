@@ -78,9 +78,17 @@
     .ia-hero-meta > div { background: var(--card-bg); padding: 16px 18px; }
     .ia-hero-meta .k { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
     .ia-hero-meta .v { font-family: var(--font-title); font-size: 1.4rem; letter-spacing: 0.02em; }
-    .ia-index { display: flex; flex-wrap: wrap; gap: 10px; }
-    .ia-index a { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; border: 1px solid var(--border); padding: 8px 14px; transition: color 0.2s, border-color 0.2s; }
-    .ia-index a:hover { color: var(--accent1); border-color: var(--accent1); }
+    .quicklinks { display: flex; flex-direction: column; gap: 10px; max-width: 480px; }
+    .quicklink { display: flex; align-items: center; gap: 16px; background: var(--card-bg); border: 1px solid var(--border); padding: 16px 18px; text-decoration: none; color: var(--white); transition: border-color 0.2s, transform 0.15s, background 0.2s; }
+    .quicklink:hover { border-color: var(--accent1); transform: translateX(2px); background: #141414; }
+    .quicklink .icon { font-size: 22px; width: 30px; text-align: center; flex-shrink: 0; }
+    .quicklink .txt { display: flex; flex-direction: column; gap: 2px; }
+    .quicklink .label { font-weight: 700; font-size: 15px; }
+    .quicklink .sub { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .quicklink .arrow { margin-left: auto; color: rgba(255,255,255,0.3); font-size: 16px; transition: transform 0.2s, color 0.2s; }
+    .quicklink:hover .arrow { color: var(--accent1); transform: translateX(3px); }
+    .quicklink-accent { border-color: rgba(76,175,80,0.4); background: rgba(76,175,80,0.06); }
+    .quicklink-accent:hover { border-color: var(--accent1); }
 
     /* SECTIONS */
     main section { padding: 56px 0; border-top: 1px solid var(--border); }
@@ -205,13 +213,42 @@
         <div><div class="k">1&ordf; Partida</div><div class="v">09:00</div></div>
         <div><div class="k">Secretariado abre</div><div class="v">07:00</div></div>
       </div>
-      <nav class="ia-index fade-in" aria-label="Índice">
-        <a href="#horario">Horário &amp; Waves</a>
-        <a href="#chegar">Como Chegar</a>
-        <a href="#local">No Local</a>
-        <a href="#pesquisa">Pesquisar Atleta</a>
-        <a href="#percurso">Percurso</a>
-        <a href="#contactos">Contactos</a>
+      <nav class="quicklinks fade-in" aria-label="Acesso rápido">
+        <a href="#pesquisa" class="quicklink quicklink-accent">
+          <span class="icon">🔍</span>
+          <span class="txt"><span class="label">Pesquisar a minha dupla</span><span class="sub">Dorsal, wave e hora de partida</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#horario" class="quicklink">
+          <span class="icon">⏰</span>
+          <span class="txt"><span class="label">Horário das Waves</span><span class="sub">Todas as partidas, por categoria</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#chegar" class="quicklink">
+          <span class="icon">🅿️</span>
+          <span class="txt"><span class="label">Como Chegar</span><span class="sub">Estacionamento e acessos</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#local" class="quicklink">
+          <span class="icon">🎫</span>
+          <span class="txt"><span class="label">No Local</span><span class="sub">Secretariado, bengaleiro, balneários</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#percurso" class="quicklink">
+          <span class="icon">🗺️</span>
+          <span class="txt"><span class="label">Mapa do Percurso</span><span class="sub">8 km + 8 estações</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="/rulebook/" class="quicklink">
+          <span class="icon">📋</span>
+          <span class="txt"><span class="label">Regulamento Oficial</span><span class="sub">Regras, penalizações, arbitragem</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#contactos" class="quicklink">
+          <span class="icon">☎️</span>
+          <span class="txt"><span class="label">Contactos</span><span class="sub">Dúvidas de última hora</span></span>
+          <span class="arrow">→</span>
+        </a>
       </nav>
     </div>
   </header>
