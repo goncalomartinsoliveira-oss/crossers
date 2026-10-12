@@ -121,6 +121,12 @@
     .load.mista .load-cat { color: var(--mista); }
     .load.fem .load-cat { color: var(--fem); }
 
+    /* AGE GROUPS */
+    .agegroups { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; margin: 20px 0; border: 1px solid var(--border); }
+    .agegroup { padding: 18px 12px; text-align: center; background: #0d0d0d; }
+    .agegroup-label { font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent1); margin-bottom: 6px; }
+    .agegroup-val { font-family: var(--font-title); font-size: 1.5rem; letter-spacing: 0.02em; color: var(--white); }
+
     .station-rules-title { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
 
     /* PENALTY TABLE */
@@ -162,6 +168,7 @@
       .footer-top { flex-direction: column; }
       #rb-hero { padding: 110px 0 44px; }
       .loads { grid-template-columns: 1fr; }
+      .agegroups { grid-template-columns: repeat(2, 1fr); }
       .station-num { font-size: 2rem; width: 40px; }
       #rb-cta { padding: 36px 22px; }
       .pen-table th, .pen-table td { padding: 10px 8px; font-size: 12.5px; }
@@ -215,6 +222,7 @@
 
       <nav class="rb-index fade-in" aria-label="Índice do regulamento">
         <a href="#formato">Formato</a>
+        <a href="#escaloes">Escalões</a>
         <a href="#corrida">Corrida</a>
         <a href="#estacoes-regras">Regras das estações</a>
         <a href="#estacoes">As 8 estações</a>
@@ -246,6 +254,26 @@
           <strong>Trabalho em dupla.</strong> Cada estação pode ser dividida entre os dois membros da dupla, mas
           <strong>ambos têm de ter parte interveniente no exercício</strong>. A forma de dividir o trabalho é livre,
           desde que os dois contribuam.
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCALÕES -->
+    <section class="rb-section">
+      <div class="container">
+        <p class="rb-section-label fade-in">Visão geral</p>
+        <h2 class="rb-h2 fade-in" id="escaloes">ESCALÕES ETÁRIOS</h2>
+        <p class="rb-p fade-in">
+          Dentro de cada categoria (Masculinas, Mistas e Femininas), as duplas competem também por escalão etário:
+        </p>
+        <div class="agegroups fade-in">
+          <div class="agegroup"><div class="agegroup-label">Escalão</div><div class="agegroup-val">U29</div></div>
+          <div class="agegroup"><div class="agegroup-label">Escalão</div><div class="agegroup-val">30-39</div></div>
+          <div class="agegroup"><div class="agegroup-label">Escalão</div><div class="agegroup-val">40-49</div></div>
+          <div class="agegroup"><div class="agegroup-label">Escalão</div><div class="agegroup-val">50+</div></div>
+        </div>
+        <div class="rb-note fade-in">
+          O escalão de cada dupla é calculado com base na <strong>média de idades dos dois atletas</strong>, à data do evento.
         </div>
       </div>
     </section>
@@ -438,7 +466,11 @@
             <ul class="rb-list">
               <li>Os atletas devem transpor a parede, passando por cima.</li>
               <li>É permitido utilizar as cordas para ajudar na subida e na descida.</li>
+              <li>Basta que <strong>um dos dois atletas</strong> da dupla consiga transpor a parede com sucesso para a estação ser considerada concluída.</li>
             </ul>
+            <div class="rb-warn">
+              Se <strong>nenhum dos atletas</strong> conseguir transpor a parede, a dupla recebe uma <strong>penalização de 5 minutos</strong>.
+            </div>
           </div>
         </div>
 
@@ -519,6 +551,7 @@
               <tr><td>Farmer Walk: devolução incorreta dos kettlebells</td><td>30 seg</td></tr>
               <tr><td>Sandbag Lunges: pousar o saco no chão</td><td>10 m</td></tr>
               <tr><td>Sandbag Lunges: pousar o saco uma segunda vez</td><td>Desclassificação</td></tr>
+              <tr><td>Olympus: nenhum dos atletas consegue transpor a parede</td><td>5 min</td></tr>
               <tr><td>Burpees Broad Jump: segunda infração à técnica</td><td>10 m</td></tr>
               <tr><td>Membro em descanso a obstruir outros participantes</td><td>10 m</td></tr>
               <tr><td>SkiErg e Remo: infração às regras da estação</td><td>Tempo, a definir pelo Head Judge</td></tr>
