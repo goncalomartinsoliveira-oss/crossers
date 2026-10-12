@@ -63,6 +63,7 @@
     .nav-back { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
     .nav-back:hover { color: var(--white); }
     .btn-nav { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #000; background: var(--accent1); border: none; padding: 10px 20px; text-decoration: none; }
+    .nav-desktop-right { display: flex; align-items: center; gap: 24px; }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); }
     .nav-mobile-overlay { display: none; position: fixed; inset: 64px 0 0; background: rgba(10,10,10,0.98); backdrop-filter: blur(8px); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
@@ -184,7 +185,7 @@
       <a href="/" class="nav-logo" aria-label="Crossers, página principal">
         <img src="/assets/logo-clean.svg" alt="Crossers" style="height:36px;width:auto;" />
       </a>
-      <div style="display:flex;align-items:center;gap:24px;" class="nav-desktop-right">
+      <div class="nav-desktop-right">
         <span class="nav-page-label">Informações ao Atleta</span>
         <a href="/" class="nav-back">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
