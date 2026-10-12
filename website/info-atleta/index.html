@@ -126,7 +126,8 @@
     .search-box svg { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.35); }
     #searchResults { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
     .result-card { background: var(--card-bg); padding: 16px 20px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-    .result-dorsal { font-family: var(--font-title); font-size: 1.8rem; color: var(--accent1); min-width: 56px; }
+    .result-dorsal { font-family: var(--font-title); font-size: 1.1rem; color: var(--accent1); min-width: 90px; letter-spacing: 0.02em; }
+    .result-dorsal div:last-child { opacity: 0.5; font-size: 0.95rem; }
     .result-body { flex: 1; min-width: 200px; }
     .result-team { font-weight: 700; font-size: 15px; }
     .result-athletes { font-size: 13px; color: rgba(255,255,255,0.55); }
@@ -508,10 +509,10 @@
       results.innerHTML = `<div class="search-stats">${items.length} resultado${items.length>1?'s':''}</div>` +
         items.slice(0,30).map(r => `
         <div class="result-card">
-          <div class="result-dorsal">#${r.a[0].d}<span style="opacity:.4;font-size:15px;"> / #${r.a[1].d}</span></div>
+          <div class="result-dorsal"><div>Dorsal ${r.a[0].d}</div><div>Dorsal ${r.a[1].d}</div></div>
           <div class="result-body">
             <div class="result-team">${r.e}</div>
-            <div class="result-athletes">${r.a.map(x => `${x.n} <span style="opacity:.5;">(#${x.d})</span>`).join(' &amp; ')}</div>
+            <div class="result-athletes">${r.a.map(x => `${x.n} <span style="opacity:.5;">(Dorsal ${x.d})</span>`).join(' &amp; ')}</div>
           </div>
           <div class="result-meta">
             <span><span class="cat-dot ${r.c}"></span><strong>${catLabel[r.c]}</strong></span>
@@ -522,12 +523,16 @@
         </div>`).join('');
     }
 
+    function norm(s) {
+      return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    }
+
     input.addEventListener('input', () => {
-      const q = input.value.trim().toLowerCase();
+      const q = norm(input.value.trim());
       if (!q) { results.innerHTML = ''; return; }
       const matches = ROSTER.filter(r =>
-        r.e.toLowerCase().includes(q) ||
-        r.a.some(x => x.n.toLowerCase().includes(q) || String(x.d).includes(q))
+        norm(r.e).includes(q) ||
+        r.a.some(x => norm(x.n).includes(q) || String(x.d).includes(q))
       );
       renderResults(matches);
     });
