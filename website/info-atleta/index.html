@@ -103,6 +103,7 @@
 
     /* INFO CARDS GRID */
     .info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .info-grid.cols-2 { grid-template-columns: repeat(2,1fr); }
     .info-card { background: var(--card-bg); padding: 24px; }
     .info-card h3 { font-family: var(--font-title); font-size: 1.3rem; letter-spacing: 0.02em; margin-bottom: 10px; display:flex; align-items:center; gap:8px; }
     .info-card p { font-size: 13.5px; color: rgba(255,255,255,0.65); }
@@ -216,7 +217,7 @@
         <div><div class="k">Data</div><div class="v">18 Out 2026</div></div>
         <div><div class="k">Local</div><div class="v">Parque Papa Francisco, Loures</div></div>
         <div><div class="k">1&ordf; Partida</div><div class="v">09:00</div></div>
-        <div><div class="k">Secretariado abre</div><div class="v">07:00</div></div>
+        <div><div class="k">Secretariado abre</div><div class="v">08:00</div></div>
       </div>
       <nav class="quicklinks fade-in" aria-label="Acesso rápido">
         <a href="#pesquisa" class="quicklink quicklink-accent">
@@ -250,8 +251,8 @@
           <span class="arrow">→</span>
         </a>
         <a href="#contactos" class="quicklink">
-          <span class="icon">☎️</span>
-          <span class="txt"><span class="label">Contactos</span><span class="sub">Dúvidas de última hora</span></span>
+          <span class="icon">❓</span>
+          <span class="txt"><span class="label">Dúvidas</span><span class="sub">Consulta o regulamento oficial</span></span>
           <span class="arrow">→</span>
         </a>
       </nav>
@@ -271,12 +272,12 @@
           Encontra a tua dupla na <a href="#pesquisa" style="color:var(--accent1)">pesquisa de atletas</a> para saberes exatamente o teu heat e hora.
         </p>
         <p class="ia-section-text fade-in" style="margin-bottom:16px;">
-          <strong>Chegada recomendada:</strong> 45 minutos antes do teu heat. <strong>Levantamento do dorsal:</strong> até 15 minutos antes da tua partida, no secretariado.
+          <strong>Chegada recomendada:</strong> 1 hora antes do teu heat. <strong>Levantamento do dorsal:</strong> até 15 minutos antes da tua partida, no secretariado.
         </p>
         <div class="wave-table-wrap fade-in">
           <table class="wave-table">
             <thead>
-              <tr><th>Heat</th><th>Categoria</th><th>Duplas</th><th>Chegada recomendada</th><th>Levantamento até</th><th>Partida</th></tr>
+              <tr><th>Heat</th><th>Categoria</th><th>Chegada recomendada</th><th>Partida</th></tr>
             </thead>
             <tbody id="waveTableBody"></tbody>
           </table>
@@ -289,29 +290,17 @@
       <div class="container">
         <p class="ia-section-label fade-in">Logística</p>
         <h2 class="ia-section-title fade-in">COMO CHEGAR</h2>
-        <div class="info-grid fade-in">
+        <div class="info-grid cols-2 fade-in">
           <div class="info-card">
             <span class="tag">Confirmado</span>
             <h3>🅿️ Estacionamento</h3>
             <p>O Parque Papa Francisco tem <strong>2.000 lugares de estacionamento gratuitos</strong>. O acesso de carro só pode ser feito pelo lado de <strong>Santa Iria de Azóia</strong>.</p>
           </div>
           <div class="info-card">
-            <span class="tag pending">A confirmar</span>
-            <h3>🚆 Transportes públicos</h3>
-            <p>Informação sobre comboio/autocarro mais próximos em breve.</p>
-            <div class="placeholder-box">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
-              PLACEHOLDER — preencher
-            </div>
-          </div>
-          <div class="info-card">
-            <span class="tag pending">A confirmar</span>
+            <span class="tag">Confirmado</span>
             <h3>📍 Morada / GPS</h3>
             <p>Parque Papa Francisco, Loures.</p>
-            <div class="placeholder-box">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
-              PLACEHOLDER — link do Google Maps
-            </div>
+            <p style="margin-top:10px;"><a href="https://maps.app.goo.gl/CwqkGsjWd6nd2RHv5" target="_blank" rel="noopener" style="color:var(--accent1);font-weight:600;">Abrir no Google Maps →</a></p>
           </div>
         </div>
       </div>
@@ -326,7 +315,7 @@
           <div class="info-card">
             <span class="tag">Confirmado</span>
             <h3>🎫 Secretariado</h3>
-            <p>Abre às <strong>07:00</strong>. Levanta o dorsal da tua dupla até 15 minutos antes da vossa wave. Traz documento de identificação.</p>
+            <p>Abre às <strong>08:00</strong>. Levanta o dorsal da tua dupla até 15 minutos antes da vossa wave. Traz documento de identificação.</p>
           </div>
           <div class="info-card">
             <span class="tag">Confirmado</span>
@@ -336,10 +325,10 @@
           <div class="info-card">
             <span class="tag pending">A confirmar</span>
             <h3>🚿 Balneários</h3>
-            <p>Vão existir balneários no local.</p>
+            <p>Vamos ter um <strong>pavilhão desportivo de apoio ao evento</strong> com balneários. É necessário deslocares-te de carro.</p>
             <div class="placeholder-box">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
-              PLACEHOLDER — localização exata por confirmar
+              PLACEHOLDER — local e link do Google Maps em breve
             </div>
           </div>
         </div>
@@ -374,20 +363,15 @@
       </div>
     </section>
 
-    <!-- CONTACTOS -->
+    <!-- REGULAMENTO -->
     <section id="contactos">
       <div class="container">
         <p class="ia-section-label fade-in">Dúvidas</p>
-        <h2 class="ia-section-title fade-in">CONTACTOS DE ÚLTIMA HORA</h2>
-        <div class="placeholder-box fade-in" style="max-width:500px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
-          PLACEHOLDER — número de telefone / Instagram para dúvidas do dia da prova
-        </div>
-
-        <div class="ia-cta fade-in" style="margin-top:32px;">
+        <h2 class="ia-section-title fade-in">AINDA TENS DÚVIDAS?</h2>
+        <div class="ia-cta fade-in">
           <div>
-            <h3>AINDA TENS DÚVIDAS?</h3>
-            <p>Consulta o regulamento oficial da prova.</p>
+            <h3>CONSULTA O REGULAMENTO OFICIAL</h3>
+            <p>Formato da prova, as 8 estações, cargas por categoria, regras técnicas e penalizações.</p>
           </div>
           <a href="/rulebook/" class="btn-grunge">Ver Rulebook</a>
         </div>
@@ -457,43 +441,47 @@
 
     // HEAT TABLE
     const waves = [
-      {heat:1,cat:'Masculina',n:7,cheg:'08:15',lev:'08:45',hora:'09:00'},
-      {heat:2,cat:'Masculina',n:7,cheg:'08:25',lev:'08:55',hora:'09:10'},
-      {heat:3,cat:'Masculina',n:7,cheg:'08:35',lev:'09:05',hora:'09:20'},
-      {heat:4,cat:'Masculina',n:7,cheg:'08:45',lev:'09:15',hora:'09:30'},
-      {heat:5,cat:'Masculina',n:7,cheg:'08:55',lev:'09:25',hora:'09:40'},
-      {heat:6,cat:'Masculina',n:7,cheg:'09:05',lev:'09:35',hora:'09:50'},
-      {heat:7,cat:'Masculina',n:7,cheg:'09:15',lev:'09:45',hora:'10:00'},
-      {heat:8,cat:'Masculina',n:7,cheg:'09:25',lev:'09:55',hora:'10:10'},
-      {heat:9,cat:'Masculina',n:7,cheg:'09:35',lev:'10:05',hora:'10:20'},
-      {heat:10,cat:'Masculina',n:7,cheg:'09:45',lev:'10:15',hora:'10:30'},
-      {heat:11,cat:'Masculina',n:6,cheg:'09:55',lev:'10:25',hora:'10:40'},
-      {heat:12,cat:'Feminina',n:7,cheg:'10:05',lev:'10:35',hora:'10:50'},
-      {heat:13,cat:'Feminina',n:6,cheg:'10:15',lev:'10:45',hora:'11:00'},
-      {heat:14,cat:'Feminina',n:7,cheg:'10:25',lev:'10:55',hora:'11:10'},
-      {heat:15,cat:'Feminina',n:7,cheg:'10:35',lev:'11:05',hora:'11:20'},
-      {heat:16,cat:'Feminina',n:7,cheg:'10:45',lev:'11:15',hora:'11:30'},
-      {heat:17,cat:'Feminina',n:7,cheg:'10:55',lev:'11:25',hora:'11:40'},
-      {heat:18,cat:'Feminina',n:7,cheg:'11:05',lev:'11:35',hora:'11:50'},
-      {heat:19,cat:'Feminina',n:7,cheg:'11:15',lev:'11:45',hora:'12:00'},
-      {heat:20,cat:'Mista',n:7,cheg:'11:25',lev:'11:55',hora:'12:10'},
-      {heat:21,cat:'Mista',n:7,cheg:'11:35',lev:'12:05',hora:'12:20'},
-      {heat:22,cat:'Mista',n:7,cheg:'11:45',lev:'12:15',hora:'12:30'},
-      {heat:23,cat:'Mista',n:7,cheg:'11:55',lev:'12:25',hora:'12:40'},
-      {heat:24,cat:'Mista',n:7,cheg:'12:05',lev:'12:35',hora:'12:50'},
-      {heat:25,cat:'Mista',n:6,cheg:'12:15',lev:'12:45',hora:'13:00'},
-      {heat:26,cat:'Mista',n:6,cheg:'12:25',lev:'12:55',hora:'13:10'},
-      {heat:27,cat:'Mista',n:4,cheg:'12:35',lev:'13:05',hora:'13:20'}
+      {heat:1,cat:'Masculina',hora:'09:00'},
+      {heat:2,cat:'Masculina',hora:'09:10'},
+      {heat:3,cat:'Masculina',hora:'09:20'},
+      {heat:4,cat:'Masculina',hora:'09:30'},
+      {heat:5,cat:'Masculina',hora:'09:40'},
+      {heat:6,cat:'Masculina',hora:'09:50'},
+      {heat:7,cat:'Masculina',hora:'10:00'},
+      {heat:8,cat:'Masculina',hora:'10:10'},
+      {heat:9,cat:'Masculina',hora:'10:20'},
+      {heat:10,cat:'Masculina',hora:'10:30'},
+      {heat:11,cat:'Masculina',hora:'10:40'},
+      {heat:12,cat:'Feminina',hora:'10:50'},
+      {heat:13,cat:'Feminina',hora:'11:00'},
+      {heat:14,cat:'Feminina',hora:'11:10'},
+      {heat:15,cat:'Feminina',hora:'11:20'},
+      {heat:16,cat:'Feminina',hora:'11:30'},
+      {heat:17,cat:'Feminina',hora:'11:40'},
+      {heat:18,cat:'Feminina',hora:'11:50'},
+      {heat:19,cat:'Feminina',hora:'12:00'},
+      {heat:20,cat:'Mista',hora:'12:10'},
+      {heat:21,cat:'Mista',hora:'12:20'},
+      {heat:22,cat:'Mista',hora:'12:30'},
+      {heat:23,cat:'Mista',hora:'12:40'},
+      {heat:24,cat:'Mista',hora:'12:50'},
+      {heat:25,cat:'Mista',hora:'13:00'},
+      {heat:26,cat:'Mista',hora:'13:10'},
+      {heat:27,cat:'Mista',hora:'13:20'}
     ];
     const catCode = {Masculina:'M', Feminina:'F', Mista:'X'};
+    // Regra: hora de chegada recomendada = partida menos 1 hora
+    function chegadaRecomendada(hora) {
+      const [h, m] = hora.split(':').map(Number);
+      const total = (h * 60 + m - 60 + 24 * 60) % (24 * 60);
+      return `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`;
+    }
     const tbody = document.getElementById('waveTableBody');
     tbody.innerHTML = waves.map(w => `
       <tr>
         <td>#${w.heat}</td>
         <td><span class="cat-dot ${catCode[w.cat]}"></span>${w.cat}</td>
-        <td>${w.n}</td>
-        <td>${w.cheg}</td>
-        <td>${w.lev}</td>
+        <td>${chegadaRecomendada(w.hora)}</td>
         <td class="wave-hora">${w.hora}</td>
       </tr>`).join('');
 
