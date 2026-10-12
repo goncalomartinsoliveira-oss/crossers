@@ -140,6 +140,10 @@
     /* MAP PLACEHOLDER */
     .map-placeholder { border: 1px dashed rgba(255,255,255,0.2); background: var(--card-bg); aspect-ratio: 16/8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,0.3); }
 
+    /* MAP IMAGE */
+    .map-wrap { border: 1px solid var(--border); background: var(--card-bg); overflow: hidden; }
+    .map-wrap img { width: 100%; height: auto; display: block; }
+
     /* CTA */
     .ia-cta { background: #111; border: 1px solid var(--border); border-left: 4px solid var(--accent1); padding: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .ia-cta h3 { font-family: var(--font-title); font-size: 1.6rem; margin-bottom: 4px; }
@@ -364,9 +368,8 @@
         <p class="ia-section-label fade-in">O Percurso</p>
         <h2 class="ia-section-title fade-in">MAPA DA PROVA</h2>
         <p class="ia-section-text fade-in">8 km de corrida intercalados com 8 estações funcionais. Consulta também o <a href="/rulebook/" style="color:var(--accent1)">regulamento oficial</a> para as regras de cada estação.</p>
-        <div class="map-placeholder fade-in">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-          <span>PLACEHOLDER — mapa oficial do percurso</span>
+        <div class="map-wrap fade-in">
+          <img src="/assets/mapa-percurso.webp" alt="Mapa do percurso Crossers 2026: 8 km de corrida intercalados com 8 estações, no Parque Papa Francisco, Loures" width="1700" height="1000" loading="lazy" />
         </div>
       </div>
     </section>
