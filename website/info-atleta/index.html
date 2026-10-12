@@ -278,7 +278,7 @@
         <div class="wave-table-wrap fade-in">
           <table class="wave-table">
             <thead>
-              <tr><th>Heat</th><th>Categoria</th><th>Chegada recomendada</th><th>Partida</th></tr>
+              <tr><th>Heat</th><th>Categoria</th><th>Partida</th><th>Chegada recomendada</th></tr>
             </thead>
             <tbody id="waveTableBody"></tbody>
           </table>
@@ -475,8 +475,8 @@
       <tr>
         <td>#${w.heat}</td>
         <td><span class="cat-dot ${catCode[w.cat]}"></span>${w.cat}</td>
-        <td>${chegadaRecomendada(w.hora)}</td>
         <td class="wave-hora">${w.hora}</td>
+        <td>${chegadaRecomendada(w.hora)}</td>
       </tr>`).join('');
 
     // SEARCH
