@@ -91,6 +91,11 @@
     .quicklink-accent { border-color: rgba(76,175,80,0.4); background: rgba(76,175,80,0.06); }
     .quicklink-accent:hover { border-color: var(--accent1); }
 
+    /* POST-EVENT BANNER */
+    .ia-post-event { background: var(--card-bg); border: 1px solid rgba(76,175,80,0.3); padding: 20px 22px; margin-bottom: 28px; }
+    .ia-post-event-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent1); margin-bottom: 14px; }
+    .ia-post-event-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
     /* SECTIONS */
     main section { padding: 56px 0; border-top: 1px solid var(--border); }
     .ia-section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent1); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
@@ -157,6 +162,7 @@
       .info-grid { grid-template-columns: 1fr; }
       .footer-top { flex-direction: column; }
       .ia-cta { flex-direction: column; align-items: flex-start; }
+      .ia-post-event-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -190,6 +196,24 @@
   <!-- HERO -->
   <header id="ia-hero">
     <div class="container">
+
+      <!-- POST-EVENT: FOTOGRAFIAS E RESULTADOS -->
+      <div class="ia-post-event fade-in">
+        <div class="ia-post-event-label">Evento Concluído &middot; 18 Outubro 2026</div>
+        <div class="ia-post-event-row">
+          <a href="https://cvphotos.pt/album/293865-crossers-the-hybrid-race" target="_blank" rel="noopener noreferrer" class="quicklink quicklink-accent">
+            <span class="icon">📸</span>
+            <span class="txt"><span class="label">Fotografias</span><span class="sub">CV Photos · Oficiais</span></span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="https://lap2go.com/pt/event/crossers-2026/results.html#0_1D1F96" target="_blank" rel="noopener noreferrer" class="quicklink quicklink-accent">
+            <span class="icon">🏆</span>
+            <span class="txt"><span class="label">Resultados</span><span class="sub">Classificações da prova</span></span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
       <p class="ia-hero-eyebrow fade-in">Crossers &middot; The Hybrid Race</p>
       <h1 class="ia-hero-title fade-in">INFORMAÇÕES<br/>AO ATLETA</h1>
       <p class="ia-hero-sub fade-in">
