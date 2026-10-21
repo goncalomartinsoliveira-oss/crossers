@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import HistoricoResultados from './HistoricoResultados'
 
 type WeekStat = { semana: string; count: number }
 
@@ -189,6 +190,8 @@ export default function PerfilPage() {
           </div>
         </div>
       )}
+
+      <HistoricoResultados />
 
       {/* Formulário edição */}
       <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
