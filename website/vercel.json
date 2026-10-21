@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/hub", "destination": "https://hub-crossers.vercel.app/hub" },
+    { "source": "/hub/:path*", "destination": "https://hub-crossers.vercel.app/hub/:path*" }
+  ]
+}
