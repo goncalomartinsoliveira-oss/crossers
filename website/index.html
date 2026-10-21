@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crossers — The Hybrid Race | Corrida Híbrida · 18 Out 2026 · Loures</title>
-  <meta name="description" content="Crossers é o evento desportivo híbrido em Loures: 8 km de corrida, 8 estações funcionais, duplas. 18 de Outubro de 2026 no Parque Papa Francisco. Inscrições encerradas — consulta as informações ao atleta." />
-  <meta name="keywords" content="crossers, hybrid race, corrida híbrida, evento desportivo, Loures, 2026, fitness, obstáculos, duplas, remo, ski erg, farmer walk, slam ball, burpees broad jump, wall balls" />
+  <title>Crossers — The Hybrid Race | Corrida Híbrida em Equipa ou a Solo</title>
+  <meta name="description" content="A Crossers é um evento desportivo híbrido: 8 km de corrida, 8 estações funcionais, em equipa ou a solo. Nasceu em Loures e vai continuar — conhece o conceito e as próximas edições." />
+  <meta name="keywords" content="crossers, hybrid race, corrida híbrida, evento desportivo, fitness, duplas, individual, remo, ski erg, farmer walk, slam ball, burpees broad jump, wall balls" />
   <meta name="author" content="Crossers" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://crossers.pt/" />
@@ -16,56 +16,30 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crossers.pt/" />
-  <meta property="og:title" content="Crossers — The Hybrid Race | 18 Outubro 2026 · Loures" />
-  <meta property="og:description" content="Evento desportivo híbrido: 8 km de corrida, 8 estações funcionais, duplas. 18 de Outubro de 2026 no Parque Papa Francisco, Loures. Inscrições encerradas — consulta as informações ao atleta." />
-  <meta property="og:image" content="https://crossers.pt/assets/evento-photo.jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Crossers — The Hybrid Race 2026" />
+  <meta property="og:title" content="Crossers — The Hybrid Race" />
+  <meta property="og:description" content="Evento desportivo híbrido: 8 km de corrida, 8 estações funcionais, em equipa ou a solo. Nasceu em Loures e vai continuar — conhece o conceito e as próximas edições." />
+  <meta property="og:image" content="https://crossers.pt/assets/evento-photo-real.jpg" />
+  <meta property="og:image:alt" content="Crossers — The Hybrid Race" />
   <meta property="og:locale" content="pt_PT" />
   <meta property="og:site_name" content="Crossers" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Crossers — The Hybrid Race | 18 Outubro 2026 · Loures" />
-  <meta name="twitter:description" content="Evento desportivo híbrido: 8 km de corrida, 8 estações funcionais, duplas. 18 de Outubro de 2026 no Parque Papa Francisco, Loures." />
-  <meta name="twitter:image" content="https://crossers.pt/assets/evento-photo.jpeg" />
+  <meta name="twitter:title" content="Crossers — The Hybrid Race" />
+  <meta name="twitter:description" content="Evento desportivo híbrido: 8 km de corrida, 8 estações funcionais, em equipa ou a solo." />
+  <meta name="twitter:image" content="https://crossers.pt/assets/evento-photo-real.jpg" />
 
-  <!-- Schema.org Event -->
+  <!-- Schema.org Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Crossers — The Hybrid Race 2026",
-    "description": "Evento desportivo híbrido que combina corrida de resistência, fitness funcional e estações de obstáculos. 8 km, 8 estações funcionais, duplas de atletas.",
-    "startDate": "2026-10-18T09:00:00",
-    "endDate": "2026-10-18T18:00:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "Parque Papa Francisco",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Loures",
-        "addressRegion": "Lisboa",
-        "addressCountry": "PT"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Crossers",
-      "url": "https://crossers.pt"
-    },
+    "@type": "SportsOrganization",
+    "name": "Crossers",
+    "alternateName": "Crossers — The Hybrid Race",
+    "description": "A Crossers é um formato de evento desportivo híbrido — corrida, fitness funcional e estações de performance — realizado em diferentes locais. 8 km, 8 estações, em equipa ou a solo.",
     "url": "https://crossers.pt",
-    "image": "https://crossers.pt/assets/evento-photo.jpeg",
-    "sport": "Hybrid Race",
-    "offers": {
-      "@type": "Offer",
-      "url": "https://crossers.pt/info-atleta/",
-      "availability": "https://schema.org/SoldOut",
-      "priceCurrency": "EUR"
-    }
+    "logo": "https://crossers.pt/assets/logo-clean.svg",
+    "sameAs": ["https://www.instagram.com/crossers.pt"]
   }
   </script>
 
@@ -227,18 +201,24 @@
     .partidas-block { background: #111; border: 1px solid var(--border); border-left: 4px solid var(--accent1); padding: 32px 40px; }
     .partidas-title { font-family: var(--font-title); font-size: 1.3rem; letter-spacing: 0.06em; margin-bottom: 12px; }
     .partidas-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.9; }
+    .cat-grid-2 { grid-template-columns: repeat(2, 1fr); }
 
-    /* INFO */
-    #info { background: #0d0d0d; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .info-tile { background: #111; padding: 28px 24px; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
-    .info-tile:hover { border-color: var(--accent1); }
-    .info-tile-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent1); margin-bottom: 8px; }
-    .info-tile-value { font-family: var(--font-title); font-size: 1.2rem; letter-spacing: 0.04em; }
-    .info-tile-sub { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+    /* EDICOES */
+    .edicoes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 680px; margin: 0 auto; }
+    .edicao-card { position: relative; display: block; text-align: left; background: rgba(17,17,17,0.85); border: 1px solid rgba(255,255,255,0.12); padding: 28px 24px; text-decoration: none; color: var(--white); transition: border-color 0.2s, transform 0.15s; }
+    a.edicao-card:hover { border-color: var(--accent1); transform: translateY(-2px); }
+    .edicao-card-soon { opacity: 0.7; }
+    .edicao-card-status { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; padding: 5px 12px; margin-bottom: 16px; }
+    .edicao-status-done { background: rgba(76,175,80,0.15); color: var(--accent1); }
+    .edicao-status-soon { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
+    .edicao-card-title { font-family: var(--font-title); font-size: 1.7rem; letter-spacing: 0.04em; line-height: 1; margin-bottom: 10px; }
+    .edicao-card-desc { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 18px; line-height: 1.5; }
+    .edicao-card-link { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent1); }
+    .edicao-card-soon .edicao-card-link { color: rgba(255,255,255,0.35); }
+    @media (max-width: 640px) { .edicoes-grid { grid-template-columns: 1fr; } }
 
-    /* INSCRICOES */
-    #inscricoes { position: relative; overflow: hidden; min-height: 640px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    /* EDICOES */
+    #edicoes { position: relative; overflow: hidden; min-height: 640px; display: flex; align-items: center; justify-content: center; text-align: center; }
     .inscricoes-photo { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1600&q=80&fit=crop') center center / cover no-repeat; filter: grayscale(70%) brightness(0.3); }
     .inscricoes-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.75) 100%); }
     .inscricoes-content { position: relative; z-index: 2; padding: 120px 24px; }
@@ -358,16 +338,12 @@
 </svg></a>
       <ul class="nav-links">
         <li><a href="#evento">O Evento</a></li>
-        <li><a href="#percurso">Percurso</a></li>
         <li><a href="#estacoes">Esta&ccedil;&otilde;es</a></li>
-        <li><a href="#categorias">Categorias</a></li>
-        <li><a href="#info">Info</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="/calendario/">Calend&aacute;rio</a></li>
+        <li><a href="#edicoes">Edi&ccedil;&otilde;es</a></li>
         <li><a href="/rulebook/">Rulebook</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul>
-      <a href="/info-atleta/" class="btn-nav">Informa&ccedil;&otilde;es ao Atleta</a>
+      <a href="#edicoes" class="btn-nav">Ver Edi&ccedil;&otilde;es</a>
       <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -376,26 +352,20 @@
 
   <div class="nav-mobile-overlay" id="mobileMenu">
     <a href="#evento" class="mobile-link">O Evento</a>
-    <a href="#percurso" class="mobile-link">Percurso</a>
     <a href="#estacoes" class="mobile-link">Esta&ccedil;&otilde;es</a>
-    <a href="#categorias" class="mobile-link">Categorias</a>
-    <a href="#info" class="mobile-link">Info</a>
-    <a href="#contacto" class="mobile-link">Contacto</a>
-    <a href="/calendario/" class="mobile-link">Calend&aacute;rio</a>
+    <a href="#edicoes" class="mobile-link">Edi&ccedil;&otilde;es</a>
     <a href="/rulebook/" class="mobile-link">Rulebook</a>
     <a href="/blog/" class="mobile-link">Blog</a>
-    <a href="/info-atleta/" class="btn-grunge mobile-link">Informa&ccedil;&otilde;es ao Atleta</a>
+    <a href="#edicoes" class="btn-grunge mobile-link">Ver Edi&ccedil;&otilde;es</a>
   </div>
 
   <!-- HERO -->
   <section id="hero" aria-label="Crossers — The Hybrid Race">
-    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
-      <source src="assets/hero-video.mp4" type="video/mp4">
-    </video>
+    <img class="hero-video" src="assets/hero-photo.jpg" alt="" aria-hidden="true" />
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-scratch" aria-hidden="true"></div>
     <div class="hero-content">
-      <p class="hero-tag">18 Outubro 2026 &middot; Loures</p>
+      <p class="hero-tag">Corrida H&iacute;brida &middot; Em Equipa ou a Solo</p>
       <div class="hero-logo-wrap"><svg viewBox="0 0 787.20001 788.47998" xmlns="http://www.w3.org/2000/svg" style="width:220px;display:block;margin:0 auto" aria-label="Crossers" role="img">
   <defs
      id="defs1" />
@@ -425,12 +395,10 @@
         <span class="hero-meta-sep" aria-hidden="true"></span>
         <span class="hero-meta-item">8 Esta&ccedil;&otilde;es</span>
         <span class="hero-meta-sep" aria-hidden="true"></span>
-        <span class="hero-meta-item">Duplas</span>
-        <span class="hero-meta-sep" aria-hidden="true"></span>
-        <span class="hero-meta-item">Loures</span>
+        <span class="hero-meta-item">Equipa ou Solo</span>
       </div>
       <div class="hero-cta-row">
-        <a href="/info-atleta/" class="btn-grunge">Informa&ccedil;&otilde;es ao Atleta</a>
+        <a href="#edicoes" class="btn-grunge">Ver Edi&ccedil;&otilde;es</a>
         <a href="#evento" class="btn-ghost">Saber mais</a>
       </div>
     </div>
@@ -447,8 +415,8 @@
       <div class="stat-bar-lbl">Esta&ccedil;&otilde;es<br>Funcionais</div>
     </div>
     <div class="stat-bar-item">
-      <div class="stat-bar-num">Duplas</div>
-      <div class="stat-bar-lbl">Masc &middot; Mistas<br>Femininas</div>
+      <div class="stat-bar-num">Equipa</div>
+      <div class="stat-bar-lbl">Ou a solo<br>&Agrave; tua escolha</div>
     </div>
   </div>
 
@@ -456,16 +424,16 @@
   <section id="evento" aria-labelledby="evento-title">
     <div class="evento-split">
       <div class="evento-photo fade-in">
-        <img src="assets/evento-photo.jpeg" alt="Atleta no evento Crossers" loading="lazy" />
+        <img src="assets/evento-photo-real.jpg" alt="Atleta no remo durante a Crossers" loading="lazy" />
         <div class="evento-photo-label">crossers 2026</div>
       </div>
       <div class="evento-text-block fade-in">
         <p class="section-label">O Conceito</p>
         <h2 class="section-title" id="evento-title">O QUE &Eacute; A CROSSERS<br><span class="accent-green">THE HYBRID RACE.</span></h2>
         <div class="divider"></div>
-        <p>A Crossers &eacute; um evento desportivo h&iacute;brido que combina o melhor da corrida de resist&ecirc;ncia com o fitness funcional e os obst&aacute;culos. Um conceito novo, posicionado na vanguarda dos eventos h&iacute;bridos modernos.</p>
+        <p>A Crossers &eacute; um evento de corrida h&iacute;brida, que combina 8&nbsp;km de corrida com 8 esta&ccedil;&otilde;es funcionais. Um conceito novo, posicionado na vanguarda dos eventos h&iacute;bridos modernos.</p>
         <p>Ao longo de 8&nbsp;km, os atletas alternam entre troços de corrida e esta&ccedil;&otilde;es de performance funcional. Oito esta&ccedil;&otilde;es. Um objetivo.</p>
-        <p>Esta edi&ccedil;&atilde;o &eacute; exclusiva para <strong style="color:var(--white)">duplas de atletas</strong>. Masculinas, Mistas ou Femininas. Dois atletas, um &uacute;nico objetivo: superar.</p>
+        <p>Podes competir <strong style="color:var(--white)">em equipa ou a solo</strong> &mdash; a escolha &eacute; tua. Em dupla, dividem o esfor&ccedil;o; sozinho, encaras tudo de frente. De qualquer forma, o objetivo &eacute; o mesmo: superar.</p>
         <div class="evento-stats">
           <div class="evento-stat-row">
             <div class="evento-stat-num">8 KM</div>
@@ -476,8 +444,8 @@
             <div class="evento-stat-lbl">Esta&ccedil;&otilde;es de performance funcional</div>
           </div>
           <div class="evento-stat-row">
-            <div class="evento-stat-num">2</div>
-            <div class="evento-stat-lbl">Atletas por equipa &middot; duplas</div>
+            <div class="evento-stat-num">1-2</div>
+            <div class="evento-stat-lbl">Atletas por equipa &middot; individual ou dupla</div>
           </div>
         </div>
       </div>
@@ -769,106 +737,65 @@
   <section id="categorias" class="section" aria-labelledby="categorias-title">
     <div class="container">
       <p class="section-label fade-in">Quem Participa</p>
-      <h2 class="section-title fade-in" id="categorias-title">CATEGORIAS <span class="accent-green">&amp; VAGAS</span></h2>
+      <h2 class="section-title fade-in" id="categorias-title">PARA TODOS OS <span class="accent-green">N&Iacute;VEIS</span></h2>
       <div class="divider fade-in" style="margin-bottom:40px"></div>
     </div>
-    <div class="cat-grid">
+    <div class="cat-grid cat-grid-2">
 
       <div class="cat-card fade-in">
-        <div class="cat-card-photo" style="background-image:url('assets/cat-masculinas.jpeg')"></div>
+        <div class="cat-card-photo" style="background-image:url('assets/formato-dupla.jpg')"></div>
         <div class="cat-card-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(76,175,80,0.12) 100%)"></div>
         <div class="cat-card-body">
           <div class="cat-accent-bar" style="background:var(--accent1)"></div>
-          <div class="cat-card-label">1.&ordf; Vaga</div>
-          <div class="cat-card-title">DUPLAS<br>MASCULINAS</div>
-          <div class="cat-card-desc">Dois atletas masculinos. Lideram o pelot&atilde;o e abrem a competi&ccedil;&atilde;o.</div>
-          <div class="cat-card-tag" style="color:var(--accent1)">&#9654; Masc</div>
+          <div class="cat-card-label">Em Equipa</div>
+          <div class="cat-card-title">EM<br>DUPLA</div>
+          <div class="cat-card-desc">Dois atletas, um objetivo. Dividem o esfor&ccedil;o nas esta&ccedil;&otilde;es e correm juntos at&eacute; &agrave; meta.</div>
+          <div class="cat-card-tag" style="color:var(--accent1)">&#9654; Masc &middot; Fem &middot; Mista</div>
         </div>
       </div>
 
       <div class="cat-card fade-in">
-        <div class="cat-card-photo" style="background-image:url('assets/cat-mistas.jpeg')"></div>
-        <div class="cat-card-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(123,63,190,0.15) 100%)"></div>
-        <div class="cat-card-body">
-          <div class="cat-accent-bar" style="background:#7B3FBE"></div>
-          <div class="cat-card-label">2.&ordf; Vaga</div>
-          <div class="cat-card-title">DUPLAS<br>MISTAS</div>
-          <div class="cat-card-desc">Um atleta masculino e um feminino. Competi&ccedil;&atilde;o a dois sem fronteiras de g&eacute;nero.</div>
-          <div class="cat-card-tag" style="color:#9B6FDE">&#9654; Masc + Fem</div>
-        </div>
-      </div>
-
-      <div class="cat-card fade-in">
-        <div class="cat-card-photo" style="background-image:url('assets/cat-femininas.jpeg')"></div>
+        <div class="cat-card-photo" style="background-image:url('assets/formato-solo.jpg')"></div>
         <div class="cat-card-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(46,125,50,0.15) 100%)"></div>
         <div class="cat-card-body">
           <div class="cat-accent-bar" style="background:var(--accent2)"></div>
-          <div class="cat-card-label">3.&ordf; Vaga</div>
-          <div class="cat-card-title">DUPLAS<br>FEMININAS</div>
-          <div class="cat-card-desc">Duas atletas femininas. A &uacute;ltima vaga da manh&atilde;, fecham o programa em for&ccedil;a.</div>
-          <div class="cat-card-tag" style="color:var(--accent2)">&#9654; Fem</div>
+          <div class="cat-card-label">Em Nome Pr&oacute;prio</div>
+          <div class="cat-card-title">A<br>SOLO</div>
+          <div class="cat-card-desc">S&oacute; tu, o rel&oacute;gio e as 8 esta&ccedil;&otilde;es. Para quem prefere decidir sozinho o pr&oacute;prio ritmo.</div>
+          <div class="cat-card-tag" style="color:var(--accent2)">&#9654; Individual</div>
         </div>
       </div>
 
     </div>
     <div class="container" style="margin-top:3px">
       <div class="partidas-block fade-in">
-        <div class="partidas-title">FORMATO DE PARTIDAS</div>
-        <p class="partidas-desc">As duplas partem em <strong style="color:var(--white)">vagas escalonadas</strong> de X em X minutos, pela seguinte ordem: <span style="color:var(--accent1)">Masculinas</span> &#8594; <span style="color:#9B6FDE">Mistas</span> &#8594; <span style="color:var(--accent2)">Femininas</span>. Os hor&aacute;rios exatos de cada vaga ser&atilde;o divulgados na semana do evento. Previs&atilde;o de in&iacute;cio: <strong style="color:var(--white)">9:00h</strong>.</p>
+        <p class="partidas-desc">As categorias exatas (masculina, feminina, mista, individual) s&atilde;o definidas e divulgadas <strong style="color:var(--white)">em cada edi&ccedil;&atilde;o</strong>, consoante o local e o n&uacute;mero de inscritos.</p>
       </div>
     </div>
   </section>
 
-  <!-- INFORMACOES -->
-  <section id="info" class="section" aria-labelledby="info-title">
-    <div class="container">
-      <p class="section-label fade-in">Detalhes</p>
-      <h2 class="section-title fade-in" id="info-title">INFORMA&Ccedil;&Otilde;ES</h2>
-      <div class="divider fade-in" style="margin-bottom:40px"></div>
-      <div class="info-grid fade-in">
-        <div class="info-tile">
-          <div class="info-tile-label">Data</div>
-          <div class="info-tile-value">18 Outubro 2026</div>
-        </div>
-        <div class="info-tile">
-          <div class="info-tile-label">Local</div>
-          <div class="info-tile-value">Loures &middot; Parque Papa Francisco</div>
-          <div class="info-tile-sub"><a href="https://maps.app.goo.gl/zjKKLdnSWuSs73Dp6" target="_blank" rel="noopener" style="color:var(--accent1);text-decoration:none;font-size:10px;letter-spacing:0.1em">&#9654; VER NO GOOGLE MAPS</a></div>
-        </div>
-        <div class="info-tile">
-          <div class="info-tile-label">Hora</div>
-          <div class="info-tile-value">9:00h</div>
-          <div class="info-tile-sub">Previs&atilde;o de in&iacute;cio</div>
-        </div>
-        <div class="info-tile">
-          <div class="info-tile-label">Formato</div>
-          <div class="info-tile-value">Duplas</div>
-        </div>
-        <div class="info-tile">
-          <div class="info-tile-label">Dist&acirc;ncia</div>
-          <div class="info-tile-value">8 km</div>
-        </div>
-        <div class="info-tile">
-          <div class="info-tile-label">Categorias</div>
-          <div class="info-tile-value">3 Categorias</div>
-          <div class="info-tile-sub">Masculinas &middot; Mistas &middot; Femininas</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INSCRICOES -->
-  <section id="inscricoes" aria-labelledby="inscricoes-title">
-    <div class="inscricoes-photo" aria-hidden="true"></div>
+  <!-- EDICOES -->
+  <section id="edicoes" aria-labelledby="edicoes-title">
+    <div class="inscricoes-photo" style="background-image:url('assets/edicao-loures.jpg')" aria-hidden="true"></div>
     <div class="inscricoes-overlay" aria-hidden="true"></div>
     <div class="inscricoes-content">
-      <p class="inscricoes-eyebrow fade-in">Inscri&ccedil;&otilde;es Encerradas</p>
-      <h2 class="inscricoes-h2 fade-in" id="inscricoes-title">EST&Aacute;S<br><span class="accent-green">PRONTO?</span></h2>
-      <p class="inscricoes-sub fade-in">18 Outubro 2026 &middot; Loures<br>As inscri&ccedil;&otilde;es para a Crossers 2026 j&aacute; encerraram. Consulta toda a informa&ccedil;&atilde;o para o dia da prova.</p>
-      <div class="inscricoes-btn-wrap fade-in">
-        <a href="/info-atleta/" class="btn-cta-main">Ver Informa&ccedil;&otilde;es ao Atleta</a>
+      <p class="inscricoes-eyebrow fade-in">A Crossers Viaja</p>
+      <h2 class="inscricoes-h2 fade-in" id="edicoes-title">PR&Oacute;XIMA<br><span class="accent-green">PARAGEM?</span></h2>
+      <p class="inscricoes-sub fade-in">A primeira edi&ccedil;&atilde;o foi em Loures. A Crossers vai continuar &mdash; novo local, novas datas, a anunciar em breve.</p>
+      <div class="edicoes-grid fade-in">
+        <a href="/info-atleta/" class="edicao-card">
+          <div class="edicao-card-status edicao-status-done">Realizado</div>
+          <div class="edicao-card-title">CROSSERS<br>LOURES 2026</div>
+          <div class="edicao-card-desc">18 Outubro 2026 &middot; Parque Papa Francisco</div>
+          <div class="edicao-card-link">&#9654; Rever o evento</div>
+        </a>
+        <div class="edicao-card edicao-card-soon">
+          <div class="edicao-card-status edicao-status-soon">Em Breve</div>
+          <div class="edicao-card-title">PR&Oacute;XIMA<br>EDI&Ccedil;&Atilde;O</div>
+          <div class="edicao-card-desc">Local e data a anunciar.</div>
+          <div class="edicao-card-link">&#9654; Subscreve a newsletter</div>
+        </div>
       </div>
-      <p class="inscricoes-note fade-in">Obrigado a todos os que se inscreveram. Vemo-nos em Loures!</p>
     </div>
   </section>
 
@@ -900,8 +827,8 @@
           <p class="section-label">Fala connosco</p>
           <h2 class="section-title" id="contacto-title">CONTACTO</h2>
           <div class="divider"></div>
-          <p>Tens alguma d&uacute;vida sobre o evento, as inscri&ccedil;&otilde;es ou as esta&ccedil;&otilde;es? Entra em contacto connosco e respondemos o mais breve poss&iacute;vel.</p>
-          <p>Para parcerias ou patrocinadores, usa tamb&eacute;m este formul&aacute;rio.</p>
+          <p>Tens alguma d&uacute;vida sobre a Crossers ou sobre o formato? Entra em contacto connosco e respondemos o mais breve poss&iacute;vel.</p>
+          <p>Queres trazer a Crossers &agrave; tua cidade, ou propor uma parceria/patroc&iacute;nio? Usa tamb&eacute;m este formul&aacute;rio.</p>
         </div>
         <div class="fade-in">
           <form class="contacto-form" id="contacto-form" action="https://formspree.io/f/xojovgjy" method="POST">
@@ -940,10 +867,9 @@
             <li><a href="#percurso">O Percurso</a></li>
             <li><a href="#estacoes">As Esta&ccedil;&otilde;es</a></li>
             <li><a href="#categorias">Categorias</a></li>
-            <li><a href="#info">Informa&ccedil;&otilde;es</a></li>
+            <li><a href="#edicoes">Edi&ccedil;&otilde;es</a></li>
             <li><a href="#contacto">Contacto</a></li>
             <li><a href="#newsletter">Newsletter</a></li>
-            <li><a href="#inscricoes">Inscri&ccedil;&otilde;es</a></li>
             <li><a href="/info-atleta/">Informa&ccedil;&otilde;es ao Atleta</a></li>
             <li><a href="/calendario/">Calend&aacute;rio de Provas</a></li>
             <li><a href="/rulebook/">Rulebook</a></li>
